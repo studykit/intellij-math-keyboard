@@ -1,0 +1,12 @@
+= Plugin Development
+:icons: font
+:imagesdir: ./images
+:stem:
+:toc:
+
+== Part I
+
+include::plugin-structure.adoc[]
+
+
+

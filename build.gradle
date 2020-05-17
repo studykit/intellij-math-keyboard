@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.21'
+}
+
+group 'net.mlcoder'
+version '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+configurations {
+    codegen
+}
+
+sourceSets {
+     codegen {
+        java {
+            srcDir 'src/codegen/java'
+        }
+    }
+}
+
+dependencies {
+    codegenImplementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.11.RELEASE'
+    codegenImplementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    codegenImplementation group: 'com.google.guava', name: 'guava', version: '28.2-jre'
+    codegenImplementation group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.1.1'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}

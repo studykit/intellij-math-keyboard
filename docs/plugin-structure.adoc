@@ -1,0 +1,190 @@
+== Plugin Structure
+
+=== Content
+
+반드시 있어야 하는 파일 목록
+
+* `META-INF/plugin.xml`
+* `.jar`
+
+
+Without Dependency
+
+ .IntelliJIDEAx0/
+ └── plugins
+     └── sample.jar
+         ├── com/foo/...
+         │   ...
+         │   ...
+         └── META-INF
+             ├── plugin.xml
+             ├── pluginIcon.svg
+             └── pluginIcon_dark.svg
+
+With Dependencies
+
+ .IntelliJIDEAx0/
+ └── plugins
+     └── sample
+         └── lib
+             ├── lib_foo.jar
+             ├── lib_bar.jar
+             │   ...
+             │   ...
+             └── sample.jar
+                 ├── com/foo/...
+                 │   ...
+                 │   ...
+                 └── META-INF
+                     ├── plugin.xml
+                     ├── pluginIcon.svg
+                     └── pluginIcon_dark.svg
+
+
+=== Class Loaders
+
+plugin uses **independent class load**. When a plugin dependes on another plugin, use `<depends>` element in `plugin.xml` file
+
+=== Actions
+
+Action::  A class derived from the `AnAction` class. `actionPerformed()`
+
+* invoked from menu, toolbar, keyboard shortcut, or the Find Actino Interface.
+* Action must be registered with the IntelliJ Platform
+* More information is on  https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html[Reference]
+
+
+=== Extensions
+
+Use extension when you need to extend existing features in IntelliJ or another plugin .
+
+**Declaring Extensions**
+
+[source,xml]
+----
+  <extensions defaultExtensionNs="com.intellij"> <!--1-->
+    <appStarter implementation="com.myplugin.MyAppStarter" /> <!--2-->
+    <projectTemplatesFactory implementation="com.myplugin.MyProjectTemplatesFactory" /> <!--3-->
+  </extensions>
+----
+<1> `com.intellij` - intellij
+<2> extend `com.intellij.appStarter` extension poinst
+<3> extend `com.intellij.projectTemplatesFactory` extension poinst
+
+=== Services
+
+Service::
+* on-demand component.
+* plugin load service by calling `ServiceManager.getService()`.
+* Service is a kind of extension.
+* only one instance exists its own level.
+  Three Types(levels) of services:::
+    - applicaiton level - `com.intellij.applicationSerice`
+    - porject level - `com.intellij.projectService`
+    - module level - `com.intellij.moduleService`
+
+
+  Light Service:::
+    No need to register light service with `plugin.xml`, but annoate `@Service`
+
+==== How to Declare a Service?
+
+[source,xml]
+----
+<extensions defaultExtensionNs="com.intellij"> <!--1-->
+  <!-- Declare the application level service -->
+  <applicationService serviceInterface="mypackage.MyApplicationService"
+                      serviceImplementation="mypackage.MyApplicationServiceImpl" />
+
+  <!-- Declare the project level service -->
+  <projectService serviceInterface="mypackage.MyProjectService"
+                  serviceImplementation="mypackage.MyProjectServiceImpl" />
+</extensions>
+----
+
+==== Retrieving a Service
+
+[source]
+----
+MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);
+
+MyProjectService projectService = project.getService(MyProjectService.class);
+----
+
+*Project Service Sample*
+
+[source,java]
+.ProjectService.java
+----
+@Service
+public final class ProjectService {
+
+   private final Project myProject;
+
+   public ProjectService(Project project) {
+     myProject = project;
+   }                     
+
+   public void someServiceMethod(String parameter) {
+     AnotherService anotherService = myProject.getService(AnotherService.class); 
+     String result = anotherService.anotherServiceMethod(parameter, false);
+     // do some more stuff
+   }
+}
+----
+
+https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/max_opened_projects[Sample Plugin]
+
+
+=== Listeners
+
+https://www.jetbrains.org/intellij/sdk/docs/reference_guide/messaging_infrastructure.html[Message infrastructure]
+
+==== Application Level Listeners
+[source,xml]
+----
+<applicationListeners>
+  <listener class="myPlugin.MyVfsListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+</applicationListeners>
+----
+
+[source,java]
+----
+public class MyVfsListener implements BulkFileListener {
+    @Override
+    public void after(@NotNull List<? extends VFileEvent> events) {
+        // handle the events
+    }
+}
+----
+
+==== Project Level Listeners
+[source,xml]
+----
+<projectListeners>
+    <listener class="MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
+</projectListeners>
+----
+
+[source,java]
+----
+public class MyToolwindowListener implements ToolWindowManagerListener {
+    private final Project project;
+
+    public MyToolwindowListener(Project project) {
+        this.project = project;
+    }
+
+    @Override
+    public void stateChanged() {
+        // handle the state change
+    }
+}
+----
+
+=== Extension Points
+
+=== Components
+Deprecated
+
+=== Dependencies

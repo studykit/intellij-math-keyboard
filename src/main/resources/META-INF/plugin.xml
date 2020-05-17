@@ -1,0 +1,19 @@
+<idea-plugin>
+  <id>net.mlcoder.unicode.keyboard</id>
+  <name>Unicode Keyboard</name>
+  <vendor email="myungo@gmail.com" url="https://mlcoder.net">mlcoder.net</vendor>
+
+  <description><![CDATA[Unicode Keyboard for Math Symbols. For math syumbols]]></description>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Add your actions here -->
+  <actions>
+    <action id="net.mlcoder.unicode.PopupAction" class="net.mlcoder.unicode.PopupAction" text="Math Symbols"
+            description="Example">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+</idea-plugin>

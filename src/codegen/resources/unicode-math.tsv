@@ -1,0 +1,2446 @@
+00021	\mathexclam	close	exclamation mark
+00023	\mathoctothorpe	ordinal	number sign
+00024	\mathdollar	ordinal	dollar sign
+00025	\mathpercent	ordinal	percent sign
+00026	\mathampersand	ordinal	ampersand
+00028	\lparen	open	left parenthesis
+00029	\rparen	close	right parenthesis
+0002B	\mathplus	binary relation	plus sign b:
+0002C	\mathcomma	punctuation	comma
+0002E	\mathperiod	ordinal	full stop, period
+0002F	\mathslash	ordinal	solidus
+0003A	\mathcolon	punctuation	colon
+0003B	\mathsemicolon	punctuation	semicolon p:
+0003C	\less	relation	less-than sign r:
+0003D	\equal	relation	equals sign r:
+0003E	\greater	relation	greater-than sign r:
+0003F	\mathquestion	ordinal	question mark
+00040	\mathatsign	ordinal	commercial at
+0005B	\lbrack	open	left square bracket
+0005C	\backslash	ordinal	reverse solidus
+0005D	\rbrack	close	right square bracket
+0007B	\lbrace	open	left curly bracket
+0007C	\vert	fence	vertical bar
+0007D	\rbrace	close	right curly bracket
+000A3	\mathsterling	ordinal	pound sign
+000A5	\mathyen	ordinal	yen sign
+000A7	\mathsection	ordinal	section symbol
+000AC	\neg	ordinal	/neg /lnot not sign
+000B1	\pm	binary relation	plus-or-minus sign
+000B6	\mathparagraph	ordinal	paragraph symbol
+000B7	\cdotp	binary relation	/centerdot b: middle dot
+000D7	\times	binary relation	multiply sign
+000F0	\matheth	letter	eth
+000F7	\div	binary relation	divide sign
+001B5	\Zbar	ordinal	impedance (latin capital letter z with stroke)
+00300	\grave	accent	grave accent
+00301	\acute	accent	acute accent
+00302	\hat	accent	circumflex accent
+00302	\widehat	accentwide	circumflex accent
+00303	\tilde	accent	tilde
+00303	\widetilde	accentwide	tilde
+00304	\bar	accent	macron
+00305	\overbar	accent	overbar embellishment
+00305	\wideoverbar	accentwide	stretchy overbar embellishment
+00306	\breve	accent	breve
+00306	\widebreve	accentwide	stretchy breve
+00307	\dot	accent	dot above
+00308	\ddot	accent	dieresis
+00309	\ovhook	accent	combining hook above
+0030A	\ocirc	accent	ring
+0030C	\check	accent	caron
+0030C	\widecheck	accentwide	stretchy caron
+00310	\candra	accent	candrabindu (non-spacing)
+00312	\oturnedcomma	accent	combining turned comma above
+00315	\ocommatopright	accent	combining comma above right
+0031A	\droang	accent	left angle above (non-spacing)
+00330	\wideutilde	bottom accent wide	under tilde accent (multiple characters and non-spacing)
+00332	\mathunderbar	bottom accent wide	combining low line
+00338	\notaccent	accentoverlay	combining long solidus overlay
+0034D	\underleftrightarrow	bottom accent wide	underleftrightarrow accent
+00391	\mupAlpha	letter	capital alpha, greek
+00392	\mupBeta	letter	capital beta, greek
+00393	\mupGamma	letter	capital gamma, greek
+00394	\mupDelta	letter	capital delta, greek
+00395	\mupEpsilon	letter	capital epsilon, greek
+00396	\mupZeta	letter	capital zeta, greek
+00397	\mupEta	letter	capital eta, greek
+00398	\mupTheta	letter	capital theta, greek
+00399	\mupIota	letter	capital iota, greek
+0039A	\mupKappa	letter	capital kappa, greek
+0039B	\mupLambda	letter	capital lambda, greek
+0039C	\mupMu	letter	capital mu, greek
+0039D	\mupNu	letter	capital nu, greek
+0039E	\mupXi	letter	capital xi, greek
+0039F	\mupOmicron	letter	capital omicron, greek
+003A0	\mupPi	letter	capital pi, greek
+003A1	\mupRho	letter	capital rho, greek
+003A3	\mupSigma	letter	capital sigma, greek
+003A4	\mupTau	letter	capital tau, greek
+003A5	\mupUpsilon	letter	capital upsilon, greek
+003A6	\mupPhi	letter	capital phi, greek
+003A7	\mupChi	letter	capital chi, greek
+003A8	\mupPsi	letter	capital psi, greek
+003A9	\mupOmega	letter	capital omega, greek
+003B1	\mupalpha	letter	small alpha, greek
+003B2	\mupbeta	letter	small beta, greek
+003B3	\mupgamma	letter	small gamma, greek
+003B4	\mupdelta	letter	small delta, greek
+003B5	\mupvarepsilon	letter	rounded small varepsilon, greek
+003B6	\mupzeta	letter	small zeta, greek
+003B7	\mupeta	letter	small eta, greek
+003B8	\muptheta	letter	straight theta, small theta, greek
+003B9	\mupiota	letter	small iota, greek
+003BA	\mupkappa	letter	small kappa, greek
+003BB	\muplambda	letter	small lambda, greek
+003BC	\mupmu	letter	small mu, greek
+003BD	\mupnu	letter	small nu, greek
+003BE	\mupxi	letter	small xi, greek
+003BF	\mupomicron	letter	small omicron, greek
+003C0	\muppi	letter	small pi, greek
+003C1	\muprho	letter	small rho, greek
+003C2	\mupvarsigma	letter	terminal sigma, greek
+003C3	\mupsigma	letter	small sigma, greek
+003C4	\muptau	letter	small tau, greek
+003C5	\mupupsilon	letter	small upsilon, greek
+003C6	\mupvarphi	letter	curly or open small phi, greek
+003C7	\mupchi	letter	small chi, greek
+003C8	\muppsi	letter	small psi, greek
+003C9	\mupomega	letter	small omega, greek
+003D1	\mupvartheta	letter	/vartheta - curly or open theta
+003D5	\mupphi	letter	/straightphi - small phi, greek
+003D6	\mupvarpi	letter	rounded small pi (pomega), greek
+003DC	\upDigamma	letter	capital digamma
+003DD	\updigamma	letter	old greek small letter digamma
+003F0	\mupvarkappa	letter	rounded small kappa, greek
+003F1	\mupvarrho	letter	rounded small rho, greek
+003F4	\mupvarTheta	letter	greek capital theta symbol
+003F5	\mupepsilon	letter	greek lunate varepsilon symbol
+003F6	\upbackepsilon	ordinal	greek reversed lunate epsilon symbol
+02010	\mathhyphen	letter	hyphen
+02015	\horizbar	ordinal	horizontal bar
+02016	\Vert	fence	double vertical bar
+02017	\twolowline	ordinal	double low line (spacing)
+02020	\dagger	binary relation	dagger relation
+02021	\ddagger	binary relation	double dagger relation
+02022	\smblkcircle	binary relation	/bullet b: round bullet, filled
+02025	\enleadertwodots	ordinal	double baseline dot (en leader)
+02026	\unicodeellipsis	ordinal	ellipsis (horizontal)
+02032	\prime	ordinal	prime or minute, not superscripted
+02033	\dprime	ordinal	double prime or second, not superscripted
+02034	\trprime	ordinal	triple prime (not superscripted)
+02035	\backprime	ordinal	reverse prime, not superscripted
+02036	\backdprime	ordinal	double reverse prime, not superscripted
+02037	\backtrprime	ordinal	triple reverse prime, not superscripted
+02038	\caretinsert	ordinal	caret (insertion mark)
+0203C	\Exclam	ordinal	double exclamation mark
+02040	\tieconcat	binary relation	character tie, z notation sequence concatenation
+02043	\hyphenbullet	ordinal	rectangle, filled (hyphen bullet)
+02044	\fracslash	binary relation	fraction slash
+02047	\Question	ordinal	double question mark
+02050	\closure	relation	close up
+02057	\qprime	ordinal	quadruple prime, not superscripted
+020AC	\euro	ordinal	euro sign
+020D0	\leftharpoonaccent	accent	combining left harpoon above
+020D0	\overleftharpoon	accentwide	combining left harpoon above
+020D1	\rightharpoonaccent	accent	combining right harpoon above
+020D1	\overrightharpoon	accentwide	combining right harpoon above
+020D2	\vertoverlay	accent	combining long vertical line overlay
+020D6	\overleftarrow	accentwide	combining left arrow above
+020D7	\overrightarrow	accentwide	combining left arrow above
+020D7	\vec	accent	combining right arrow above
+020DB	\dddot	accent	combining three dots above
+020DC	\ddddot	accent	combining four dots above
+020DD	\enclosecircle	ordinal	combining enclosing circle
+020DE	\enclosesquare	ordinal	combining enclosing square
+020DF	\enclosediamond	ordinal	combining enclosing diamond
+020E1	\overleftrightarrow	accentwide	combining left right arrow above
+020E4	\enclosetriangle	ordinal	combining enclosing upward pointing triangle
+020E7	\annuity	accent	combining annuity symbol
+020E8	\threeunderdot	bottom accent	combining triple underdot
+020E9	\widebridgeabove	accent	combining wide bridge above
+020EC	\underrightharpoondown	bottom accent wide	combining rightwards harpoon with barb downwards
+020ED	\underleftharpoondown	bottom accent wide	combining leftwards harpoon with barb downwards
+020EE	\underleftarrow	bottom accent wide	combining left arrow below
+020EF	\underrightarrow	bottom accent wide	combining right arrow below
+020F0	\asteraccent	accent	combining asterisk above
+02102	\BbbC	letter	/bbb c, open face c
+02107	\Eulerconst	ordinal	euler constant
+0210A	\mscrg	letter	/scr g, script letter g
+0210B	\mscrH	letter	hamiltonian (script capital h)
+0210C	\mfrakH	letter	/frak h, upper case h
+0210D	\BbbH	letter	/bbb h, open face h
+0210E	\Planckconst	ordinal	planck constant
+0210F	\hslash	letter	/hslash - variant planck's over 2pi
+02110	\mscrI	letter	/scr i, script letter i
+02111	\Im	letter	imaginary part
+02112	\mscrL	letter	lagrangian (script capital l)
+02113	\ell	letter	cursive small l
+02115	\BbbN	letter	/bbb n, open face n
+02118	\wp	letter	weierstrass p
+02119	\BbbP	letter	/bbb p, open face p
+0211A	\BbbQ	letter	/bbb q, open face q
+0211B	\mscrR	letter	/scr r, script letter r
+0211C	\Re	letter	real part
+0211D	\BbbR	letter	/bbb r, open face r
+02124	\BbbZ	letter	/bbb z, open face z
+02127	\mho	ordinal	conductance
+02128	\mfrakZ	letter	/frak z, upper case z
+02129	\turnediota	letter	turned iota
+0212B	\Angstrom	letter	angstrom capital a, ring
+0212C	\mscrB	letter	bernoulli function (script capital b)
+0212D	\mfrakC	letter	black-letter capital c
+0212F	\mscre	letter	/scr e, script letter e
+02130	\mscrE	letter	/scr e, script letter e
+02131	\mscrF	letter	/scr f, script letter f
+02132	\Finv	ordinal	turned capital f
+02133	\mscrM	letter	physics m-matrix (script capital m)
+02134	\mscro	letter	order of (script small o)
+02135	\aleph	letter	aleph, hebrew
+02136	\beth	letter	beth, hebrew
+02137	\gimel	letter	gimel, hebrew
+02138	\daleth	letter	daleth, hebrew
+0213C	\Bbbpi	ordinal	double-struck small pi
+0213D	\Bbbgamma	letter	double-struck small gamma
+0213E	\BbbGamma	letter	double-struck capital gamma
+0213F	\BbbPi	letter	double-struck capital pi
+02140	\Bbbsum	big operator	double-struck n-ary summation
+02141	\Game	ordinal	turned sans-serif capital g
+02142	\sansLturned	ordinal	turned sans-serif capital l
+02143	\sansLmirrored	ordinal	reversed sans-serif capital l
+02144	\Yup	ordinal	turned sans-serif capital y
+02145	\mitBbbD	ordinal	double-struck italic capital d
+02146	\mitBbbd	ordinal	double-struck italic small d
+02147	\mitBbbe	ordinal	double-struck italic small e
+02148	\mitBbbi	ordinal	double-struck italic small i
+02149	\mitBbbj	ordinal	double-struck italic small j
+0214A	\PropertyLine	ordinal	property line
+0214B	\upand	binary relation	turned ampersand
+02190	\leftarrow	relation	/leftarrow /gets a: leftward arrow
+02191	\uparrow	relation	upward arrow
+02192	\rightarrow	relation	/rightarrow /to a: rightward arrow
+02193	\downarrow	relation	downward arrow
+02194	\leftrightarrow	relation	left and right arrow
+02195	\updownarrow	relation	up and down arrow
+02196	\nwarrow	relation	nw pointing arrow
+02197	\nearrow	relation	ne pointing arrow
+02198	\searrow	relation	se pointing arrow
+02199	\swarrow	relation	sw pointing arrow
+0219A	\nleftarrow	relation	not left arrow
+0219B	\nrightarrow	relation	not right arrow
+0219C	\leftwavearrow	relation	left arrow-wavy
+0219D	\rightwavearrow	relation	right arrow-wavy
+0219E	\twoheadleftarrow	relation	left two-headed arrow
+0219F	\twoheaduparrow	relation	up two-headed arrow
+021A0	\twoheadrightarrow	relation	right two-headed arrow
+021A1	\twoheaddownarrow	relation	down two-headed arrow
+021A2	\leftarrowtail	relation	left arrow-tailed
+021A3	\rightarrowtail	relation	right arrow-tailed
+021A4	\mapsfrom	relation	maps to, leftward
+021A5	\mapsup	relation	maps to, upward
+021A6	\mapsto	relation	maps to, rightward
+021A7	\mapsdown	relation	maps to, downward
+021A8	\updownarrowbar	ordinal	up down arrow with base (perpendicular)
+021A9	\hookleftarrow	relation	left arrow-hooked
+021AA	\hookrightarrow	relation	right arrow-hooked
+021AB	\looparrowleft	relation	left arrow-looped
+021AC	\looparrowright	relation	right arrow-looped
+021AD	\leftrightsquigarrow	relation	left and right arr-wavy
+021AE	\nleftrightarrow	relation	not left and right arrow
+021AF	\downzigzagarrow	relation	downwards zigzag arrow
+021B0	\Lsh	relation	/lsh a:
+021B1	\Rsh	relation	/rsh a:
+021B2	\Ldsh	relation	left down angled arrow
+021B3	\Rdsh	relation	right down angled arrow
+021B4	\linefeed	ordinal	rightwards arrow with corner downwards
+021B5	\carriagereturn	ordinal	downwards arrow with corner leftward = carriage return
+021B6	\curvearrowleft	relation	left curved arrow
+021B7	\curvearrowright	relation	right curved arrow
+021B8	\barovernorthwestarrow	ordinal	north west arrow to long bar
+021B9	\barleftarrowrightarrowbar	ordinal	leftwards arrow to bar over rightwards arrow to bar
+021BA	\acwopencirclearrow	ordinal	anticlockwise open circle arrow
+021BB	\cwopencirclearrow	ordinal	clockwise open circle arrow
+021BC	\leftharpoonup	relation	left harpoon-up
+021BD	\leftharpoondown	relation	left harpoon-down
+021BE	\upharpoonright	relation	/upharpoonright /restriction a: up harpoon-right
+021BF	\upharpoonleft	relation	up harpoon-left
+021C0	\rightharpoonup	relation	right harpoon-up
+021C1	\rightharpoondown	relation	right harpoon-down
+021C2	\downharpoonright	relation	down harpoon-right
+021C3	\downharpoonleft	relation	down harpoon-left
+021C4	\rightleftarrows	relation	right arrow over left arrow
+021C5	\updownarrows	relation	up arrow, down arrow
+021C6	\leftrightarrows	relation	left arrow over right arrow
+021C7	\leftleftarrows	relation	two left arrows
+021C8	\upuparrows	relation	two up arrows
+021C9	\rightrightarrows	relation	two right arrows
+021CA	\downdownarrows	relation	two down arrows
+021CB	\leftrightharpoons	relation	left harpoon over right
+021CC	\rightleftharpoons	relation	right harpoon over left
+021CD	\nLeftarrow	relation	not implied by
+021CE	\nLeftrightarrow	relation	not left and right double arrows
+021CF	\nRightarrow	relation	not implies
+021D0	\Leftarrow	relation	is implied by
+021D1	\Uparrow	relation	up double arrow
+021D2	\Rightarrow	relation	implies
+021D3	\Downarrow	relation	down double arrow
+021D4	\Leftrightarrow	relation	left and right double arrow
+021D5	\Updownarrow	relation	up and down double arrow
+021D6	\Nwarrow	relation	nw pointing double arrow
+021D7	\Nearrow	relation	ne pointing double arrow
+021D8	\Searrow	relation	se pointing double arrow
+021D9	\Swarrow	relation	sw pointing double arrow
+021DA	\Lleftarrow	relation	left triple arrow
+021DB	\Rrightarrow	relation	right triple arrow
+021DC	\leftsquigarrow	relation	leftwards squiggle arrow
+021DD	\rightsquigarrow	relation	rightwards squiggle arrow
+021DE	\nHuparrow	ordinal	upwards arrow with double stroke
+021DF	\nHdownarrow	ordinal	downwards arrow with double stroke
+021E0	\leftdasharrow	ordinal	leftwards dashed arrow
+021E1	\updasharrow	ordinal	upwards dashed arrow
+021E2	\rightdasharrow	ordinal	rightwards dashed arrow
+021E3	\downdasharrow	ordinal	downwards dashed arrow
+021E4	\barleftarrow	relation	leftwards arrow to bar
+021E5	\rightarrowbar	relation	rightwards arrow to bar
+021E6	\leftwhitearrow	ordinal	leftwards white arrow
+021E7	\upwhitearrow	ordinal	upwards white arrow
+021E8	\rightwhitearrow	ordinal	rightwards white arrow
+021E9	\downwhitearrow	ordinal	downwards white arrow
+021EA	\whitearrowupfrombar	ordinal	upwards white arrow from bar
+021F4	\circleonrightarrow	relation	right arrow with small circle
+021F5	\downuparrows	relation	downwards arrow leftwards of upwards arrow
+021F6	\rightthreearrows	relation	three rightwards arrows
+021F7	\nvleftarrow	relation	leftwards arrow with vertical stroke
+021F8	\nvrightarrow	relation	rightwards arrow with vertical stroke
+021F9	\nvleftrightarrow	relation	left right arrow with vertical stroke
+021FA	\nVleftarrow	relation	leftwards arrow with double vertical stroke
+021FB	\nVrightarrow	relation	rightwards arrow with double vertical stroke
+021FC	\nVleftrightarrow	relation	left right arrow with double vertical stroke
+021FD	\leftarrowtriangle	relation	leftwards open-headed arrow
+021FE	\rightarrowtriangle	relation	rightwards open-headed arrow
+021FF	\leftrightarrowtriangle	relation	left right open-headed arrow
+02200	\forall	ordinal	for all
+02201	\complement	ordinal	complement sign
+02202	\partial	letter	partial differential
+02203	\exists	ordinal	at least one exists
+02204	\nexists	ordinal	negated exists
+02205	\varnothing	ordinal	circle, slash
+02206	\increment	ordinal	laplacian (delta; nabla\string^2)
+02207	\nabla	letter	nabla, del, hamilton operator
+02208	\in	relation	set membership, variant
+02209	\notin	relation	negated set membership
+0220A	\smallin	relation	set membership (small set membership)
+0220B	\ni	relation	contains, variant
+0220C	\nni	relation	negated contains, variant
+0220D	\smallni	relation	/ni /owns r: contains (small contains as member)
+0220E	\QED	ordinal	end of proof
+0220F	\prod	big operator	product operator
+02210	\coprod	big operator	coproduct operator
+02211	\sum	big operator	summation operator
+02212	\minus	binary relation	minus sign
+02213	\mp	binary relation	minus-or-plus sign
+02214	\dotplus	binary relation	plus sign, dot above
+02215	\divslash	binary relation	division slash
+02216	\smallsetminus	binary relation	small set minus (cf. reverse solidus)
+02217	\ast	binary relation	centered asterisk
+02218	\vysmwhtcircle	binary relation	composite function (small circle)
+02219	\vysmblkcircle	binary relation	bullet operator
+0221A	\sqrt	open	radical
+0221A	\surd	ordinal	radical
+0221B	\cuberoot	open	cube root
+0221C	\fourthroot	open	fourth root
+0221D	\propto	relation	is proportional to
+0221E	\infty	ordinal	infinity
+0221F	\rightangle	ordinal	right (90 degree) angle
+02220	\angle	ordinal	angle
+02221	\measuredangle	ordinal	angle-measured
+02222	\sphericalangle	ordinal	angle-spherical
+02223	\mid	relation	/mid r:
+02224	\nmid	relation	negated mid
+02225	\parallel	relation	parallel
+02226	\nparallel	relation	not parallel
+02227	\wedge	binary relation	/wedge /land b: logical and
+02228	\vee	binary relation	/vee /lor b: logical or
+02229	\cap	binary relation	intersection
+0222A	\cup	binary relation	union or logical sum
+0222B	\int	big operator	integral operator
+0222C	\iint	big operator	double integral operator
+0222D	\iiint	big operator	triple integral operator
+0222E	\oint	big operator	contour integral operator
+0222F	\oiint	big operator	double contour integral operator
+02230	\oiiint	big operator	triple contour integral operator
+02231	\intclockwise	big operator	clockwise integral
+02232	\varointclockwise	big operator	contour integral, clockwise
+02233	\ointctrclockwise	big operator	contour integral, anticlockwise
+02234	\therefore	ordinal	therefore
+02235	\because	ordinal	because
+02236	\mathratio	relation	ratio
+02237	\Colon	relation	two colons
+02238	\dotminus	binary relation	minus sign, dot above
+02239	\dashcolon	relation	excess (-:)
+0223A	\dotsminusdots	relation	minus with four dots, geometric properties
+0223B	\kernelcontraction	relation	homothetic
+0223C	\sim	relation	similar
+0223D	\backsim	relation	reverse similar
+0223E	\invlazys	binary relation	most positive [inverted lazy s]
+0223F	\sinewave	ordinal	sine wave
+02240	\wr	binary relation	wreath product
+02241	\nsim	relation	not similar
+02242	\eqsim	relation	equals, similar
+02243	\simeq	relation	similar, equals
+02244	\nsime	relation	not similar, equals
+02243	\sime	relation	similar, equals (alias)
+02244	\nsimeq	relation	not similar, equals (alias)
+02245	\cong	relation	congruent with
+02246	\simneqq	relation	similar, not equals [vert only for 9573 entity]
+02247	\ncong	relation	not congruent with
+02248	\approx	relation	approximate
+02249	\napprox	relation	not approximate
+0224A	\approxeq	relation	approximate, equals
+0224B	\approxident	relation	approximately identical to
+0224C	\backcong	relation	all equal to
+0224D	\asymp	relation	asymptotically equal to
+0224E	\Bumpeq	relation	bumpy equals
+0224F	\bumpeq	relation	bumpy equals, equals
+02250	\doteq	relation	equals, single dot above
+02251	\Doteq	relation	/doteqdot /doteq r: equals, even dots
+02252	\fallingdotseq	relation	equals, falling dots
+02253	\risingdotseq	relation	equals, rising dots
+02254	\coloneq	relation	colon, equals
+02255	\eqcolon	relation	equals, colon
+02256	\eqcirc	relation	circle on equals sign
+02257	\circeq	relation	circle, equals
+02258	\arceq	relation	arc, equals; corresponds to
+02259	\wedgeq	relation	corresponds to (wedge, equals)
+0225A	\veeeq	relation	logical or, equals
+0225B	\stareq	relation	star equals
+0225C	\triangleq	relation	triangle, equals
+0225D	\eqdef	relation	equals by definition
+0225E	\measeq	relation	measured by (m over equals)
+0225F	\questeq	relation	equal with questionmark
+02260	\ne	relation	/ne /neq r: not equal
+02261	\equiv	relation	identical with
+02262	\nequiv	relation	not identical with
+02263	\Equiv	relation	strict equivalence (4 lines)
+02264	\leq	relation	/leq /le r: less-than-or-equal
+02265	\geq	relation	/geq /ge r: greater-than-or-equal
+02266	\leqq	relation	less, double equals
+02267	\geqq	relation	greater, double equals
+02268	\lneqq	relation	less, not double equals
+02269	\gneqq	relation	greater, not double equals
+0226A	\ll	relation	much less than, type 2
+0226B	\gg	relation	much greater than, type 2
+0226C	\between	relation	between
+0226D	\nasymp	relation	not asymptotically equal to
+0226E	\nless	relation	not less-than
+0226F	\ngtr	relation	not greater-than
+02270	\nleq	relation	not less-than-or-equal
+02271	\ngeq	relation	not greater-than-or-equal
+02272	\lesssim	relation	less, similar
+02273	\gtrsim	relation	greater, similar
+02274	\nlesssim	relation	not less, similar
+02275	\ngtrsim	relation	not greater, similar
+02276	\lessgtr	relation	less, greater
+02277	\gtrless	relation	greater, less
+02278	\nlessgtr	relation	not less, greater
+02279	\ngtrless	relation	not greater, less
+0227A	\prec	relation	precedes
+0227B	\succ	relation	succeeds
+0227C	\preccurlyeq	relation	precedes, curly equals
+0227D	\succcurlyeq	relation	succeeds, curly equals
+0227E	\precsim	relation	precedes, similar
+0227F	\succsim	relation	succeeds, similar
+02280	\nprec	relation	not precedes
+02281	\nsucc	relation	not succeeds
+02282	\subset	relation	subset or is implied by
+02283	\supset	relation	superset or implies
+02284	\nsubset	relation	not subset, variant [slash negation]
+02285	\nsupset	relation	not superset, variant [slash negation]
+02286	\subseteq	relation	subset, equals
+02287	\supseteq	relation	superset, equals
+02288	\nsubseteq	relation	not subset, equals
+02289	\nsupseteq	relation	not superset, equals
+0228A	\subsetneq	relation	subset, not equals
+0228B	\supsetneq	relation	superset, not equals
+0228C	\cupleftarrow	binary relation	multiset
+0228D	\cupdot	binary relation	union, with dot
+0228E	\uplus	binary relation	plus sign in union
+0228F	\sqsubset	relation	square subset
+02290	\sqsupset	relation	square superset
+02291	\sqsubseteq	relation	square subset, equals
+02292	\sqsupseteq	relation	square superset, equals
+02293	\sqcap	binary relation	square intersection
+02294	\sqcup	binary relation	square union
+02295	\oplus	binary relation	plus sign in circle
+02296	\ominus	binary relation	minus sign in circle
+02297	\otimes	binary relation	multiply sign in circle
+02298	\oslash	binary relation	solidus in circle
+02299	\odot	binary relation	middle dot in circle
+0229A	\circledcirc	binary relation	small circle in circle
+0229B	\circledast	binary relation	asterisk in circle
+0229C	\circledequal	binary relation	equal in circle
+0229D	\circleddash	binary relation	hyphen in circle
+0229E	\boxplus	binary relation	plus sign in box
+0229F	\boxminus	binary relation	minus sign in box
+022A0	\boxtimes	binary relation	multiply sign in box
+022A1	\boxdot	binary relation	/dotsquare /boxdot b: small dot in box
+022A2	\vdash	relation	vertical, dash
+022A3	\dashv	relation	dash, vertical
+022A4	\top	ordinal	top
+022A5	\bot	ordinal	bottom
+022A6	\assert	relation	assertion (vertical, short dash)
+022A7	\models	relation	models (vertical, short double dash)
+022A8	\vDash	relation	vertical, double dash
+022A9	\Vdash	relation	double vertical, dash
+022AA	\Vvdash	relation	triple vertical, dash
+022AB	\VDash	relation	double vert, double dash
+022AC	\nvdash	relation	not vertical, dash
+022AD	\nvDash	relation	not vertical, double dash
+022AE	\nVdash	relation	not double vertical, dash
+022AF	\nVDash	relation	not double vert, double dash
+022B0	\prurel	relation	element precedes under relation
+022B1	\scurel	relation	succeeds under relation
+022B2	\vartriangleleft	relation	left triangle, open, variant
+022B3	\vartriangleright	relation	right triangle, open, variant
+022B4	\trianglelefteq	relation	left triangle, equals
+022B5	\trianglerighteq	relation	right triangle, equals
+022B6	\origof	relation	original of
+022B7	\imageof	relation	image of
+022B8	\multimap	relation	/multimap a:
+022B9	\hermitmatrix	ordinal	hermitian conjugate matrix
+022BA	\intercal	binary relation	intercal
+022BB	\veebar	binary relation	logical or, bar below (large vee); exclusive disjunction
+022BC	\barwedge	binary relation	bar, wedge (large wedge)
+022BD	\barvee	binary relation	bar, vee (large vee)
+022BE	\measuredrightangle	ordinal	right angle-measured [with arc]
+022BF	\varlrtriangle	ordinal	right triangle
+022C0	\bigwedge	big operator	logical and operator
+022C1	\bigvee	big operator	logical or operator
+022C2	\bigcap	big operator	intersection operator
+022C3	\bigcup	big operator	union operator
+022C4	\smwhtdiamond	binary relation	white diamond
+022C5	\cdot	binary relation	small middle dot
+022C6	\star	binary relation	small star, filled, low
+022C7	\divideontimes	binary relation	division on times
+022C8	\bowtie	relation	bowtie
+022C9	\ltimes	binary relation	times sign, left closed
+022CA	\rtimes	binary relation	times sign, right closed
+022CB	\leftthreetimes	binary relation	left semidirect product
+022CC	\rightthreetimes	binary relation	right semidirect product
+022CD	\backsimeq	relation	reverse similar, equals
+022CE	\curlyvee	binary relation	curly logical or
+022CF	\curlywedge	binary relation	curly logical and
+022D0	\Subset	relation	double subset
+022D1	\Supset	relation	double superset
+022D2	\Cap	binary relation	/cap /doublecap b: double intersection
+022D3	\Cup	binary relation	/cup /doublecup b: double union
+022D4	\pitchfork	relation	pitchfork
+022D5	\equalparallel	relation	parallel, equal; equal or parallel
+022D6	\lessdot	relation	less than, with dot
+022D7	\gtrdot	relation	greater than, with dot
+022D8	\lll	relation	/ll /lll /llless r: triple less-than
+022D9	\ggg	relation	/ggg /gg /gggtr r: triple greater-than
+022DA	\lesseqgtr	relation	less, equals, greater
+022DB	\gtreqless	relation	greater, equals, less
+022DC	\eqless	relation	equal-or-less
+022DD	\eqgtr	relation	equal-or-greater
+022DE	\curlyeqprec	relation	curly equals, precedes
+022DF	\curlyeqsucc	relation	curly equals, succeeds
+022E0	\npreccurlyeq	relation	not precedes, curly equals
+022E1	\nsucccurlyeq	relation	not succeeds, curly equals
+022E2	\nsqsubseteq	relation	not, square subset, equals
+022E3	\nsqsupseteq	relation	not, square superset, equals
+022E4	\sqsubsetneq	relation	square subset, not equals
+022E5	\sqsupsetneq	relation	square superset, not equals
+022E6	\lnsim	relation	less, not similar
+022E7	\gnsim	relation	greater, not similar
+022E8	\precnsim	relation	precedes, not similar
+022E9	\succnsim	relation	succeeds, not similar
+022EA	\nvartriangleleft	relation	not left triangle
+022EB	\nvartriangleright	relation	not right triangle
+022EC	\ntrianglelefteq	relation	not left triangle, equals
+022ED	\ntrianglerighteq	relation	not right triangle, equals
+022EE	\vdots	relation	vertical ellipsis
+022EF	\unicodecdots	ordinal	three dots, centered
+022F0	\adots	relation	three dots, ascending
+022F1	\ddots	relation	three dots, descending
+022F2	\disin	relation	element of with long horizontal stroke
+022F3	\varisins	relation	element of with vertical bar at end of horizontal stroke
+022F4	\isins	relation	small element of with vertical bar at end of horizontal stroke
+022F5	\isindot	relation	element of with dot above
+022F6	\varisinobar	relation	element of with overbar
+022F7	\isinobar	relation	small element of with overbar
+022F8	\isinvb	relation	element of with underbar
+022F9	\isinE	relation	element of with two horizontal strokes
+022FA	\nisd	relation	contains with long horizontal stroke
+022FB	\varnis	relation	contains with vertical bar at end of horizontal stroke
+022FC	\nis	relation	small contains with vertical bar at end of horizontal stroke
+022FD	\varniobar	relation	contains with overbar
+022FE	\niobar	relation	small contains with overbar
+022FF	\bagmember	relation	z notation bag membership
+02300	\diameter	ordinal	diameter sign
+02302	\house	ordinal	house
+02305	\varbarwedge	binary relation	/barwedge b: logical and, bar above [projective (bar over small wedge)]
+02306	\vardoublebarwedge	binary relation	/doublebarwedge b: logical and, double bar above [perspective (double bar over small wedge)]
+02308	\lceil	open	left ceiling
+02309	\rceil	close	right ceiling
+0230A	\lfloor	open	left floor
+0230B	\rfloor	close	right floor
+02310	\invnot	ordinal	reverse not
+02311	\sqlozenge	ordinal	square lozenge
+02312	\profline	ordinal	profile of a line
+02313	\profsurf	ordinal	profile of a surface
+02317	\viewdata	ordinal	viewdata square
+02319	\turnednot	ordinal	turned not sign
+0231C	\ulcorner	open	upper left corner
+0231D	\urcorner	close	upper right corner
+0231E	\llcorner	open	lower left corner
+0231F	\lrcorner	close	lower right corner
+02320	\inttop	ordinal	top half integral
+02321	\intbottom	ordinal	bottom half integral
+02322	\frown	relation	down curve
+02323	\smile	relation	up curve
+0232C	\varhexagonlrbonds	ordinal	six carbon ring, corner down, double bonds lower right etc
+02332	\conictaper	ordinal	conical taper
+02336	\topbot	ordinal	top and bottom
+0233D	\obar	binary relation	circle with vertical bar
+0233F	\APLnotslash	relation	solidus, bar through (apl functional symbol slash bar)
+02340	\APLnotbackslash	ordinal	apl functional symbol backslash bar
+02353	\APLboxupcaret	ordinal	boxed up caret
+02370	\APLboxquestion	ordinal	boxed question mark
+0237C	\rangledownzigzagarrow	ordinal	right angle with downwards zigzag arrow
+02394	\hexagon	ordinal	horizontal benzene ring [hexagon flat open]
+0239B	\lparenuend	ordinal	left parenthesis upper hook
+0239C	\lparenextender	ordinal	left parenthesis extension
+0239D	\lparenlend	ordinal	left parenthesis lower hook
+0239E	\rparenuend	ordinal	right parenthesis upper hook
+0239F	\rparenextender	ordinal	right parenthesis extension
+023A0	\rparenlend	ordinal	right parenthesis lower hook
+023A1	\lbrackuend	ordinal	left square bracket upper corner
+023A2	\lbrackextender	ordinal	left square bracket extension
+023A3	\lbracklend	ordinal	left square bracket lower corner
+023A4	\rbrackuend	ordinal	right square bracket upper corner
+023A5	\rbrackextender	ordinal	right square bracket extension
+023A6	\rbracklend	ordinal	right square bracket lower corner
+023A7	\lbraceuend	ordinal	left curly bracket upper hook
+023A8	\lbracemid	ordinal	left curly bracket middle piece
+023A9	\lbracelend	ordinal	left curly bracket lower hook
+023AA	\vbraceextender	ordinal	curly bracket extension
+023AB	\rbraceuend	ordinal	right curly bracket upper hook
+023AC	\rbracemid	ordinal	right curly bracket middle piece
+023AD	\rbracelend	ordinal	right curly bracket lower hook
+023AE	\intextender	ordinal	integral extension
+023AF	\harrowextender	ordinal	horizontal line extension (used to extend arrows)
+023B0	\lmoustache	open	upper left or lower right curly bracket section
+023B1	\rmoustache	close	upper right or lower left curly bracket section
+023B2	\sumtop	ordinal	summation top
+023B3	\sumbottom	ordinal	summation bottom
+023B4	\overbracket	over	top square bracket
+023B5	\underbracket	\mathunder	bottom square bracket
+023B6	\bbrktbrk	ordinal	bottom square bracket over top square bracket
+023B7	\sqrtbottom	ordinal	radical symbol bottom
+023B8	\lvboxline	ordinal	left vertical box line
+023B9	\rvboxline	ordinal	right vertical box line
+023CE	\varcarriagereturn	ordinal	return symbol
+023DC	\overparen	over	top parenthesis (mathematical use)
+023DD	\underparen	\mathunder	bottom parenthesis (mathematical use)
+023DE	\overbrace	over	top curly bracket (mathematical use)
+023DF	\underbrace	\mathunder	bottom curly bracket (mathematical use)
+023E0	\obrbrak	ordinal	top tortoise shell bracket (mathematical use)
+023E1	\ubrbrak	ordinal	bottom tortoise shell bracket (mathematical use)
+023E2	\trapezium	ordinal	white trapezium
+023E3	\benzenr	ordinal	benzene ring with circle
+023E4	\strns	ordinal	straightness
+023E5	\fltns	ordinal	flatness
+023E6	\accurrent	ordinal	ac current
+023E7	\elinters	ordinal	electrical intersection
+02422	\blanksymbol	ordinal	blank symbol
+02423	\mathvisiblespace	ordinal	open box
+02506	\bdtriplevdash	ordinal	doubly broken vert
+02580	\blockuphalf	ordinal	upper half block
+02584	\blocklowhalf	ordinal	lower half block
+02588	\blockfull	ordinal	full block
+0258C	\blocklefthalf	ordinal	left half block
+02590	\blockrighthalf	ordinal	right half block
+02591	\blockqtrshaded	ordinal	25% shaded block
+02592	\blockhalfshaded	ordinal	50% shaded block
+02593	\blockthreeqtrshaded	ordinal	75% shaded block
+025A0	\mdlgblksquare	ordinal	square, filled
+025A1	\mdlgwhtsquare	ordinal	square, open
+025A2	\squoval	ordinal	white square with rounded corners
+025A3	\blackinwhitesquare	ordinal	white square containing black small square
+025A4	\squarehfill	ordinal	square, horizontal rule filled
+025A5	\squarevfill	ordinal	square, vertical rule filled
+025A6	\squarehvfill	ordinal	square with orthogonal crosshatch fill
+025A7	\squarenwsefill	ordinal	square, nw-to-se rule filled
+025A8	\squareneswfill	ordinal	square, ne-to-sw rule filled
+025A9	\squarecrossfill	ordinal	square with diagonal crosshatch fill
+025AA	\smblksquare	ordinal	/blacksquare - sq bullet, filled
+025AB	\smwhtsquare	ordinal	white small square
+025AC	\hrectangleblack	ordinal	black rectangle
+025AD	\hrectangle	ordinal	horizontal rectangle, open
+025AE	\vrectangleblack	ordinal	black vertical rectangle
+025AF	\vrectangle	ordinal	rectangle, white (vertical)
+025B0	\parallelogramblack	ordinal	black parallelogram
+025B1	\parallelogram	ordinal	parallelogram, open
+025B2	\bigblacktriangleup	ordinal	black up-pointing triangle
+025B3	\bigtriangleup	binary relation	big up triangle, open
+025B4	\blacktriangle	ordinal	up triangle, filled
+025B5	\vartriangle	relation	/triangle - up triangle, open
+025B6	\blacktriangleright	ordinal	(large) right triangle, filled
+025B7	\triangleright	binary relation	(large) right triangle, open; z notation range restriction
+025B8	\smallblacktriangleright	ordinal	right triangle, filled
+025B9	\smalltriangleright	ordinal	right triangle, open
+025BA	\blackpointerright	ordinal	black right-pointing pointer
+025BB	\whitepointerright	ordinal	white right-pointing pointer
+025BC	\bigblacktriangledown	ordinal	big down triangle, filled
+025BD	\bigtriangledown	ordinal	big down triangle, open
+025BE	\blacktriangledown	ordinal	down triangle, filled
+025BF	\triangledown	ordinal	down triangle, open
+025C0	\blacktriangleleft	ordinal	(large) left triangle, filled
+025C1	\triangleleft	binary relation	(large) left triangle, open; z notation domain restriction
+025C2	\smallblacktriangleleft	ordinal	left triangle, filled
+025C3	\smalltriangleleft	ordinal	left triangle, open
+025C4	\blackpointerleft	ordinal	black left-pointing pointer
+025C5	\whitepointerleft	ordinal	white left-pointing pointer
+025C6	\mdlgblkdiamond	ordinal	black diamond
+025C7	\mdlgwhtdiamond	ordinal	white diamond; diamond, open
+025C8	\blackinwhitediamond	ordinal	white diamond containing black small diamond
+025C9	\fisheye	ordinal	fisheye
+025CA	\mdlgwhtlozenge	ordinal	lozenge or total mark
+025CB	\mdlgwhtcircle	binary relation	medium large circle
+025CC	\dottedcircle	ordinal	dotted circle
+025CD	\circlevertfill	ordinal	circle with vertical fill
+025CE	\bullseye	ordinal	bullseye
+025CF	\mdlgblkcircle	ordinal	circle, filled
+025D0	\circlelefthalfblack	ordinal	circle, filled left half [harvey ball]
+025D1	\circlerighthalfblack	ordinal	circle, filled right half
+025D2	\circlebottomhalfblack	ordinal	circle, filled bottom half
+025D3	\circletophalfblack	ordinal	circle, filled top half
+025D4	\circleurquadblack	ordinal	circle with upper right quadrant black
+025D5	\blackcircleulquadwhite	ordinal	circle with all but upper left quadrant black
+025D6	\blacklefthalfcircle	ordinal	left half black circle
+025D7	\blackrighthalfcircle	ordinal	right half black circle
+025D8	\inversebullet	ordinal	inverse bullet
+025D9	\inversewhitecircle	ordinal	inverse white circle
+025DA	\invwhiteupperhalfcircle	ordinal	upper half inverse white circle
+025DB	\invwhitelowerhalfcircle	ordinal	lower half inverse white circle
+025DC	\ularc	ordinal	upper left quadrant circular arc
+025DD	\urarc	ordinal	upper right quadrant circular arc
+025DE	\lrarc	ordinal	lower right quadrant circular arc
+025DF	\llarc	ordinal	lower left quadrant circular arc
+025E0	\topsemicircle	ordinal	upper half circle
+025E1	\botsemicircle	ordinal	lower half circle
+025E2	\lrblacktriangle	ordinal	lower right triangle, filled
+025E3	\llblacktriangle	ordinal	lower left triangle, filled
+025E4	\ulblacktriangle	ordinal	upper left triangle, filled
+025E5	\urblacktriangle	ordinal	upper right triangle, filled
+025E6	\smwhtcircle	ordinal	white bullet
+025E7	\squareleftblack	ordinal	square, filled left half
+025E8	\squarerightblack	ordinal	square, filled right half
+025E9	\squareulblack	ordinal	square, filled top left corner
+025EA	\squarelrblack	ordinal	square, filled bottom right corner
+025EB	\boxbar	binary relation	vertical bar in box
+025EC	\trianglecdot	ordinal	triangle with centered dot
+025ED	\triangleleftblack	ordinal	up-pointing triangle with left half black
+025EE	\trianglerightblack	ordinal	up-pointing triangle with right half black
+025EF	\lgwhtcircle	ordinal	large circle
+025F0	\squareulquad	ordinal	white square with upper left quadrant
+025F1	\squarellquad	ordinal	white square with lower left quadrant
+025F2	\squarelrquad	ordinal	white square with lower right quadrant
+025F3	\squareurquad	ordinal	white square with upper right quadrant
+025F4	\circleulquad	ordinal	white circle with upper left quadrant
+025F5	\circlellquad	ordinal	white circle with lower left quadrant
+025F6	\circlelrquad	ordinal	white circle with lower right quadrant
+025F7	\circleurquad	ordinal	white circle with upper right quadrant
+025F8	\ultriangle	ordinal	upper left triangle
+025F9	\urtriangle	ordinal	upper right triangle
+025FA	\lltriangle	ordinal	lower left triangle
+025FB	\mdwhtsquare	ordinal	white medium square
+025FC	\mdblksquare	ordinal	black medium square
+025FD	\mdsmwhtsquare	ordinal	white medium small square
+025FE	\mdsmblksquare	ordinal	black medium small square
+025FF	\lrtriangle	ordinal	lower right triangle
+02605	\bigstar	ordinal	star, filled
+02606	\bigwhitestar	ordinal	star, open
+02609	\astrosun	ordinal	sun
+02621	\danger	ordinal	dangerous bend (caution sign)
+0263B	\blacksmiley	ordinal	black smiling face
+0263C	\sun	ordinal	white sun with rays
+0263D	\rightmoon	ordinal	first quarter moon
+0263E	\leftmoon	ordinal	last quarter moon
+02640	\female	ordinal	venus, female
+02642	\male	ordinal	mars, male
+02660	\spadesuit	ordinal	spades suit symbol
+02661	\heartsuit	ordinal	heart suit symbol
+02662	\diamondsuit	ordinal	diamond suit symbol
+02663	\clubsuit	ordinal	club suit symbol
+02664	\varspadesuit	ordinal	spade, white (card suit)
+02665	\varheartsuit	ordinal	filled heart (card suit)
+02666	\vardiamondsuit	ordinal	filled diamond (card suit)
+02667	\varclubsuit	ordinal	club, white (card suit)
+02669	\quarternote	ordinal	music note (sung text sign)
+0266A	\eighthnote	ordinal	eighth note
+0266B	\twonotes	ordinal	beamed eighth notes
+0266D	\flat	ordinal	musical flat
+0266E	\natural	ordinal	music natural
+0266F	\sharp	ordinal	musical sharp
+0267E	\acidfree	ordinal	permanent paper sign
+02680	\dicei	ordinal	die face-1
+02681	\diceii	ordinal	die face-2
+02682	\diceiii	ordinal	die face-3
+02683	\diceiv	ordinal	die face-4
+02684	\dicev	ordinal	die face-5
+02685	\dicevi	ordinal	die face-6
+02686	\circledrightdot	ordinal	white circle with dot right
+02687	\circledtwodots	ordinal	white circle with two dots
+02688	\blackcircledrightdot	ordinal	black circle with white dot right
+02689	\blackcircledtwodots	ordinal	black circle with two white dots
+026A5	\Hermaphrodite	ordinal	male and female sign
+026AA	\mdwhtcircle	ordinal	medium white circle
+026AB	\mdblkcircle	ordinal	medium black circle
+026AC	\mdsmwhtcircle	ordinal	medium small white circle
+026B2	\neuter	ordinal	neuter
+02713	\checkmark	ordinal	tick, check mark
+02720	\maltese	ordinal	maltese cross
+0272A	\circledstar	ordinal	circled white star
+02736	\varstar	ordinal	six pointed black star
+0273D	\dingasterisk	ordinal	heavy teardrop-spoked asterisk
+02772	\lbrbrak	open	light left tortoise shell bracket ornament
+02773	\rbrbrak	close	light right tortoise shell bracket ornament
+0279B	\draftingarrow	ordinal	right arrow with bold head (drafting)
+027C0	\threedangle	ordinal	three dimensional angle
+027C1	\whiteinwhitetriangle	ordinal	white triangle containing small white triangle
+027C2	\perp	relation	perpendicular
+027C3	\subsetcirc	ordinal	open subset
+027C4	\supsetcirc	ordinal	open superset
+027C5	\lbag	open	left s-shaped bag delimiter
+027C6	\rbag	close	right s-shaped bag delimiter
+027C7	\veedot	binary relation	or with dot inside
+027C8	\bsolhsub	relation	reverse solidus preceding subset
+027C9	\suphsol	relation	superset preceding solidus
+027CC	\longdivision	open	long division
+027D0	\diamondcdot	ordinal	white diamond with centred dot
+027D1	\wedgedot	binary relation	and with dot
+027D2	\upin	relation	element of opening upwards
+027D3	\pullback	relation	lower right corner with dot
+027D4	\pushout	relation	upper left corner with dot
+027D5	\leftouterjoin	big operator	left outer join
+027D6	\rightouterjoin	big operator	right outer join
+027D7	\fullouterjoin	big operator	full outer join
+027D8	\bigbot	big operator	large up tack
+027D9	\bigtop	big operator	large down tack
+027DA	\DashVDash	relation	left and right double turnstile
+027DB	\dashVdash	relation	left and right tack
+027DC	\multimapinv	relation	left multimap
+027DD	\vlongdash	relation	long left tack
+027DE	\longdashv	relation	long right tack
+027DF	\cirbot	relation	up tack with circle above
+027E0	\lozengeminus	binary relation	lozenge divided by horizontal rule
+027E1	\concavediamond	binary relation	white concave-sided diamond
+027E2	\concavediamondtickleft	binary relation	white concave-sided diamond with leftwards tick
+027E3	\concavediamondtickright	binary relation	white concave-sided diamond with rightwards tick
+027E4	\whitesquaretickleft	binary relation	white square with leftwards tick
+027E5	\whitesquaretickright	binary relation	white square with rightwards tick
+027E6	\lBrack	open	mathematical left white square bracket
+027E7	\rBrack	close	mathematical right white square bracket
+027E8	\langle	open	mathematical left angle bracket
+027E9	\rangle	close	mathematical right angle bracket
+027EA	\lAngle	open	mathematical left double angle bracket
+027EB	\rAngle	close	mathematical right double angle bracket
+027EC	\Lbrbrak	open	mathematical left white tortoise shell bracket
+027ED	\Rbrbrak	close	mathematical right white tortoise shell bracket
+027EE	\lgroup	open	mathematical left flattened parenthesis
+027EF	\rgroup	close	mathematical right flattened parenthesis
+027F0	\UUparrow	relation	upwards quadruple arrow
+027F1	\DDownarrow	relation	downwards quadruple arrow
+027F2	\acwgapcirclearrow	relation	anticlockwise gapped circle arrow
+027F3	\cwgapcirclearrow	relation	clockwise gapped circle arrow
+027F4	\rightarrowonoplus	relation	right arrow with circled plus
+027F5	\longleftarrow	relation	long leftwards arrow
+027F6	\longrightarrow	relation	long rightwards arrow
+027F7	\longleftrightarrow	relation	long left right arrow
+027F8	\Longleftarrow	relation	long leftwards double arrow
+027F9	\Longrightarrow	relation	long rightwards double arrow
+027FA	\Longleftrightarrow	relation	long left right double arrow
+027FB	\longmapsfrom	relation	long leftwards arrow from bar
+027FC	\longmapsto	relation	long rightwards arrow from bar
+027FD	\Longmapsfrom	relation	long leftwards double arrow from bar
+027FE	\Longmapsto	relation	long rightwards double arrow from bar
+027FF	\longrightsquigarrow	relation	long rightwards squiggle arrow
+02900	\nvtwoheadrightarrow	relation	rightwards two-headed arrow with vertical stroke
+02901	\nVtwoheadrightarrow	relation	rightwards two-headed arrow with double vertical stroke
+02902	\nvLeftarrow	relation	leftwards double arrow with vertical stroke
+02903	\nvRightarrow	relation	rightwards double arrow with vertical stroke
+02904	\nvLeftrightarrow	relation	left right double arrow with vertical stroke
+02905	\twoheadmapsto	relation	rightwards two-headed arrow from bar
+02906	\Mapsfrom	relation	leftwards double arrow from bar
+02907	\Mapsto	relation	rightwards double arrow from bar
+02908	\downarrowbarred	relation	downwards arrow with horizontal stroke
+02909	\uparrowbarred	relation	upwards arrow with horizontal stroke
+0290A	\Uuparrow	relation	upwards triple arrow
+0290B	\Ddownarrow	relation	downwards triple arrow
+0290C	\leftbkarrow	relation	leftwards double dash arrow
+0290D	\rightbkarrow	relation	rightwards double dash arrow
+0290E	\leftdbkarrow	relation	leftwards triple dash arrow
+0290F	\dbkarrow	relation	rightwards triple dash arrow
+02910	\drbkarrow	relation	rightwards two-headed triple dash arrow
+02911	\rightdotarrow	relation	rightwards arrow with dotted stem
+02912	\baruparrow	relation	upwards arrow to bar
+02913	\downarrowbar	relation	downwards arrow to bar
+02914	\nvrightarrowtail	relation	rightwards arrow with tail with vertical stroke
+02915	\nVrightarrowtail	relation	rightwards arrow with tail with double vertical stroke
+02916	\twoheadrightarrowtail	relation	rightwards two-headed arrow with tail
+02917	\nvtwoheadrightarrowtail	relation	rightwards two-headed arrow with tail with vertical stroke
+02918	\nVtwoheadrightarrowtail	relation	rightwards two-headed arrow with tail with double vertical stroke
+02919	\lefttail	relation	leftwards arrow-tail
+0291A	\righttail	relation	rightwards arrow-tail
+0291B	\leftdbltail	relation	leftwards double arrow-tail
+0291C	\rightdbltail	relation	rightwards double arrow-tail
+0291D	\diamondleftarrow	relation	leftwards arrow to black diamond
+0291E	\rightarrowdiamond	relation	rightwards arrow to black diamond
+0291F	\diamondleftarrowbar	relation	leftwards arrow from bar to black diamond
+02920	\barrightarrowdiamond	relation	rightwards arrow from bar to black diamond
+02921	\nwsearrow	relation	north west and south east arrow
+02922	\neswarrow	relation	north east and south west arrow
+02923	\hknwarrow	relation	north west arrow with hook
+02924	\hknearrow	relation	north east arrow with hook
+02925	\hksearrow	relation	south east arrow with hook
+02926	\hkswarrow	relation	south west arrow with hook
+02927	\tona	relation	north west arrow and north east arrow
+02928	\toea	relation	north east arrow and south east arrow
+02929	\tosa	relation	south east arrow and south west arrow
+0292A	\towa	relation	south west arrow and north west arrow
+0292B	\rdiagovfdiag	ordinal	rising diagonal crossing falling diagonal
+0292C	\fdiagovrdiag	ordinal	falling diagonal crossing rising diagonal
+0292D	\seovnearrow	ordinal	south east arrow crossing north east arrow
+0292E	\neovsearrow	ordinal	north east arrow crossing south east arrow
+0292F	\fdiagovnearrow	ordinal	falling diagonal crossing north east arrow
+02930	\rdiagovsearrow	ordinal	rising diagonal crossing south east arrow
+02931	\neovnwarrow	ordinal	north east arrow crossing north west arrow
+02932	\nwovnearrow	ordinal	north west arrow crossing north east arrow
+02933	\rightcurvedarrow	relation	wave arrow pointing directly right
+02934	\uprightcurvearrow	ordinal	arrow pointing rightwards then curving upwards
+02935	\downrightcurvedarrow	ordinal	arrow pointing rightwards then curving downwards
+02936	\leftdowncurvedarrow	relation	arrow pointing downwards then curving leftwards
+02937	\rightdowncurvedarrow	relation	arrow pointing downwards then curving rightwards
+02938	\cwrightarcarrow	relation	right-side arc clockwise arrow
+02939	\acwleftarcarrow	relation	left-side arc anticlockwise arrow
+0293A	\acwoverarcarrow	relation	top arc anticlockwise arrow
+0293B	\acwunderarcarrow	relation	bottom arc anticlockwise arrow
+0293C	\curvearrowrightminus	relation	top arc clockwise arrow with minus
+0293D	\curvearrowleftplus	relation	top arc anticlockwise arrow with plus
+0293E	\cwundercurvearrow	relation	lower right semicircular clockwise arrow
+0293F	\ccwundercurvearrow	relation	lower left semicircular anticlockwise arrow
+02940	\acwcirclearrow	relation	anticlockwise closed circle arrow
+02941	\cwcirclearrow	relation	clockwise closed circle arrow
+02942	\rightarrowshortleftarrow	relation	rightwards arrow above short leftwards arrow
+02943	\leftarrowshortrightarrow	relation	leftwards arrow above short rightwards arrow
+02944	\shortrightarrowleftarrow	relation	short rightwards arrow above leftwards arrow
+02945	\rightarrowplus	relation	rightwards arrow with plus below
+02946	\leftarrowplus	relation	leftwards arrow with plus below
+02947	\rightarrowx	relation	rightwards arrow through x
+02948	\leftrightarrowcircle	relation	left right arrow through small circle
+02949	\twoheaduparrowcircle	relation	upwards two-headed arrow from small circle
+0294A	\leftrightharpoonupdown	relation	left barb up right barb down harpoon
+0294B	\leftrightharpoondownup	relation	left barb down right barb up harpoon
+0294C	\updownharpoonrightleft	relation	up barb right down barb left harpoon
+0294D	\updownharpoonleftright	relation	up barb left down barb right harpoon
+0294E	\leftrightharpoonupup	relation	left barb up right barb up harpoon
+0294F	\updownharpoonrightright	relation	up barb right down barb right harpoon
+02950	\leftrightharpoondowndown	relation	left barb down right barb down harpoon
+02951	\updownharpoonleftleft	relation	up barb left down barb left harpoon
+02952	\barleftharpoonup	relation	leftwards harpoon with barb up to bar
+02953	\rightharpoonupbar	relation	rightwards harpoon with barb up to bar
+02954	\barupharpoonright	relation	upwards harpoon with barb right to bar
+02955	\downharpoonrightbar	relation	downwards harpoon with barb right to bar
+02956	\barleftharpoondown	relation	leftwards harpoon with barb down to bar
+02957	\rightharpoondownbar	relation	rightwards harpoon with barb down to bar
+02958	\barupharpoonleft	relation	upwards harpoon with barb left to bar
+02959	\downharpoonleftbar	relation	downwards harpoon with barb left to bar
+0295A	\leftharpoonupbar	relation	leftwards harpoon with barb up from bar
+0295B	\barrightharpoonup	relation	rightwards harpoon with barb up from bar
+0295C	\upharpoonrightbar	relation	upwards harpoon with barb right from bar
+0295D	\bardownharpoonright	relation	downwards harpoon with barb right from bar
+0295E	\leftharpoondownbar	relation	leftwards harpoon with barb down from bar
+0295F	\barrightharpoondown	relation	rightwards harpoon with barb down from bar
+02960	\upharpoonleftbar	relation	upwards harpoon with barb left from bar
+02961	\bardownharpoonleft	relation	downwards harpoon with barb left from bar
+02962	\leftharpoonsupdown	relation	leftwards harpoon with barb up above leftwards harpoon with barb down
+02963	\upharpoonsleftright	relation	upwards harpoon with barb left beside upwards harpoon with barb right
+02964	\rightharpoonsupdown	relation	rightwards harpoon with barb up above rightwards harpoon with barb down
+02965	\downharpoonsleftright	relation	downwards harpoon with barb left beside downwards harpoon with barb right
+02966	\leftrightharpoonsup	relation	leftwards harpoon with barb up above rightwards harpoon with barb up
+02967	\leftrightharpoonsdown	relation	leftwards harpoon with barb down above rightwards harpoon with barb down
+02968	\rightleftharpoonsup	relation	rightwards harpoon with barb up above leftwards harpoon with barb up
+02969	\rightleftharpoonsdown	relation	rightwards harpoon with barb down above leftwards harpoon with barb down
+0296A	\leftharpoonupdash	relation	leftwards harpoon with barb up above long dash
+0296B	\dashleftharpoondown	relation	leftwards harpoon with barb down below long dash
+0296C	\rightharpoonupdash	relation	rightwards harpoon with barb up above long dash
+0296D	\dashrightharpoondown	relation	rightwards harpoon with barb down below long dash
+0296E	\updownharpoonsleftright	relation	upwards harpoon with barb left beside downwards harpoon with barb right
+0296F	\downupharpoonsleftright	relation	downwards harpoon with barb left beside upwards harpoon with barb right
+02970	\rightimply	relation	right double arrow with rounded head
+02971	\equalrightarrow	relation	equals sign above rightwards arrow
+02972	\similarrightarrow	relation	tilde operator above rightwards arrow
+02973	\leftarrowsimilar	relation	leftwards arrow above tilde operator
+02974	\rightarrowsimilar	relation	rightwards arrow above tilde operator
+02975	\rightarrowapprox	relation	rightwards arrow above almost equal to
+02976	\ltlarr	relation	less-than above leftwards arrow
+02977	\leftarrowless	relation	leftwards arrow through less-than
+02978	\gtrarr	relation	greater-than above rightwards arrow
+02979	\subrarr	relation	subset above rightwards arrow
+0297A	\leftarrowsubset	relation	leftwards arrow through subset
+0297B	\suplarr	relation	superset above leftwards arrow
+0297C	\leftfishtail	relation	left fish tail
+0297D	\rightfishtail	relation	right fish tail
+0297E	\upfishtail	relation	up fish tail
+0297F	\downfishtail	relation	down fish tail
+02980	\Vvert	fence	triple vertical bar delimiter
+02981	\mdsmblkcircle	ordinal	z notation spot
+02982	\typecolon	relation	z notation type colon
+02983	\lBrace	open	left white curly bracket
+02984	\rBrace	close	right white curly bracket
+02985	\lParen	open	left white parenthesis
+02986	\rParen	close	right white parenthesis
+02987	\llparenthesis	open	z notation left image bracket
+02988	\rrparenthesis	close	z notation right image bracket
+02989	\llangle	open	z notation left binding bracket
+0298A	\rrangle	close	z notation right binding bracket
+0298B	\lbrackubar	open	left square bracket with underbar
+0298C	\rbrackubar	close	right square bracket with underbar
+0298D	\lbrackultick	open	left square bracket with tick in top corner
+0298E	\rbracklrtick	close	right square bracket with tick in bottom corner
+0298F	\lbracklltick	open	left square bracket with tick in bottom corner
+02990	\rbrackurtick	close	right square bracket with tick in top corner
+02991	\langledot	open	left angle bracket with dot
+02992	\rangledot	close	right angle bracket with dot
+02993	\lparenless	open	left arc less-than bracket
+02994	\rparengtr	close	right arc greater-than bracket
+02995	\Lparengtr	open	double left arc greater-than bracket
+02996	\Rparenless	close	double right arc less-than bracket
+02997	\lblkbrbrak	open	left black tortoise shell bracket
+02998	\rblkbrbrak	close	right black tortoise shell bracket
+02999	\fourvdots	ordinal	dotted fence
+0299A	\vzigzag	ordinal	vertical zigzag line
+0299B	\measuredangleleft	ordinal	measured angle opening left
+0299C	\rightanglesqr	ordinal	right angle variant with square
+0299D	\rightanglemdot	ordinal	measured right angle with dot
+0299E	\angles	ordinal	angle with s inside
+0299F	\angdnr	ordinal	acute angle
+029A0	\gtlpar	ordinal	spherical angle opening left
+029A1	\sphericalangleup	ordinal	spherical angle opening up
+029A2	\turnangle	ordinal	turned angle
+029A3	\revangle	ordinal	reversed angle
+029A4	\angleubar	ordinal	angle with underbar
+029A5	\revangleubar	ordinal	reversed angle with underbar
+029A6	\wideangledown	ordinal	oblique angle opening up
+029A7	\wideangleup	ordinal	oblique angle opening down
+029A8	\measanglerutone	ordinal	measured angle with open arm ending in arrow pointing up and right
+029A9	\measanglelutonw	ordinal	measured angle with open arm ending in arrow pointing up and left
+029AA	\measanglerdtose	ordinal	measured angle with open arm ending in arrow pointing down and right
+029AB	\measangleldtosw	ordinal	measured angle with open arm ending in arrow pointing down and left
+029AC	\measangleurtone	ordinal	measured angle with open arm ending in arrow pointing right and up
+029AD	\measangleultonw	ordinal	measured angle with open arm ending in arrow pointing left and up
+029AE	\measangledrtose	ordinal	measured angle with open arm ending in arrow pointing right and down
+029AF	\measangledltosw	ordinal	measured angle with open arm ending in arrow pointing left and down
+029B0	\revemptyset	ordinal	reversed empty set
+029B1	\emptysetobar	ordinal	empty set with overbar
+029B2	\emptysetocirc	ordinal	empty set with small circle above
+029B3	\emptysetoarr	ordinal	empty set with right arrow above
+029B4	\emptysetoarrl	ordinal	empty set with left arrow above
+029B5	\circlehbar	binary relation	circle with horizontal bar
+029B6	\circledvert	binary relation	circled vertical bar
+029B7	\circledparallel	binary relation	circled parallel
+029B8	\obslash	binary relation	circled reverse solidus
+029B9	\operp	binary relation	circled perpendicular
+029BA	\obot	ordinal	circle divided by horizontal bar and top half divided by vertical bar
+029BB	\olcross	ordinal	circle with superimposed x
+029BC	\odotslashdot	ordinal	circled anticlockwise-rotated division sign
+029BD	\uparrowoncircle	ordinal	up arrow through circle
+029BE	\circledwhitebullet	ordinal	circled white bullet
+029BF	\circledbullet	ordinal	circled bullet
+029C0	\olessthan	binary relation	circled less-than
+029C1	\ogreaterthan	binary relation	circled greater-than
+029C2	\cirscir	ordinal	circle with small circle to the right
+029C3	\cirE	ordinal	circle with two horizontal strokes to the right
+029C4	\boxdiag	binary relation	squared rising diagonal slash
+029C5	\boxbslash	binary relation	squared falling diagonal slash
+029C6	\boxast	binary relation	squared asterisk
+029C7	\boxcircle	binary relation	squared small circle
+029C8	\boxbox	binary relation	squared square
+029C9	\boxonbox	ordinal	two joined squares
+029CA	\triangleodot	ordinal	triangle with dot above
+029CB	\triangleubar	ordinal	triangle with underbar
+029CC	\triangles	ordinal	s in triangle
+029CD	\triangleserifs	binary relation	triangle with serifs at bottom
+029CE	\rtriltri	relation	right triangle above left triangle
+029CF	\ltrivb	relation	left triangle beside vertical bar
+029D0	\vbrtri	relation	vertical bar beside right triangle
+029D1	\lfbowtie	relation	left black bowtie
+029D2	\rfbowtie	relation	right black bowtie
+029D3	\fbowtie	relation	black bowtie
+029D4	\lftimes	relation	left black times
+029D5	\rftimes	relation	right black times
+029D6	\hourglass	binary relation	white hourglass
+029D7	\blackhourglass	binary relation	black hourglass
+029D8	\lvzigzag	open	left wiggly fence
+029D9	\rvzigzag	close	right wiggly fence
+029DA	\Lvzigzag	open	left double wiggly fence
+029DB	\Rvzigzag	close	right double wiggly fence
+029DC	\iinfin	ordinal	incomplete infinity
+029DD	\tieinfty	ordinal	tie over infinity
+029DE	\nvinfty	ordinal	infinity negated with vertical bar
+029DF	\dualmap	relation	double-ended multimap
+029E0	\laplac	ordinal	square with contoured outline
+029E1	\lrtriangleeq	relation	increases as
+029E2	\shuffle	binary relation	shuffle product
+029E3	\eparsl	relation	equals sign and slanted parallel
+029E4	\smeparsl	relation	equals sign and slanted parallel with tilde above
+029E5	\eqvparsl	relation	identical to and slanted parallel
+029E6	\gleichstark	relation	gleich stark
+029E7	\thermod	ordinal	thermodynamic
+029E8	\downtriangleleftblack	ordinal	down-pointing triangle with left half black
+029E9	\downtrianglerightblack	ordinal	down-pointing triangle with right half black
+029EA	\blackdiamonddownarrow	ordinal	black diamond with down arrow
+029EB	\mdlgblklozenge	binary relation	black lozenge
+029EC	\circledownarrow	ordinal	white circle with down arrow
+029ED	\blackcircledownarrow	ordinal	black circle with down arrow
+029EE	\errbarsquare	ordinal	error-barred white square
+029EF	\errbarblacksquare	ordinal	error-barred black square
+029F0	\errbardiamond	ordinal	error-barred white diamond
+029F1	\errbarblackdiamond	ordinal	error-barred black diamond
+029F2	\errbarcircle	ordinal	error-barred white circle
+029F3	\errbarblackcircle	ordinal	error-barred black circle
+029F4	\ruledelayed	relation	rule-delayed
+029F5	\setminus	binary relation	reverse solidus operator
+029F6	\dsol	binary relation	solidus with overbar
+029F7	\rsolbar	binary relation	reverse solidus with horizontal stroke
+029F8	\xsol	big operator	big solidus
+029F9	\xbsol	big operator	big reverse solidus
+029FA	\doubleplus	binary relation	double plus
+029FB	\tripleplus	binary relation	triple plus
+029FC	\lcurvyangle	open	left pointing curved angle bracket
+029FD	\rcurvyangle	close	right pointing curved angle bracket
+029FE	\tplus	binary relation	tiny
+029FF	\tminus	binary relation	miny
+02A00	\bigodot	big operator	n-ary circled dot operator
+02A01	\bigoplus	big operator	n-ary circled plus operator
+02A02	\bigotimes	big operator	n-ary circled times operator
+02A03	\bigcupdot	big operator	n-ary union operator with dot
+02A04	\biguplus	big operator	n-ary union operator with plus
+02A05	\bigsqcap	big operator	n-ary square intersection operator
+02A06	\bigsqcup	big operator	n-ary square union operator
+02A07	\conjquant	big operator	two logical and operator
+02A08	\disjquant	big operator	two logical or operator
+02A09	\bigtimes	big operator	n-ary times operator
+02A0A	\modtwosum	big operator	modulo two sum
+02A0B	\sumint	big operator	summation with integral
+02A0C	\iiiint	big operator	quadruple integral operator
+02A0D	\intbar	big operator	finite part integral
+02A0E	\intBar	big operator	integral with double stroke
+02A0F	\fint	big operator	integral average with slash
+02A10	\cirfnint	big operator	circulation function
+02A11	\awint	big operator	anticlockwise integration
+02A12	\rppolint	big operator	line integration with rectangular path around pole
+02A13	\scpolint	big operator	line integration with semicircular path around pole
+02A14	\npolint	big operator	line integration not including the pole
+02A15	\pointint	big operator	integral around a point operator
+02A16	\sqint	big operator	quaternion integral operator
+02A17	\intlarhk	big operator	integral with leftwards arrow with hook
+02A18	\intx	big operator	integral with times sign
+02A19	\intcap	big operator	integral with intersection
+02A1A	\intcup	big operator	integral with union
+02A1B	\upint	big operator	integral with overbar
+02A1C	\lowint	big operator	integral with underbar
+02A1D	\Join	big operator	join
+02A1E	\bigtriangleleft	big operator	large left triangle operator
+02A1F	\zcmp	big operator	z notation schema composition
+02A20	\zpipe	big operator	z notation schema piping
+02A21	\zproject	big operator	z notation schema projection
+02A22	\ringplus	binary relation	plus sign with small circle above
+02A23	\plushat	binary relation	plus sign with circumflex accent above
+02A24	\simplus	binary relation	plus sign with tilde above
+02A25	\plusdot	binary relation	plus sign with dot below
+02A26	\plussim	binary relation	plus sign with tilde below
+02A27	\plussubtwo	binary relation	plus sign with subscript two
+02A28	\plustrif	binary relation	plus sign with black triangle
+02A29	\commaminus	binary relation	minus sign with comma above
+02A2A	\minusdot	binary relation	minus sign with dot below
+02A2B	\minusfdots	binary relation	minus sign with falling dots
+02A2C	\minusrdots	binary relation	minus sign with rising dots
+02A2D	\opluslhrim	binary relation	plus sign in left half circle
+02A2E	\oplusrhrim	binary relation	plus sign in right half circle
+02A2F	\vectimes	binary relation	vector or cross product
+02A30	\dottimes	binary relation	multiplication sign with dot above
+02A31	\timesbar	binary relation	multiplication sign with underbar
+02A32	\btimes	binary relation	semidirect product with bottom closed
+02A33	\smashtimes	binary relation	smash product
+02A34	\otimeslhrim	binary relation	multiplication sign in left half circle
+02A35	\otimesrhrim	binary relation	multiplication sign in right half circle
+02A36	\otimeshat	binary relation	circled multiplication sign with circumflex accent
+02A37	\Otimes	binary relation	multiplication sign in double circle
+02A38	\odiv	binary relation	circled division sign
+02A39	\triangleplus	binary relation	plus sign in triangle
+02A3A	\triangleminus	binary relation	minus sign in triangle
+02A3B	\triangletimes	binary relation	multiplication sign in triangle
+02A3C	\intprod	binary relation	interior product
+02A3D	\intprodr	binary relation	righthand interior product
+02A3E	\fcmp	binary relation	z notation relational composition
+02A3F	\amalg	binary relation	amalgamation or coproduct
+02A40	\capdot	binary relation	intersection with dot
+02A41	\uminus	binary relation	union with minus sign
+02A42	\barcup	binary relation	union with overbar
+02A43	\barcap	binary relation	intersection with overbar
+02A44	\capwedge	binary relation	intersection with logical and
+02A45	\cupvee	binary relation	union with logical or
+02A46	\cupovercap	binary relation	union above intersection
+02A47	\capovercup	binary relation	intersection above union
+02A48	\cupbarcap	binary relation	union above bar above intersection
+02A49	\capbarcup	binary relation	intersection above bar above union
+02A4A	\twocups	binary relation	union beside and joined with union
+02A4B	\twocaps	binary relation	intersection beside and joined with intersection
+02A4C	\closedvarcup	binary relation	closed union with serifs
+02A4D	\closedvarcap	binary relation	closed intersection with serifs
+02A4E	\Sqcap	binary relation	double square intersection
+02A4F	\Sqcup	binary relation	double square union
+02A50	\closedvarcupsmashprod	binary relation	closed union with serifs and smash product
+02A51	\wedgeodot	binary relation	logical and with dot above
+02A52	\veeodot	binary relation	logical or with dot above
+02A53	\Wedge	binary relation	double logical and
+02A54	\Vee	binary relation	double logical or
+02A55	\wedgeonwedge	binary relation	two intersecting logical and
+02A56	\veeonvee	binary relation	two intersecting logical or
+02A57	\bigslopedvee	binary relation	sloping large or
+02A58	\bigslopedwedge	binary relation	sloping large and
+02A59	\veeonwedge	relation	logical or overlapping logical and
+02A5A	\wedgemidvert	binary relation	logical and with middle stem
+02A5B	\veemidvert	binary relation	logical or with middle stem
+02A5C	\midbarwedge	binary relation	ogical and with horizontal dash
+02A5D	\midbarvee	binary relation	logical or with horizontal dash
+02A5E	\doublebarwedge	binary relation	logical and with double overbar
+02A5F	\wedgebar	binary relation	logical and with underbar
+02A60	\wedgedoublebar	binary relation	logical and with double underbar
+02A61	\varveebar	binary relation	small vee with underbar
+02A62	\doublebarvee	binary relation	logical or with double overbar
+02A63	\veedoublebar	binary relation	logical or with double underbar
+02A64	\dsub	binary relation	z notation domain antirestriction
+02A65	\rsub	binary relation	z notation range antirestriction
+02A66	\eqdot	relation	equals sign with dot below
+02A67	\dotequiv	relation	identical with dot above
+02A68	\equivVert	relation	triple horizontal bar with double vertical stroke
+02A69	\equivVvert	relation	triple horizontal bar with triple vertical stroke
+02A6A	\dotsim	relation	tilde operator with dot above
+02A6B	\simrdots	relation	tilde operator with rising dots
+02A6C	\simminussim	relation	similar minus similar
+02A6D	\congdot	relation	congruent with dot above
+02A6E	\asteq	relation	equals with asterisk
+02A6F	\hatapprox	relation	almost equal to with circumflex accent
+02A70	\approxeqq	relation	approximately equal or equal to
+02A71	\eqqplus	binary relation	equals sign above plus sign
+02A72	\pluseqq	binary relation	plus sign above equals sign
+02A73	\eqqsim	relation	equals sign above tilde operator
+02A74	\Coloneq	relation	double colon equal
+02A75	\eqeq	relation	two consecutive equals signs
+02A76	\eqeqeq	relation	three consecutive equals signs
+02A77	\ddotseq	relation	equals sign with two dots above and two dots below
+02A78	\equivDD	relation	equivalent with four dots above
+02A79	\ltcir	relation	less-than with circle inside
+02A7A	\gtcir	relation	greater-than with circle inside
+02A7B	\ltquest	relation	less-than with question mark above
+02A7C	\gtquest	relation	greater-than with question mark above
+02A7D	\leqslant	relation	less-than or slanted equal to
+02A7E	\geqslant	relation	greater-than or slanted equal to
+02A7F	\lesdot	relation	less-than or slanted equal to with dot inside
+02A80	\gesdot	relation	greater-than or slanted equal to with dot inside
+02A81	\lesdoto	relation	less-than or slanted equal to with dot above
+02A82	\gesdoto	relation	greater-than or slanted equal to with dot above
+02A83	\lesdotor	relation	less-than or slanted equal to with dot above right
+02A84	\gesdotol	relation	greater-than or slanted equal to with dot above left
+02A85	\lessapprox	relation	less-than or approximate
+02A86	\gtrapprox	relation	greater-than or approximate
+02A87	\lneq	relation	less-than and single-line not equal to
+02A88	\gneq	relation	greater-than and single-line not equal to
+02A89	\lnapprox	relation	less-than and not approximate
+02A8A	\gnapprox	relation	greater-than and not approximate
+02A8B	\lesseqqgtr	relation	less-than above double-line equal above greater-than
+02A8C	\gtreqqless	relation	greater-than above double-line equal above less-than
+02A8D	\lsime	relation	less-than above similar or equal
+02A8E	\gsime	relation	greater-than above similar or equal
+02A8F	\lsimg	relation	less-than above similar above greater-than
+02A90	\gsiml	relation	greater-than above similar above less-than
+02A91	\lgE	relation	less-than above greater-than above double-line equal
+02A92	\glE	relation	greater-than above less-than above double-line equal
+02A93	\lesges	relation	less-than above slanted equal above greater-than above slanted equal
+02A94	\gesles	relation	greater-than above slanted equal above less-than above slanted equal
+02A95	\eqslantless	relation	slanted equal to or less-than
+02A96	\eqslantgtr	relation	slanted equal to or greater-than
+02A97	\elsdot	relation	slanted equal to or less-than with dot inside
+02A98	\egsdot	relation	slanted equal to or greater-than with dot inside
+02A99	\eqqless	relation	double-line equal to or less-than
+02A9A	\eqqgtr	relation	double-line equal to or greater-than
+02A9B	\eqqslantless	relation	double-line slanted equal to or less-than
+02A9C	\eqqslantgtr	relation	double-line slanted equal to or greater-than
+02A9D	\simless	relation	similar or less-than
+02A9E	\simgtr	relation	similar or greater-than
+02A9F	\simlE	relation	similar above less-than above equals sign
+02AA0	\simgE	relation	similar above greater-than above equals sign
+02AA1	\Lt	relation	double nested less-than
+02AA2	\Gt	relation	double nested greater-than
+02AA3	\partialmeetcontraction	relation	double less-than with underbar
+02AA4	\glj	relation	greater-than overlapping less-than
+02AA5	\gla	relation	greater-than beside less-than
+02AA6	\ltcc	relation	less-than closed by curve
+02AA7	\gtcc	relation	greater-than closed by curve
+02AA8	\lescc	relation	less-than closed by curve above slanted equal
+02AA9	\gescc	relation	greater-than closed by curve above slanted equal
+02AAA	\smt	relation	smaller than
+02AAB	\lat	relation	larger than
+02AAC	\smte	relation	smaller than or equal to
+02AAD	\late	relation	larger than or equal to
+02AAE	\bumpeqq	relation	equals sign with bumpy above
+02AAF	\preceq	relation	precedes above single-line equals sign
+02AB0	\succeq	relation	succeeds above single-line equals sign
+02AB1	\precneq	relation	precedes above single-line not equal to
+02AB2	\succneq	relation	succeeds above single-line not equal to
+02AB3	\preceqq	relation	precedes above equals sign
+02AB4	\succeqq	relation	succeeds above equals sign
+02AB5	\precneqq	relation	precedes above not equal to
+02AB6	\succneqq	relation	succeeds above not equal to
+02AB7	\precapprox	relation	precedes above almost equal to
+02AB8	\succapprox	relation	succeeds above almost equal to
+02AB9	\precnapprox	relation	precedes above not almost equal to
+02ABA	\succnapprox	relation	succeeds above not almost equal to
+02ABB	\Prec	relation	double precedes
+02ABC	\Succ	relation	double succeeds
+02ABD	\subsetdot	relation	subset with dot
+02ABE	\supsetdot	relation	superset with dot
+02ABF	\subsetplus	relation	subset with plus sign below
+02AC0	\supsetplus	relation	superset with plus sign below
+02AC1	\submult	relation	subset with multiplication sign below
+02AC2	\supmult	relation	superset with multiplication sign below
+02AC3	\subedot	relation	subset of or equal to with dot above
+02AC4	\supedot	relation	superset of or equal to with dot above
+02AC5	\subseteqq	relation	subset of above equals sign
+02AC6	\supseteqq	relation	superset of above equals sign
+02AC7	\subsim	relation	subset of above tilde operator
+02AC8	\supsim	relation	superset of above tilde operator
+02AC9	\subsetapprox	relation	subset of above almost equal to
+02ACA	\supsetapprox	relation	superset of above almost equal to
+02ACB	\subsetneqq	relation	subset of above not equal to
+02ACC	\supsetneqq	relation	superset of above not equal to
+02ACD	\lsqhook	relation	square left open box operator
+02ACE	\rsqhook	relation	square right open box operator
+02ACF	\csub	relation	closed subset
+02AD0	\csup	relation	closed superset
+02AD1	\csube	relation	closed subset or equal to
+02AD2	\csupe	relation	closed superset or equal to
+02AD3	\subsup	relation	subset above superset
+02AD4	\supsub	relation	superset above subset
+02AD5	\subsub	relation	subset above subset
+02AD6	\supsup	relation	superset above superset
+02AD7	\suphsub	relation	superset beside subset
+02AD8	\supdsub	relation	superset beside and joined by dash with subset
+02AD9	\forkv	relation	element of opening downwards
+02ADA	\topfork	relation	pitchfork with tee top
+02ADB	\mlcp	relation	transversal intersection
+02ADC	\forks	relation	forking
+02ADD	\forksnot	relation	nonforking
+02ADE	\shortlefttack	relation	short left tack
+02ADF	\shortdowntack	relation	short down tack
+02AE0	\shortuptack	relation	short up tack
+02AE1	\perps	ordinal	perpendicular with s
+02AE2	\vDdash	relation	vertical bar triple right turnstile
+02AE3	\dashV	relation	double vertical bar left turnstile
+02AE4	\Dashv	relation	vertical bar double left turnstile
+02AE5	\DashV	relation	double vertical bar double left turnstile
+02AE6	\varVdash	relation	long dash from left member of double vertical
+02AE7	\Barv	relation	short down tack with overbar
+02AE8	\vBar	relation	short up tack with underbar
+02AE9	\vBarv	relation	short up tack above short down tack
+02AEA	\barV	relation	double down tack
+02AEB	\Vbar	relation	double up tack
+02AEC	\Not	relation	double stroke not sign
+02AED	\bNot	relation	reversed double stroke not sign
+02AEE	\revnmid	relation	does not divide with reversed negation slash
+02AEF	\cirmid	relation	vertical line with circle above
+02AF0	\midcir	relation	vertical line with circle below
+02AF1	\topcir	ordinal	down tack with circle below
+02AF2	\nhpar	relation	parallel with horizontal stroke
+02AF3	\parsim	relation	parallel with tilde operator
+02AF4	\interleave	binary relation	triple vertical bar binary relation
+02AF5	\nhVvert	binary relation	triple vertical bar with horizontal stroke
+02AF6	\threedotcolon	binary relation	triple colon operator
+02AF7	\lllnest	relation	stacked very much less-than
+02AF8	\gggnest	relation	stacked very much greater-than
+02AF9	\leqqslant	relation	double-line slanted less-than or equal to
+02AFA	\geqqslant	relation	double-line slanted greater-than or equal to
+02AFB	\trslash	binary relation	triple solidus binary relation
+02AFC	\biginterleave	big operator	large triple vertical bar operator
+02AFD	\sslash	binary relation	double solidus operator
+02AFE	\talloblong	binary relation	white vertical bar
+02AFF	\bigtalloblong	big operator	n-ary white vertical bar
+02B12	\squaretopblack	ordinal	square with top half black
+02B13	\squarebotblack	ordinal	square with bottom half black
+02B14	\squareurblack	ordinal	square with upper right diagonal half black
+02B15	\squarellblack	ordinal	square with lower left diagonal half black
+02B16	\diamondleftblack	ordinal	diamond with left half black
+02B17	\diamondrightblack	ordinal	diamond with right half black
+02B18	\diamondtopblack	ordinal	diamond with top half black
+02B19	\diamondbotblack	ordinal	diamond with bottom half black
+02B1A	\dottedsquare	ordinal	dotted square
+02B1B	\lgblksquare	ordinal	black large square
+02B1C	\lgwhtsquare	ordinal	white large square
+02B1D	\vysmblksquare	ordinal	black very small square
+02B1E	\vysmwhtsquare	ordinal	white very small square
+02B1F	\pentagonblack	ordinal	black pentagon
+02B20	\pentagon	ordinal	white pentagon
+02B21	\varhexagon	ordinal	white hexagon
+02B22	\varhexagonblack	ordinal	black hexagon
+02B23	\hexagonblack	ordinal	horizontal black hexagon
+02B24	\lgblkcircle	ordinal	black large circle
+02B25	\mdblkdiamond	ordinal	black medium diamond
+02B26	\mdwhtdiamond	ordinal	white medium diamond
+02B27	\mdblklozenge	ordinal	black medium lozenge
+02B28	\mdwhtlozenge	ordinal	white medium lozenge
+02B29	\smblkdiamond	ordinal	black small diamond
+02B2A	\smblklozenge	ordinal	black small lozenge
+02B2B	\smwhtlozenge	ordinal	white small lozenge
+02B2C	\blkhorzoval	ordinal	black horizontal ellipse
+02B2D	\whthorzoval	ordinal	white horizontal ellipse
+02B2E	\blkvertoval	ordinal	black vertical ellipse
+02B2F	\whtvertoval	ordinal	white vertical ellipse
+02B30	\circleonleftarrow	relation	left arrow with small circle
+02B31	\leftthreearrows	relation	three leftwards arrows
+02B32	\leftarrowonoplus	relation	left arrow with circled plus
+02B33	\longleftsquigarrow	relation	long leftwards squiggle arrow
+02B34	\nvtwoheadleftarrow	relation	leftwards two-headed arrow with vertical stroke
+02B35	\nVtwoheadleftarrow	relation	leftwards two-headed arrow with double vertical stroke
+02B36	\twoheadmapsfrom	relation	leftwards two-headed arrow from bar
+02B37	\twoheadleftdbkarrow	relation	leftwards two-headed triple-dash arrow
+02B38	\leftdotarrow	relation	leftwards arrow with dotted stem
+02B39	\nvleftarrowtail	relation	leftwards arrow with tail with vertical stroke
+02B3A	\nVleftarrowtail	relation	leftwards arrow with tail with double vertical stroke
+02B3B	\twoheadleftarrowtail	relation	leftwards two-headed arrow with tail
+02B3C	\nvtwoheadleftarrowtail	relation	leftwards two-headed arrow with tail with vertical stroke
+02B3D	\nVtwoheadleftarrowtail	relation	leftwards two-headed arrow with tail with double vertical stroke
+02B3E	\leftarrowx	relation	leftwards arrow through x
+02B3F	\leftcurvedarrow	relation	wave arrow pointing directly left
+02B40	\equalleftarrow	relation	equals sign above leftwards arrow
+02B41	\bsimilarleftarrow	relation	reverse tilde operator above leftwards arrow
+02B42	\leftarrowbackapprox	relation	leftwards arrow above reverse almost equal to
+02B43	\rightarrowgtr	relation	rightwards arrow through greater-than
+02B44	\rightarrowsupset	relation	rightwards arrow through subset
+02B45	\LLeftarrow	relation	leftwards quadruple arrow
+02B46	\RRightarrow	relation	rightwards quadruple arrow
+02B47	\bsimilarrightarrow	relation	reverse tilde operator above rightwards arrow
+02B48	\rightarrowbackapprox	relation	rightwards arrow above reverse almost equal to
+02B49	\similarleftarrow	relation	tilde operator above leftwards arrow
+02B4A	\leftarrowapprox	relation	leftwards arrow above almost equal to
+02B4B	\leftarrowbsimilar	relation	leftwards arrow above reverse tilde operator
+02B4C	\rightarrowbsimilar	relation	righttwards arrow above reverse tilde operator
+02B50	\medwhitestar	ordinal	white medium star
+02B51	\medblackstar	ordinal	black medium star
+02B52	\smwhitestar	ordinal	white small star
+02B53	\rightpentagonblack	ordinal	black right-pointing pentagon
+02B54	\rightpentagon	ordinal	white right-pointing pentagon
+03012	\postalmark	ordinal	postal mark
+03030	\hzigzag	ordinal	zigzag
+1D400	\mbfA	letter	bold A
+1D401	\mbfB	letter	bold B
+1D402	\mbfC	letter	bold C
+1D403	\mbfD	letter	bold D
+1D404	\mbfE	letter	bold E
+1D405	\mbfF	letter	bold F
+1D406	\mbfG	letter	bold G
+1D407	\mbfH	letter	bold H
+1D408	\mbfI	letter	bold I
+1D409	\mbfJ	letter	bold J
+1D40A	\mbfK	letter	bold K
+1D40B	\mbfL	letter	bold L
+1D40C	\mbfM	letter	bold M
+1D40D	\mbfN	letter	bold N
+1D40E	\mbfO	letter	bold O
+1D40F	\mbfP	letter	bold P
+1D410	\mbfQ	letter	bold Q
+1D411	\mbfR	letter	bold R
+1D412	\mbfS	letter	bold S
+1D413	\mbfT	letter	bold T
+1D414	\mbfU	letter	bold U
+1D415	\mbfV	letter	bold V
+1D416	\mbfW	letter	bold W
+1D417	\mbfX	letter	bold X
+1D418	\mbfY	letter	bold Y
+1D419	\mbfZ	letter	bold Z
+1D41A	\mbfa	letter	bold a
+1D41B	\mbfb	letter	bold b
+1D41C	\mbfc	letter	bold c
+1D41D	\mbfd	letter	bold d
+1D41E	\mbfe	letter	bold e
+1D41F	\mbff	letter	bold f
+1D420	\mbfg	letter	bold g
+1D421	\mbfh	letter	bold h
+1D422	\mbfi	letter	bold i
+1D423	\mbfj	letter	bold j
+1D424	\mbfk	letter	bold k
+1D425	\mbfl	letter	bold l
+1D426	\mbfm	letter	bold m
+1D427	\mbfn	letter	bold n
+1D428	\mbfo	letter	bold o
+1D429	\mbfp	letter	bold p
+1D42A	\mbfq	letter	bold q
+1D42B	\mbfr	letter	bold r
+1D42C	\mbfs	letter	bold s
+1D42D	\mbft	letter	bold t
+1D42E	\mbfu	letter	bold u
+1D42F	\mbfv	letter	bold v
+1D430	\mbfw	letter	bold w
+1D431	\mbfx	letter	bold x
+1D432	\mbfy	letter	bold y
+1D433	\mbfz	letter	bold z
+1D434	\mitA	letter	italic A
+1D435	\mitB	letter	italic B
+1D436	\mitC	letter	italic C
+1D437	\mitD	letter	italic D
+1D438	\mitE	letter	italic E
+1D439	\mitF	letter	italic F
+1D43A	\mitG	letter	italic G
+1D43B	\mitH	letter	italic H
+1D43C	\mitI	letter	italic I
+1D43D	\mitJ	letter	italic J
+1D43E	\mitK	letter	italic K
+1D43F	\mitL	letter	italic L
+1D440	\mitM	letter	italic M
+1D441	\mitN	letter	italic N
+1D442	\mitO	letter	italic O
+1D443	\mitP	letter	italic P
+1D444	\mitQ	letter	italic Q
+1D445	\mitR	letter	italic R
+1D446	\mitS	letter	italic S
+1D447	\mitT	letter	italic T
+1D448	\mitU	letter	italic U
+1D449	\mitV	letter	italic V
+1D44A	\mitW	letter	italic W
+1D44B	\mitX	letter	italic X
+1D44C	\mitY	letter	italic Y
+1D44D	\mitZ	letter	italic Z
+1D44E	\mita	letter	italic a
+1D44F	\mitb	letter	italic b
+1D450	\mitc	letter	italic c
+1D451	\mitd	letter	italic d
+1D452	\mite	letter	italic e
+1D453	\mitf	letter	italic f
+1D454	\mitg	letter	italic g
+1D456	\miti	letter	italic i
+1D457	\mitj	letter	italic j
+1D458	\mitk	letter	italic k
+1D459	\mitl	letter	italic l
+1D45A	\mitm	letter	italic m
+1D45B	\mitn	letter	italic n
+1D45C	\mito	letter	italic o
+1D45D	\mitp	letter	italic p
+1D45E	\mitq	letter	italic q
+1D45F	\mitr	letter	italic r
+1D460	\mits	letter	italic s
+1D461	\mitt	letter	italic t
+1D462	\mitu	letter	italic u
+1D463	\mitv	letter	italic v
+1D464	\mitw	letter	italic w
+1D465	\mitx	letter	italic x
+1D466	\mity	letter	italic y
+1D467	\mitz	letter	italic z
+1D468	\mbfitA	letter	bold iA
+1D469	\mbfitB	letter	bold italic B
+1D46A	\mbfitC	letter	bold italic C
+1D46B	\mbfitD	letter	bold italic D
+1D46C	\mbfitE	letter	bold italic E
+1D46D	\mbfitF	letter	bold italic F
+1D46E	\mbfitG	letter	bold italic G
+1D46F	\mbfitH	letter	bold italic H
+1D470	\mbfitI	letter	bold italic I
+1D471	\mbfitJ	letter	bold italic J
+1D472	\mbfitK	letter	bold italic K
+1D473	\mbfitL	letter	bold italic L
+1D474	\mbfitM	letter	bold italic M
+1D475	\mbfitN	letter	bold italic N
+1D476	\mbfitO	letter	bold italic O
+1D477	\mbfitP	letter	bold italic P
+1D478	\mbfitQ	letter	bold italic Q
+1D479	\mbfitR	letter	bold italic R
+1D47A	\mbfitS	letter	bold italic S
+1D47B	\mbfitT	letter	bold italic T
+1D47C	\mbfitU	letter	bold italic U
+1D47D	\mbfitV	letter	bold italic V
+1D47E	\mbfitW	letter	bold italic W
+1D47F	\mbfitX	letter	bold italic X
+1D480	\mbfitY	letter	bold italic Y
+1D481	\mbfitZ	letter	bold italic Z
+1D482	\mbfita	letter	bold italic a
+1D483	\mbfitb	letter	bold italic b
+1D484	\mbfitc	letter	bold italic c
+1D485	\mbfitd	letter	bold italic d
+1D486	\mbfite	letter	bold italic e
+1D487	\mbfitf	letter	bold italic f
+1D488	\mbfitg	letter	bold italic g
+1D489	\mbfith	letter	bold italic h
+1D48A	\mbfiti	letter	bold italic i
+1D48B	\mbfitj	letter	bold italic j
+1D48C	\mbfitk	letter	bold italic k
+1D48D	\mbfitl	letter	bold italic l
+1D48E	\mbfitm	letter	bold italic m
+1D48F	\mbfitn	letter	bold italic n
+1D490	\mbfito	letter	bold italic o
+1D491	\mbfitp	letter	bold italic p
+1D492	\mbfitq	letter	bold italic q
+1D493	\mbfitr	letter	bold italic r
+1D494	\mbfits	letter	bold italic s
+1D495	\mbfitt	letter	bold italic t
+1D496	\mbfitu	letter	bold italic u
+1D497	\mbfitv	letter	bold italic v
+1D498	\mbfitw	letter	bold italic w
+1D499	\mbfitx	letter	bold italic x
+1D49A	\mbfity	letter	bold italic y
+1D49B	\mbfitz	letter	bold italic z
+1D49C	\mscrA	letter	script A
+1D49E	\mscrC	letter	script C
+1D49F	\mscrD	letter	script D
+1D4A2	\mscrG	letter	script G
+1D4A5	\mscrJ	letter	script J
+1D4A6	\mscrK	letter	script K
+1D4A9	\mscrN	letter	script N
+1D4AA	\mscrO	letter	script O
+1D4AB	\mscrP	letter	script P
+1D4AC	\mscrQ	letter	script Q
+1D4AE	\mscrS	letter	script S
+1D4AF	\mscrT	letter	script T
+1D4B0	\mscrU	letter	script U
+1D4B1	\mscrV	letter	script V
+1D4B2	\mscrW	letter	script W
+1D4B3	\mscrX	letter	script X
+1D4B4	\mscrY	letter	script Y
+1D4B5	\mscrZ	letter	script Z
+1D4B6	\mscra	letter	script a
+1D4B7	\mscrb	letter	script b
+1D4B8	\mscrc	letter	script c
+1D4B9	\mscrd	letter	script d
+1D4BB	\mscrf	letter	script f
+1D4BD	\mscrh	letter	script h
+1D4BE	\mscri	letter	script i
+1D4BF	\mscrj	letter	script j
+1D4C0	\mscrk	letter	script k
+1D4C1	\mscrl	letter	script l
+1D4C2	\mscrm	letter	script m
+1D4C3	\mscrn	letter	script n
+1D4C5	\mscrp	letter	script p
+1D4C6	\mscrq	letter	script q
+1D4C7	\mscrr	letter	script r
+1D4C8	\mscrs	letter	script s
+1D4C9	\mscrt	letter	script t
+1D4CA	\mscru	letter	script u
+1D4CB	\mscrv	letter	script v
+1D4CC	\mscrw	letter	script w
+1D4CD	\mscrx	letter	script x
+1D4CE	\mscry	letter	script y
+1D4CF	\mscrz	letter	script z
+1D4D0	\mbfscrA	letter	bold script A
+1D4D1	\mbfscrB	letter	bold script B
+1D4D2	\mbfscrC	letter	bold script C
+1D4D3	\mbfscrD	letter	bold script D
+1D4D4	\mbfscrE	letter	bold script E
+1D4D5	\mbfscrF	letter	bold script F
+1D4D6	\mbfscrG	letter	bold script G
+1D4D7	\mbfscrH	letter	bold script H
+1D4D8	\mbfscrI	letter	bold script I
+1D4D9	\mbfscrJ	letter	bold script J
+1D4DA	\mbfscrK	letter	bold script K
+1D4DB	\mbfscrL	letter	bold script L
+1D4DC	\mbfscrM	letter	bold script M
+1D4DD	\mbfscrN	letter	bold script N
+1D4DE	\mbfscrO	letter	bold script O
+1D4DF	\mbfscrP	letter	bold script P
+1D4E0	\mbfscrQ	letter	bold script Q
+1D4E1	\mbfscrR	letter	bold script R
+1D4E2	\mbfscrS	letter	bold script S
+1D4E3	\mbfscrT	letter	bold script T
+1D4E4	\mbfscrU	letter	bold script U
+1D4E5	\mbfscrV	letter	bold script V
+1D4E6	\mbfscrW	letter	bold script W
+1D4E7	\mbfscrX	letter	bold script X
+1D4E8	\mbfscrY	letter	bold script Y
+1D4E9	\mbfscrZ	letter	bold script Z
+1D4EA	\mbfscra	letter	bold script a
+1D4EB	\mbfscrb	letter	bold script b
+1D4EC	\mbfscrc	letter	bold script c
+1D4ED	\mbfscrd	letter	bold script d
+1D4EE	\mbfscre	letter	bold script e
+1D4EF	\mbfscrf	letter	bold script f
+1D4F0	\mbfscrg	letter	bold script g
+1D4F1	\mbfscrh	letter	bold script h
+1D4F2	\mbfscri	letter	bold script i
+1D4F3	\mbfscrj	letter	bold script j
+1D4F4	\mbfscrk	letter	bold script k
+1D4F5	\mbfscrl	letter	bold script l
+1D4F6	\mbfscrm	letter	bold script m
+1D4F7	\mbfscrn	letter	bold script n
+1D4F8	\mbfscro	letter	bold script o
+1D4F9	\mbfscrp	letter	bold script p
+1D4FA	\mbfscrq	letter	bold script q
+1D4FB	\mbfscrr	letter	bold script r
+1D4FC	\mbfscrs	letter	bold script s
+1D4FD	\mbfscrt	letter	bold script t
+1D4FE	\mbfscru	letter	bold script u
+1D4FF	\mbfscrv	letter	bold script v
+1D500	\mbfscrw	letter	bold script w
+1D501	\mbfscrx	letter	bold script x
+1D502	\mbfscry	letter	bold script y
+1D503	\mbfscrz	letter	bold script z
+1D504	\mfrakA	letter	fraktur A
+1D505	\mfrakB	letter	fraktur B
+1D507	\mfrakD	letter	fraktur D
+1D508	\mfrakE	letter	fraktur E
+1D509	\mfrakF	letter	fraktur F
+1D50A	\mfrakG	letter	fraktur G
+1D50D	\mfrakJ	letter	fraktur J
+1D50E	\mfrakK	letter	fraktur K
+1D50F	\mfrakL	letter	fraktur L
+1D510	\mfrakM	letter	fraktur M
+1D511	\mfrakN	letter	fraktur N
+1D512	\mfrakO	letter	fraktur O
+1D513	\mfrakP	letter	fraktur P
+1D514	\mfrakQ	letter	fraktur Q
+1D516	\mfrakS	letter	fraktur S
+1D517	\mfrakT	letter	fraktur T
+1D518	\mfrakU	letter	fraktur U
+1D519	\mfrakV	letter	fraktur V
+1D51A	\mfrakW	letter	fraktur W
+1D51B	\mfrakX	letter	fraktur X
+1D51C	\mfrakY	letter	fraktur Y
+1D51E	\mfraka	letter	fraktur a
+1D51F	\mfrakb	letter	fraktur b
+1D520	\mfrakc	letter	fraktur c
+1D521	\mfrakd	letter	fraktur d
+1D522	\mfrake	letter	fraktur e
+1D523	\mfrakf	letter	fraktur f
+1D524	\mfrakg	letter	fraktur g
+1D525	\mfrakh	letter	fraktur h
+1D526	\mfraki	letter	fraktur i
+1D527	\mfrakj	letter	fraktur j
+1D528	\mfrakk	letter	fraktur k
+1D529	\mfrakl	letter	fraktur l
+1D52A	\mfrakm	letter	fraktur m
+1D52B	\mfrakn	letter	fraktur n
+1D52C	\mfrako	letter	fraktur o
+1D52D	\mfrakp	letter	fraktur p
+1D52E	\mfrakq	letter	fraktur q
+1D52F	\mfrakr	letter	fraktur r
+1D530	\mfraks	letter	fraktur s
+1D531	\mfrakt	letter	fraktur t
+1D532	\mfraku	letter	fraktur u
+1D533	\mfrakv	letter	fraktur v
+1D534	\mfrakw	letter	fraktur w
+1D535	\mfrakx	letter	fraktur x
+1D536	\mfraky	letter	fraktur y
+1D537	\mfrakz	letter	fraktur z
+1D538	\BbbA	letter	double-struct A
+1D539	\BbbB	letter	double-struct B
+1D53B	\BbbD	letter	double-struct D
+1D53C	\BbbE	letter	double-struct E
+1D53D	\BbbF	letter	double-struct F
+1D53E	\BbbG	letter	double-struct G
+1D540	\BbbI	letter	double-struct I
+1D541	\BbbJ	letter	double-struct J
+1D542	\BbbK	letter	double-struct K
+1D543	\BbbL	letter	double-struct L
+1D544	\BbbM	letter	double-struct M
+1D546	\BbbO	letter	double-struct O
+1D54A	\BbbS	letter	double-struct S
+1D54B	\BbbT	letter	double-struct T
+1D54C	\BbbU	letter	double-struct U
+1D54D	\BbbV	letter	double-struct V
+1D54E	\BbbW	letter	double-struct W
+1D54F	\BbbX	letter	double-struct X
+1D550	\BbbY	letter	double-struct Y
+1D552	\Bbba	letter	double-struct a
+1D553	\Bbbb	letter	double-struct b
+1D554	\Bbbc	letter	double-struct c
+1D555	\Bbbd	letter	double-struct d
+1D556	\Bbbe	letter	double-struct e
+1D557	\Bbbf	letter	double-struct f
+1D558	\Bbbg	letter	double-struct g
+1D559	\Bbbh	letter	double-struct h
+1D55A	\Bbbi	letter	double-struct i
+1D55B	\Bbbj	letter	double-struct j
+1D55C	\Bbbk	letter	double-struct k
+1D55D	\Bbbl	letter	double-struct l
+1D55E	\Bbbm	letter	double-struct m
+1D55F	\Bbbn	letter	double-struct n
+1D560	\Bbbo	letter	double-struct o
+1D561	\Bbbp	letter	double-struct p
+1D562	\Bbbq	letter	double-struct q
+1D563	\Bbbr	letter	double-struct r
+1D564	\Bbbs	letter	double-struct s
+1D565	\Bbbt	letter	double-struct t
+1D566	\Bbbu	letter	double-struct u
+1D567	\Bbbv	letter	double-struct v
+1D568	\Bbbw	letter	double-struct w
+1D569	\Bbbx	letter	double-struct x
+1D56A	\Bbby	letter	double-struct y
+1D56B	\Bbbz	letter	double-struct z
+1D56C	\mbffrakA	letter	bold fraktur A
+1D56D	\mbffrakB	letter	bold fraktur B
+1D56E	\mbffrakC	letter	bold fraktur C
+1D56F	\mbffrakD	letter	bold fraktur D
+1D570	\mbffrakE	letter	bold fraktur E
+1D571	\mbffrakF	letter	bold fraktur F
+1D572	\mbffrakG	letter	bold fraktur G
+1D573	\mbffrakH	letter	bold fraktur H
+1D574	\mbffrakI	letter	bold fraktur I
+1D575	\mbffrakJ	letter	bold fraktur J
+1D576	\mbffrakK	letter	bold fraktur K
+1D577	\mbffrakL	letter	bold fraktur L
+1D578	\mbffrakM	letter	bold fraktur M
+1D579	\mbffrakN	letter	bold fraktur N
+1D57A	\mbffrakO	letter	bold fraktur O
+1D57B	\mbffrakP	letter	bold fraktur P
+1D57C	\mbffrakQ	letter	bold fraktur Q
+1D57D	\mbffrakR	letter	bold fraktur R
+1D57E	\mbffrakS	letter	bold fraktur S
+1D57F	\mbffrakT	letter	bold fraktur T
+1D580	\mbffrakU	letter	bold fraktur U
+1D581	\mbffrakV	letter	bold fraktur V
+1D582	\mbffrakW	letter	bold fraktur W
+1D583	\mbffrakX	letter	bold fraktur X
+1D584	\mbffrakY	letter	bold fraktur Y
+1D585	\mbffrakZ	letter	bold fraktur Z
+1D586	\mbffraka	letter	bold fraktur a
+1D587	\mbffrakb	letter	bold fraktur b
+1D588	\mbffrakc	letter	bold fraktur c
+1D589	\mbffrakd	letter	bold fraktur d
+1D58A	\mbffrake	letter	bold fraktur e
+1D58B	\mbffrakf	letter	bold fraktur f
+1D58C	\mbffrakg	letter	bold fraktur g
+1D58D	\mbffrakh	letter	bold fraktur h
+1D58E	\mbffraki	letter	bold fraktur i
+1D58F	\mbffrakj	letter	bold fraktur j
+1D590	\mbffrakk	letter	bold fraktur k
+1D591	\mbffrakl	letter	bold fraktur l
+1D592	\mbffrakm	letter	bold fraktur m
+1D593	\mbffrakn	letter	bold fraktur n
+1D594	\mbffrako	letter	bold fraktur o
+1D595	\mbffrakp	letter	bold fraktur p
+1D596	\mbffrakq	letter	bold fraktur q
+1D597	\mbffrakr	letter	bold fraktur r
+1D598	\mbffraks	letter	bold fraktur s
+1D599	\mbffrakt	letter	bold fraktur t
+1D59A	\mbffraku	letter	bold fraktur u
+1D59B	\mbffrakv	letter	bold fraktur v
+1D59C	\mbffrakw	letter	bold fraktur w
+1D59D	\mbffrakx	letter	bold fraktur x
+1D59E	\mbffraky	letter	bold fraktur y
+1D59F	\mbffrakz	letter	bold fraktur z
+1D5A0	\msansA	letter	sans-serif A
+1D5A1	\msansB	letter	sans-serif B
+1D5A2	\msansC	letter	sans-serif C
+1D5A3	\msansD	letter	sans-serif D
+1D5A4	\msansE	letter	sans-serif E
+1D5A5	\msansF	letter	sans-serif F
+1D5A6	\msansG	letter	sans-serif G
+1D5A7	\msansH	letter	sans-serif H
+1D5A8	\msansI	letter	sans-serif I
+1D5A9	\msansJ	letter	sans-serif J
+1D5AA	\msansK	letter	sans-serif K
+1D5AB	\msansL	letter	sans-serif L
+1D5AC	\msansM	letter	sans-serif M
+1D5AD	\msansN	letter	sans-serif N
+1D5AE	\msansO	letter	sans-serif O
+1D5AF	\msansP	letter	sans-serif P
+1D5B0	\msansQ	letter	sans-serif Q
+1D5B1	\msansR	letter	sans-serif R
+1D5B2	\msansS	letter	sans-serif S
+1D5B3	\msansT	letter	sans-serif T
+1D5B4	\msansU	letter	sans-serif U
+1D5B5	\msansV	letter	sans-serif V
+1D5B6	\msansW	letter	sans-serif W
+1D5B7	\msansX	letter	sans-serif X
+1D5B8	\msansY	letter	sans-serif Y
+1D5B9	\msansZ	letter	sans-serif Z
+1D5BA	\msansa	letter	sans-serif a
+1D5BB	\msansb	letter	sans-serif b
+1D5BC	\msansc	letter	sans-serif c
+1D5BD	\msansd	letter	sans-serif d
+1D5BE	\msanse	letter	sans-serif e
+1D5BF	\msansf	letter	sans-serif f
+1D5C0	\msansg	letter	sans-serif g
+1D5C1	\msansh	letter	sans-serif h
+1D5C2	\msansi	letter	sans-serif i
+1D5C3	\msansj	letter	sans-serif j
+1D5C4	\msansk	letter	sans-serif k
+1D5C5	\msansl	letter	sans-serif l
+1D5C6	\msansm	letter	sans-serif m
+1D5C7	\msansn	letter	sans-serif n
+1D5C8	\msanso	letter	sans-serif o
+1D5C9	\msansp	letter	sans-serif p
+1D5CA	\msansq	letter	sans-serif q
+1D5CB	\msansr	letter	sans-serif r
+1D5CC	\msanss	letter	sans-serif s
+1D5CD	\msanst	letter	sans-serif t
+1D5CE	\msansu	letter	sans-serif u
+1D5CF	\msansv	letter	sans-serif v
+1D5D0	\msansw	letter	sans-serif w
+1D5D1	\msansx	letter	sans-serif x
+1D5D2	\msansy	letter	sans-serif y
+1D5D3	\msansz	letter	sans-serif z
+1D5D4	\mbfsansA	letter	sans-serif bold A
+1D5D5	\mbfsansB	letter	sans-serif bold B
+1D5D6	\mbfsansC	letter	sans-serif bold C
+1D5D7	\mbfsansD	letter	sans-serif bold D
+1D5D8	\mbfsansE	letter	sans-serif bold E
+1D5D9	\mbfsansF	letter	sans-serif bold F
+1D5DA	\mbfsansG	letter	sans-serif bold G
+1D5DB	\mbfsansH	letter	sans-serif bold H
+1D5DC	\mbfsansI	letter	sans-serif bold I
+1D5DD	\mbfsansJ	letter	sans-serif bold J
+1D5DE	\mbfsansK	letter	sans-serif bold K
+1D5DF	\mbfsansL	letter	sans-serif bold L
+1D5E0	\mbfsansM	letter	sans-serif bold M
+1D5E1	\mbfsansN	letter	sans-serif bold N
+1D5E2	\mbfsansO	letter	sans-serif bold O
+1D5E3	\mbfsansP	letter	sans-serif bold P
+1D5E4	\mbfsansQ	letter	sans-serif bold Q
+1D5E5	\mbfsansR	letter	sans-serif bold R
+1D5E6	\mbfsansS	letter	sans-serif bold S
+1D5E7	\mbfsansT	letter	sans-serif bold T
+1D5E8	\mbfsansU	letter	sans-serif bold U
+1D5E9	\mbfsansV	letter	sans-serif bold V
+1D5EA	\mbfsansW	letter	sans-serif bold W
+1D5EB	\mbfsansX	letter	sans-serif bold X
+1D5EC	\mbfsansY	letter	sans-serif bold Y
+1D5ED	\mbfsansZ	letter	sans-serif bold Z
+1D5EE	\mbfsansa	letter	sans-serif bold a
+1D5EF	\mbfsansb	letter	sans-serif bold b
+1D5F0	\mbfsansc	letter	sans-serif bold c
+1D5F1	\mbfsansd	letter	sans-serif bold d
+1D5F2	\mbfsanse	letter	sans-serif bold e
+1D5F3	\mbfsansf	letter	sans-serif bold f
+1D5F4	\mbfsansg	letter	sans-serif bold g
+1D5F5	\mbfsansh	letter	sans-serif bold h
+1D5F6	\mbfsansi	letter	sans-serif bold i
+1D5F7	\mbfsansj	letter	sans-serif bold j
+1D5F8	\mbfsansk	letter	sans-serif bold k
+1D5F9	\mbfsansl	letter	sans-serif bold l
+1D5FA	\mbfsansm	letter	sans-serif bold m
+1D5FB	\mbfsansn	letter	sans-serif bold n
+1D5FC	\mbfsanso	letter	sans-serif bold o
+1D5FD	\mbfsansp	letter	sans-serif bold p
+1D5FE	\mbfsansq	letter	sans-serif bold q
+1D5FF	\mbfsansr	letter	sans-serif bold r
+1D600	\mbfsanss	letter	sans-serif bold s
+1D601	\mbfsanst	letter	sans-serif bold t
+1D602	\mbfsansu	letter	sans-serif bold u
+1D603	\mbfsansv	letter	sans-serif bold v
+1D604	\mbfsansw	letter	sans-serif bold w
+1D605	\mbfsansx	letter	sans-serif bold x
+1D606	\mbfsansy	letter	sans-serif bold y
+1D607	\mbfsansz	letter	sans-serif bold z
+1D608	\mitsansA	letter	sans-serif italic A
+1D609	\mitsansB	letter	sans-serif italic B
+1D60A	\mitsansC	letter	sans-serif italic C
+1D60B	\mitsansD	letter	sans-serif italic D
+1D60C	\mitsansE	letter	sans-serif italic E
+1D60D	\mitsansF	letter	sans-serif italic F
+1D60E	\mitsansG	letter	sans-serif italic G
+1D60F	\mitsansH	letter	sans-serif italic H
+1D610	\mitsansI	letter	sans-serif italic I
+1D611	\mitsansJ	letter	sans-serif italic J
+1D612	\mitsansK	letter	sans-serif italic K
+1D613	\mitsansL	letter	sans-serif italic L
+1D614	\mitsansM	letter	sans-serif italic M
+1D615	\mitsansN	letter	sans-serif italic N
+1D616	\mitsansO	letter	sans-serif italic O
+1D617	\mitsansP	letter	sans-serif italic P
+1D618	\mitsansQ	letter	sans-serif italic Q
+1D619	\mitsansR	letter	sans-serif italic R
+1D61A	\mitsansS	letter	sans-serif italic S
+1D61B	\mitsansT	letter	sans-serif italic T
+1D61C	\mitsansU	letter	sans-serif italic U
+1D61D	\mitsansV	letter	sans-serif italic V
+1D61E	\mitsansW	letter	sans-serif italic W
+1D61F	\mitsansX	letter	sans-serif italic X
+1D620	\mitsansY	letter	sans-serif italic Y
+1D621	\mitsansZ	letter	sans-serif italic Z
+1D622	\mitsansa	letter	sans-serif italic a
+1D623	\mitsansb	letter	sans-serif italic b
+1D624	\mitsansc	letter	sans-serif italic c
+1D625	\mitsansd	letter	sans-serif italic d
+1D626	\mitsanse	letter	sans-serif italic e
+1D627	\mitsansf	letter	sans-serif italic f
+1D628	\mitsansg	letter	sans-serif italic g
+1D629	\mitsansh	letter	sans-serif italic h
+1D62A	\mitsansi	letter	sans-serif italic i
+1D62B	\mitsansj	letter	sans-serif italic j
+1D62C	\mitsansk	letter	sans-serif italic k
+1D62D	\mitsansl	letter	sans-serif italic l
+1D62E	\mitsansm	letter	sans-serif italic m
+1D62F	\mitsansn	letter	sans-serif italic n
+1D630	\mitsanso	letter	sans-serif italic o
+1D631	\mitsansp	letter	sans-serif italic p
+1D632	\mitsansq	letter	sans-serif italic q
+1D633	\mitsansr	letter	sans-serif italic r
+1D634	\mitsanss	letter	sans-serif italic s
+1D635	\mitsanst	letter	sans-serif italic t
+1D636	\mitsansu	letter	sans-serif italic u
+1D637	\mitsansv	letter	sans-serif italic v
+1D638	\mitsansw	letter	sans-serif italic w
+1D639	\mitsansx	letter	sans-serif italic x
+1D63A	\mitsansy	letter	sans-serif italic y
+1D63B	\mitsansz	letter	sans-serif italic z
+1D63C	\mbfitsansA	letter	sans-serif bold italic A
+1D63D	\mbfitsansB	letter	sans-serif bold italic B
+1D63E	\mbfitsansC	letter	sans-serif bold italic C
+1D63F	\mbfitsansD	letter	sans-serif bold italic D
+1D640	\mbfitsansE	letter	sans-serif bold italic E
+1D641	\mbfitsansF	letter	sans-serif bold italic F
+1D642	\mbfitsansG	letter	sans-serif bold italic G
+1D643	\mbfitsansH	letter	sans-serif bold italic H
+1D644	\mbfitsansI	letter	sans-serif bold italic I
+1D645	\mbfitsansJ	letter	sans-serif bold italic J
+1D646	\mbfitsansK	letter	sans-serif bold italic K
+1D647	\mbfitsansL	letter	sans-serif bold italic L
+1D648	\mbfitsansM	letter	sans-serif bold italic M
+1D649	\mbfitsansN	letter	sans-serif bold italic N
+1D64A	\mbfitsansO	letter	sans-serif bold italic O
+1D64B	\mbfitsansP	letter	sans-serif bold italic P
+1D64C	\mbfitsansQ	letter	sans-serif bold italic Q
+1D64D	\mbfitsansR	letter	sans-serif bold italic R
+1D64E	\mbfitsansS	letter	sans-serif bold italic S
+1D64F	\mbfitsansT	letter	sans-serif bold italic T
+1D650	\mbfitsansU	letter	sans-serif bold italic U
+1D651	\mbfitsansV	letter	sans-serif bold italic V
+1D652	\mbfitsansW	letter	sans-serif bold italic W
+1D653	\mbfitsansX	letter	sans-serif bold italic X
+1D654	\mbfitsansY	letter	sans-serif bold italic Y
+1D655	\mbfitsansZ	letter	sans-serif bold italic Z
+1D656	\mbfitsansa	letter	sans-serif bold italic a
+1D657	\mbfitsansb	letter	sans-serif bold italic b
+1D658	\mbfitsansc	letter	sans-serif bold italic c
+1D659	\mbfitsansd	letter	sans-serif bold italic d
+1D65A	\mbfitsanse	letter	sans-serif bold italic e
+1D65B	\mbfitsansf	letter	sans-serif bold italic f
+1D65C	\mbfitsansg	letter	sans-serif bold italic g
+1D65D	\mbfitsansh	letter	sans-serif bold italic h
+1D65E	\mbfitsansi	letter	sans-serif bold italic i
+1D65F	\mbfitsansj	letter	sans-serif bold italic j
+1D660	\mbfitsansk	letter	sans-serif bold italic k
+1D661	\mbfitsansl	letter	sans-serif bold italic l
+1D662	\mbfitsansm	letter	sans-serif bold italic m
+1D663	\mbfitsansn	letter	sans-serif bold italic n
+1D664	\mbfitsanso	letter	sans-serif bold italic o
+1D665	\mbfitsansp	letter	sans-serif bold italic p
+1D666	\mbfitsansq	letter	sans-serif bold italic q
+1D667	\mbfitsansr	letter	sans-serif bold italic r
+1D668	\mbfitsanss	letter	sans-serif bold italic s
+1D669	\mbfitsanst	letter	sans-serif bold italic t
+1D66A	\mbfitsansu	letter	sans-serif bold italic u
+1D66B	\mbfitsansv	letter	sans-serif bold italic v
+1D66C	\mbfitsansw	letter	sans-serif bold italic w
+1D66D	\mbfitsansx	letter	sans-serif bold italic x
+1D66E	\mbfitsansy	letter	sans-serif bold italic y
+1D66F	\mbfitsansz	letter	sans-serif bold italic z
+1D670	\mttA	letter	monospace A
+1D671	\mttB	letter	monospace B
+1D672	\mttC	letter	monospace C
+1D673	\mttD	letter	monospace D
+1D674	\mttE	letter	monospace E
+1D675	\mttF	letter	monospace F
+1D676	\mttG	letter	monospace G
+1D677	\mttH	letter	monospace H
+1D678	\mttI	letter	monospace I
+1D679	\mttJ	letter	monospace J
+1D67A	\mttK	letter	monospace K
+1D67B	\mttL	letter	monospace L
+1D67C	\mttM	letter	monospace M
+1D67D	\mttN	letter	monospace N
+1D67E	\mttO	letter	monospace O
+1D67F	\mttP	letter	monospace P
+1D680	\mttQ	letter	monospace Q
+1D681	\mttR	letter	monospace R
+1D682	\mttS	letter	monospace S
+1D683	\mttT	letter	monospace T
+1D684	\mttU	letter	monospace U
+1D685	\mttV	letter	monospace V
+1D686	\mttW	letter	monospace W
+1D687	\mttX	letter	monospace X
+1D688	\mttY	letter	monospace Y
+1D689	\mttZ	letter	monospace Z
+1D68A	\mtta	letter	monospace a
+1D68B	\mttb	letter	monospace b
+1D68C	\mttc	letter	monospace c
+1D68D	\mttd	letter	monospace d
+1D68E	\mtte	letter	monospace e
+1D68F	\mttf	letter	monospace f
+1D690	\mttg	letter	monospace g
+1D691	\mtth	letter	monospace h
+1D692	\mtti	letter	monospace i
+1D693	\mttj	letter	monospace j
+1D694	\mttk	letter	monospace k
+1D695	\mttl	letter	monospace l
+1D696	\mttm	letter	monospace m
+1D697	\mttn	letter	monospace n
+1D698	\mtto	letter	monospace o
+1D699	\mttp	letter	monospace p
+1D69A	\mttq	letter	monospace q
+1D69B	\mttr	letter	monospace r
+1D69C	\mtts	letter	monospace s
+1D69D	\mttt	letter	monospace t
+1D69E	\mttu	letter	monospace u
+1D69F	\mttv	letter	monospace v
+1D6A0	\mttw	letter	monospace w
+1D6A1	\mttx	letter	monospace x
+1D6A2	\mtty	letter	monospace y
+1D6A3	\mttz	letter	monospace z
+1D6A4	\imath	letter	italic small dotless i
+1D6A5	\jmath	letter	italic small dotless j
+1D6A8	\mbfAlpha	letter	bold Alpha
+1D6A9	\mbfBeta	letter	bold Beta
+1D6AA	\mbfGamma	letter	bold Gamma
+1D6AB	\mbfDelta	letter	bold Delta
+1D6AC	\mbfEpsilon	letter	bold Epsilon
+1D6AD	\mbfZeta	letter	bold Zeta
+1D6AE	\mbfEta	letter	bold Eta
+1D6AF	\mbfTheta	letter	bold Theta
+1D6B0	\mbfIota	letter	bold Iota
+1D6B1	\mbfKappa	letter	bold Kappa
+1D6B2	\mbfLambda	letter	bold Lambda
+1D6B3	\mbfMu	letter	bold Mu
+1D6B4	\mbfNu	letter	bold Nu
+1D6B5	\mbfXi	letter	bold Xi
+1D6B6	\mbfOmicron	letter	bold Omicron
+1D6B7	\mbfPi	letter	bold Pi
+1D6B8	\mbfRho	letter	bold Rho
+1D6B9	\mbfvarTheta	letter	bold Theta
+1D6BA	\mbfSigma	letter	bold Sigma
+1D6BB	\mbfTau	letter	bold Tau
+1D6BC	\mbfUpsilon	letter	bold Upsilon
+1D6BD	\mbfPhi	letter	bold Phi
+1D6BE	\mbfChi	letter	bold Chi
+1D6BF	\mbfPsi	letter	bold Psi
+1D6C0	\mbfOmega	letter	bold Omega
+1D6C1	\mbfnabla	letter	bold nabla
+1D6C2	\mbfalpha	letter	bold alpha
+1D6C3	\mbfbeta	letter	bold beta
+1D6C4	\mbfgamma	letter	bold gamma
+1D6C5	\mbfdelta	letter	bold delta
+1D6C6	\mbfvarepsilon	letter	bold varepsilon
+1D6C7	\mbfzeta	letter	bold zeta
+1D6C8	\mbfeta	letter	bold eta
+1D6C9	\mbftheta	letter	bold theta
+1D6CA	\mbfiota	letter	bold iota
+1D6CB	\mbfkappa	letter	bold kappa
+1D6CC	\mbflambda	letter	bold lambda
+1D6CD	\mbfmu	letter	bold small mu
+1D6CE	\mbfnu	letter	bold small nu
+1D6CF	\mbfxi	letter	bold small xi
+1D6D0	\mbfomicron	letter	bold small omicron
+1D6D1	\mbfpi	letter	bold small pi
+1D6D2	\mbfrho	letter	bold small rho
+1D6D3	\mbfvarsigma	letter	bold small final sigma
+1D6D4	\mbfsigma	letter	bold small sigma
+1D6D5	\mbftau	letter	bold small tau
+1D6D6	\mbfupsilon	letter	bold small upsilon
+1D6D7	\mbfvarphi	letter	bold small phi
+1D6D8	\mbfchi	letter	bold small chi
+1D6D9	\mbfpsi	letter	bold small psi
+1D6DA	\mbfomega	letter	bold small omega
+1D6DB	\mbfpartial	letter	bold partial differential
+1D6DC	\mbfepsilon	letter	bold varepsilon symbol
+1D6DD	\mbfvartheta	letter	bold theta symbol
+1D6DE	\mbfvarkappa	letter	bold kappa symbol
+1D6DF	\mbfphi	letter	bold phi symbol
+1D6E0	\mbfvarrho	letter	bold rho symbol
+1D6E1	\mbfvarpi	letter	bold pi symbol
+1D6E2	\mitAlpha	letter	italic capital alpha
+1D6E3	\mitBeta	letter	italic capital beta
+1D6E4	\mitGamma	letter	italic capital gamma
+1D6E5	\mitDelta	letter	italic capital delta
+1D6E6	\mitEpsilon	letter	italic capital epsilon
+1D6E7	\mitZeta	letter	italic capital zeta
+1D6E8	\mitEta	letter	italic capital eta
+1D6E9	\mitTheta	letter	italic capital theta
+1D6EA	\mitIota	letter	italic capital iota
+1D6EB	\mitKappa	letter	italic capital kappa
+1D6EC	\mitLambda	letter	italic capital lambda
+1D6ED	\mitMu	letter	italic capital mu
+1D6EE	\mitNu	letter	italic capital nu
+1D6EF	\mitXi	letter	italic capital xi
+1D6F0	\mitOmicron	letter	italic capital omicron
+1D6F1	\mitPi	letter	italic capital pi
+1D6F2	\mitRho	letter	italic capital rho
+1D6F3	\mitvarTheta	letter	italic capital theta symbol
+1D6F4	\mitSigma	letter	italic capital sigma
+1D6F5	\mitTau	letter	italic capital tau
+1D6F6	\mitUpsilon	letter	italic capital upsilon
+1D6F7	\mitPhi	letter	italic capital phi
+1D6F8	\mitChi	letter	italic capital chi
+1D6F9	\mitPsi	letter	italic capital psi
+1D6FA	\mitOmega	letter	italic capital omega
+1D6FB	\mitnabla	letter	italic nabla
+1D6FC	\mitalpha	letter	italic small alpha
+1D6FD	\mitbeta	letter	italic small beta
+1D6FE	\mitgamma	letter	italic small gamma
+1D6FF	\mitdelta	letter	italic small delta
+1D700	\mitvarepsilon	letter	italic small varepsilon
+1D701	\mitzeta	letter	italic small zeta
+1D702	\miteta	letter	italic small eta
+1D703	\mittheta	letter	italic small theta
+1D704	\mitiota	letter	italic small iota
+1D705	\mitkappa	letter	italic small kappa
+1D706	\mitlambda	letter	italic small lambda
+1D707	\mitmu	letter	italic small mu
+1D708	\mitnu	letter	italic small nu
+1D709	\mitxi	letter	italic small xi
+1D70A	\mitomicron	letter	italic small omicron
+1D70B	\mitpi	letter	italic small pi
+1D70C	\mitrho	letter	italic small rho
+1D70D	\mitvarsigma	letter	italic small final sigma
+1D70E	\mitsigma	letter	italic small sigma
+1D70F	\mittau	letter	italic small tau
+1D710	\mitupsilon	letter	italic small upsilon
+1D711	\mitvarphi	letter	italic small phi
+1D712	\mitchi	letter	italic small chi
+1D713	\mitpsi	letter	italic small psi
+1D714	\mitomega	letter	italic small omega
+1D715	\mitpartial	letter	italic partial differential
+1D716	\mitepsilon	letter	italic varepsilon symbol
+1D717	\mitvartheta	letter	italic theta symbol
+1D718	\mitvarkappa	letter	italic kappa symbol
+1D719	\mitphi	letter	italic phi symbol
+1D71A	\mitvarrho	letter	italic rho symbol
+1D71B	\mitvarpi	letter	italic pi symbol
+1D71C	\mbfitAlpha	letter	bold italic capital alpha
+1D71D	\mbfitBeta	letter	bold italic capital beta
+1D71E	\mbfitGamma	letter	bold italic capital gamma
+1D71F	\mbfitDelta	letter	bold italic capital delta
+1D720	\mbfitEpsilon	letter	bold italic capital epsilon
+1D721	\mbfitZeta	letter	bold italic capital zeta
+1D722	\mbfitEta	letter	bold italic capital eta
+1D723	\mbfitTheta	letter	bold italic capital theta
+1D724	\mbfitIota	letter	bold italic capital iota
+1D725	\mbfitKappa	letter	bold italic capital kappa
+1D726	\mbfitLambda	letter	bold italic capital lambda
+1D727	\mbfitMu	letter	bold italic capital mu
+1D728	\mbfitNu	letter	bold italic capital nu
+1D729	\mbfitXi	letter	bold italic capital xi
+1D72A	\mbfitOmicron	letter	bold italic capital omicron
+1D72B	\mbfitPi	letter	bold italic capital pi
+1D72C	\mbfitRho	letter	bold italic capital rho
+1D72D	\mbfitvarTheta	letter	bold italic capital theta symbol
+1D72E	\mbfitSigma	letter	bold italic capital sigma
+1D72F	\mbfitTau	letter	bold italic capital tau
+1D730	\mbfitUpsilon	letter	bold italic capital upsilon
+1D731	\mbfitPhi	letter	bold italic capital phi
+1D732	\mbfitChi	letter	bold italic capital chi
+1D733	\mbfitPsi	letter	bold italic capital psi
+1D734	\mbfitOmega	letter	bold italic capital omega
+1D735	\mbfitnabla	letter	bold italic nabla
+1D736	\mbfitalpha	letter	bold italic small alpha
+1D737	\mbfitbeta	letter	bold italic small beta
+1D738	\mbfitgamma	letter	bold italic small gamma
+1D739	\mbfitdelta	letter	bold italic small delta
+1D73A	\mbfitvarepsilon	letter	bold italic small varepsilon
+1D73B	\mbfitzeta	letter	bold italic small zeta
+1D73C	\mbfiteta	letter	bold italic small eta
+1D73D	\mbfittheta	letter	bold italic small theta
+1D73E	\mbfitiota	letter	bold italic small iota
+1D73F	\mbfitkappa	letter	bold italic small kappa
+1D740	\mbfitlambda	letter	bold italic small lambda
+1D741	\mbfitmu	letter	bold italic small mu
+1D742	\mbfitnu	letter	bold italic small nu
+1D743	\mbfitxi	letter	bold italic small xi
+1D744	\mbfitomicron	letter	bold italic small omicron
+1D745	\mbfitpi	letter	bold italic small pi
+1D746	\mbfitrho	letter	bold italic small rho
+1D747	\mbfitvarsigma	letter	bold italic small final sigma
+1D748	\mbfitsigma	letter	bold italic small sigma
+1D749	\mbfittau	letter	bold italic small tau
+1D74A	\mbfitupsilon	letter	bold italic small upsilon
+1D74B	\mbfitvarphi	letter	bold italic small phi
+1D74C	\mbfitchi	letter	bold italic small chi
+1D74D	\mbfitpsi	letter	bold italic small psi
+1D74E	\mbfitomega	letter	bold italic small omega
+1D74F	\mbfitpartial	letter	bold italic partial differential
+1D750	\mbfitepsilon	letter	bold italic varepsilon symbol
+1D751	\mbfitvartheta	letter	bold italic theta symbol
+1D752	\mbfitvarkappa	letter	bold italic kappa symbol
+1D753	\mbfitphi	letter	bold italic phi symbol
+1D754	\mbfitvarrho	letter	bold italic rho symbol
+1D755	\mbfitvarpi	letter	bold italic pi symbol
+1D756	\mbfsansAlpha	letter	sans-serif bold Alpha
+1D757	\mbfsansBeta	letter	sans-serif bold Beta
+1D758	\mbfsansGamma	letter	sans-serif bold Gamma
+1D759	\mbfsansDelta	letter	sans-serif bold Delta
+1D75A	\mbfsansEpsilon	letter	sans-serif bold Epsilon
+1D75B	\mbfsansZeta	letter	sans-serif bold Zeta
+1D75C	\mbfsansEta	letter	sans-serif bold Eta
+1D75D	\mbfsansTheta	letter	sans-serif bold Theta
+1D75E	\mbfsansIota	letter	sans-serif bold Iota
+1D75F	\mbfsansKappa	letter	sans-serif bold Kappa
+1D760	\mbfsansLambda	letter	sans-serif bold Lambda
+1D761	\mbfsansMu	letter	sans-serif bold Mu
+1D762	\mbfsansNu	letter	sans-serif bold Nu
+1D763	\mbfsansXi	letter	sans-serif bold Xi
+1D764	\mbfsansOmicron	letter	sans-serif bold Omicron
+1D765	\mbfsansPi	letter	sans-serif bold Pi
+1D766	\mbfsansRho	letter	sans-serif bold Rho
+1D767	\mbfsansvarTheta	letter	sans-serif bold capital Symbol
+1D768	\mbfsansSigma	letter	sans-serif bold Sigma
+1D769	\mbfsansTau	letter	sans-serif bold Tau
+1D76A	\mbfsansUpsilon	letter	sans-serif bold Upsilon
+1D76B	\mbfsansPhi	letter	sans-serif bold Phi
+1D76C	\mbfsansChi	letter	sans-serif bold Chi
+1D76D	\mbfsansPsi	letter	sans-serif bold Psi
+1D76E	\mbfsansOmega	letter	sans-serif bold Omega
+1D76F	\mbfsansnabla	letter	sans-serif bold nabla
+1D770	\mbfsansalpha	letter	sans-serif bold alpha
+1D771	\mbfsansbeta	letter	sans-serif bold beta
+1D772	\mbfsansgamma	letter	sans-serif bold gamma
+1D773	\mbfsansdelta	letter	sans-serif bold delta
+1D774	\mbfsansvarepsilon	letter	sans-serif bold varepsilon
+1D775	\mbfsanszeta	letter	sans-serif bold zeta
+1D776	\mbfsanseta	letter	sans-serif bold eta
+1D777	\mbfsanstheta	letter	sans-serif bold theta
+1D778	\mbfsansiota	letter	sans-serif bold iota
+1D779	\mbfsanskappa	letter	sans-serif bold kappa
+1D77A	\mbfsanslambda	letter	sans-serif bold lambda
+1D77B	\mbfsansmu	letter	sans-serif bold mu
+1D77C	\mbfsansnu	letter	sans-serif bold nu
+1D77D	\mbfsansxi	letter	sans-serif bold xi
+1D77E	\mbfsansomicron	letter	sans-serif bold omicron
+1D77F	\mbfsanspi	letter	sans-serif bold pi
+1D780	\mbfsansrho	letter	sans-serif bold rho
+1D781	\mbfsansvarsigma	letter	sans-serif bold small sigma
+1D782	\mbfsanssigma	letter	sans-serif bold sigma
+1D783	\mbfsanstau	letter	sans-serif bold tau
+1D784	\mbfsansupsilon	letter	sans-serif bold upsilon
+1D785	\mbfsansvarphi	letter	sans-serif bold phi
+1D786	\mbfsanschi	letter	sans-serif bold chi
+1D787	\mbfsanspsi	letter	sans-serif bold psi
+1D788	\mbfsansomega	letter	sans-serif bold omega
+1D789	\mbfsanspartial	letter	sans-serif bold partial differential
+1D78A	\mbfsansepsilon	letter	sans-serif bold varepsilon symbol
+1D78B	\mbfsansvartheta	letter	sans-serif bold theta symbol
+1D78C	\mbfsansvarkappa	letter	sans-serif bold kappa symbol
+1D78D	\mbfsansphi	letter	sans-serif bold phi symbol
+1D78E	\mbfsansvarrho	letter	sans-serif bold rho symbol
+1D78F	\mbfsansvarpi	letter	sans-serif bold pi symbol
+1D790	\mbfitsansAlpha	letter	sans-serif bold italic Alpha
+1D791	\mbfitsansBeta	letter	sans-serif bold italic Beta
+1D792	\mbfitsansGamma	letter	sans-serif bold italic Gamma
+1D793	\mbfitsansDelta	letter	sans-serif bold italic Delta
+1D794	\mbfitsansEpsilon	letter	sans-serif bold italic Epsilon
+1D795	\mbfitsansZeta	letter	sans-serif bold italic Zeta
+1D796	\mbfitsansEta	letter	sans-serif bold italic Eta
+1D797	\mbfitsansTheta	letter	sans-serif bold italic Theta
+1D798	\mbfitsansIota	letter	sans-serif bold italic Iota
+1D799	\mbfitsansKappa	letter	sans-serif bold italic Kappa
+1D79A	\mbfitsansLambda	letter	sans-serif bold italic Lambda
+1D79B	\mbfitsansMu	letter	sans-serif bold italic Mu
+1D79C	\mbfitsansNu	letter	sans-serif bold italic Nu
+1D79D	\mbfitsansXi	letter	sans-serif bold italic Xi
+1D79E	\mbfitsansOmicron	letter	sans-serif bold italic Omicron
+1D79F	\mbfitsansPi	letter	sans-serif bold italic Pi
+1D7A0	\mbfitsansRho	letter	sans-serif bold italic Rho
+1D7A1	\mbfitsansvarTheta	letter	sans-serif bold italic Theta
+1D7A2	\mbfitsansSigma	letter	sans-serif bold italic Sigma
+1D7A3	\mbfitsansTau	letter	sans-serif bold italic Tau
+1D7A4	\mbfitsansUpsilon	letter	sans-serif bold italic Upsilon
+1D7A5	\mbfitsansPhi	letter	sans-serif bold italic Phi
+1D7A6	\mbfitsansChi	letter	sans-serif bold italic Chi
+1D7A7	\mbfitsansPsi	letter	sans-serif bold italic Psi
+1D7A8	\mbfitsansOmega	letter	sans-serif bold italic Omega
+1D7A9	\mbfitsansnabla	letter	sans-serif bold italic nabla
+1D7AA	\mbfitsansalpha	letter	sans-serif bold italic alpha
+1D7AB	\mbfitsansbeta	letter	sans-serif bold italic beta
+1D7AC	\mbfitsansgamma	letter	sans-serif bold italic gamma
+1D7AD	\mbfitsansdelta	letter	sans-serif bold italic delta
+1D7AE	\mbfitsansvarepsilon	letter	sans-serif bold italic varepsilon
+1D7AF	\mbfitsanszeta	letter	sans-serif bold italic zeta
+1D7B0	\mbfitsanseta	letter	sans-serif bold italic eta
+1D7B1	\mbfitsanstheta	letter	sans-serif bold italic theta
+1D7B2	\mbfitsansiota	letter	sans-serif bold italic iota
+1D7B3	\mbfitsanskappa	letter	sans-serif bold italic kappa
+1D7B4	\mbfitsanslambda	letter	sans-serif bold italic lambda
+1D7B5	\mbfitsansmu	letter	sans-serif bold italic mu
+1D7B6	\mbfitsansnu	letter	sans-serif bold italic nu
+1D7B7	\mbfitsansxi	letter	sans-serif bold italic xi
+1D7B8	\mbfitsansomicron	letter	sans-serif bold italic omicron
+1D7B9	\mbfitsanspi	letter	sans-serif bold italic pi
+1D7BA	\mbfitsansrho	letter	sans-serif bold italic rho
+1D7BB	\mbfitsansvarsigma	letter	sans-serif bold italic final sigma
+1D7BC	\mbfitsanssigma	letter	sans-serif bold italic sigma
+1D7BD	\mbfitsanstau	letter	sans-serif bold italic tau
+1D7BE	\mbfitsansupsilon	letter	sans-serif bold italic upsilon
+1D7BF	\mbfitsansvarphi	letter	sans-serif bold italic phi
+1D7C0	\mbfitsanschi	letter	sans-serif bold italic chi
+1D7C1	\mbfitsanspsi	letter	sans-serif bold italic psi
+1D7C2	\mbfitsansomega	letter	sans-serif bold italic omega
+1D7C3	\mbfitsanspartial	letter	sans-serif bold italic partial differential
+1D7C4	\mbfitsansepsilon	letter	sans-serif bold italic varepsilon symbol
+1D7C5	\mbfitsansvartheta	letter	sans-serif bold italic theta symbol
+1D7C6	\mbfitsansvarkappa	letter	sans-serif bold italic kappa symbol
+1D7C7	\mbfitsansphi	letter	sans-serif bold italic phi symbol
+1D7C8	\mbfitsansvarrho	letter	sans-serif bold italic rho symbol
+1D7C9	\mbfitsansvarpi	letter	sans-serif bold italic pi symbol
+1D7CA	\mbfDigamma	letter	bold capital digamma
+1D7CB	\mbfdigamma	letter	bold small digamma
+1D7CE	\mbfzero	ordinal	bold digit 0
+1D7CF	\mbfone	ordinal	bold digit 1
+1D7D0	\mbftwo	ordinal	bold digit 2
+1D7D1	\mbfthree	ordinal	bold digit 3
+1D7D2	\mbffour	ordinal	bold digit 4
+1D7D3	\mbffive	ordinal	bold digit 5
+1D7D4	\mbfsix	ordinal	bold digit 6
+1D7D5	\mbfseven	ordinal	bold digit 7
+1D7D6	\mbfeight	ordinal	bold digit 8
+1D7D7	\mbfnine	ordinal	bold digit 9
+1D7D8	\Bbbzero	ordinal	double-struct digit 0
+1D7D9	\Bbbone	ordinal	double-struct digit 1
+1D7DA	\Bbbtwo	ordinal	double-struct digit 2
+1D7DB	\Bbbthree	ordinal	double-struct digit 3
+1D7DC	\Bbbfour	ordinal	double-struct digit 4
+1D7DD	\Bbbfive	ordinal	double-struct digit 5
+1D7DE	\Bbbsix	ordinal	double-struct digit 6
+1D7DF	\Bbbseven	ordinal	double-struct digit 7
+1D7E0	\Bbbeight	ordinal	double-struct digit 8
+1D7E1	\Bbbnine	ordinal	double-struct digit 9
+1D7E2	\msanszero	ordinal	sans-serif digit 0
+1D7E3	\msansone	ordinal	sans-serif digit 1
+1D7E4	\msanstwo	ordinal	sans-serif digit 2
+1D7E5	\msansthree	ordinal	sans-serif digit 3
+1D7E6	\msansfour	ordinal	sans-serif digit 4
+1D7E7	\msansfive	ordinal	sans-serif digit 5
+1D7E8	\msanssix	ordinal	sans-serif digit 6
+1D7E9	\msansseven	ordinal	sans-serif digit 7
+1D7EA	\msanseight	ordinal	sans-serif digit 8
+1D7EB	\msansnine	ordinal	sans-serif digit 9
+1D7EC	\mbfsanszero	ordinal	sans-serif bold digit 0
+1D7ED	\mbfsansone	ordinal	sans-serif bold digit 1
+1D7EE	\mbfsanstwo	ordinal	sans-serif bold digit 2
+1D7EF	\mbfsansthree	ordinal	sans-serif bold digit 3
+1D7F0	\mbfsansfour	ordinal	sans-serif bold digit 4
+1D7F1	\mbfsansfive	ordinal	sans-serif bold digit 5
+1D7F2	\mbfsanssix	ordinal	sans-serif bold digit 6
+1D7F3	\mbfsansseven	ordinal	sans-serif bold digit 7
+1D7F4	\mbfsanseight	ordinal	sans-serif bold digit 8
+1D7F5	\mbfsansnine	ordinal	sans-serif bold digit 9
+1D7F6	\mttzero	ordinal	monospace digit 0
+1D7F7	\mttone	ordinal	monospace digit 1
+1D7F8	\mtttwo	ordinal	monospace digit 2
+1D7F9	\mttthree	ordinal	monospace digit 3
+1D7FA	\mttfour	ordinal	monospace digit 4
+1D7FB	\mttfive	ordinal	monospace digit 5
+1D7FC	\mttsix	ordinal	monospace digit 6
+1D7FD	\mttseven	ordinal	monospace digit 7
+1D7FE	\mtteight	ordinal	monospace digit 8
+1D7FF	\mttnine	ordinal	monospace digit 9
+1EEF0	\arabicmaj	big operator	arabic mathematical operator meem with hah with tatweel
+1EEF1	\arabichad	big operator	arabic mathematical operator hah with dal

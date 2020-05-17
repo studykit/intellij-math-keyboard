@@ -1,0 +1,9 @@
+<templateSet group="Unicode">
+  <template name="\alpha" value="[$TEXT$]($LINK$)$END$&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LINK" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="UNICODE" value="true"/>
+    </context>
+  </template>
+</templateSet>

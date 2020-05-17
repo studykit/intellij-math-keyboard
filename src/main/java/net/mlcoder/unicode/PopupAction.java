@@ -14,7 +14,6 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.components.FixedColumnsModel;
-import com.intellij.ui.speedSearch.FilteringTableModel;
 import com.intellij.ui.table.JBTable;
 import net.mlcoder.unicode.category.MathSymbol;
 import org.apache.commons.lang3.StringUtils;
@@ -22,43 +21,18 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PopupAction extends AnAction {
     private static final Logger logger = Logger.getInstance(PopupAction.class);
-    private static final ListModel<MathSymbol> symbols = new CollectionListModel<>(MathSymbol.symbols);
-
-    private static class Query {
-        String text = "";
-        String[] words = StringUtils.splitByWholeSeparator(text, null);
-
-        void append(char ch) {
-            text = (text + ch);
-            split();
-        }
-
-        void append(CharSequence charSequence) {
-            text = (text + charSequence);
-            split();
-        }
-
-        void backspace() {
-            if (StringUtils.isEmpty(text)) {
-                return;
-            }
-
-            text = text.substring(0, text.length() - 1);
-            split();
-        }
-
-        void split() {
-            words = StringUtils.splitByWholeSeparator(text, null);
-        }
-    }
+    private static final FixedColumnsModel wholeTableModel =
+        new FixedColumnsModel(new CollectionListModel<>(MathSymbol.symbols, true), 5);
 
     @Override
+    @SuppressWarnings("unchecked")
     public void actionPerformed(@NotNull AnActionEvent event) {
         final Editor editor = event.getData(CommonDataKeys.EDITOR);
         if (editor == null) {
@@ -70,37 +44,7 @@ public class PopupAction extends AnAction {
             return;
         }
 
-        MathSymbol symbol1 = MathSymbol.titleSymbols.get("alpha");
-        logger.info("alpha: " + symbol1);
-        FilteringTableModel<MathSymbol> tableModel = new FilteringTableModel<>(new FixedColumnsModel(symbols, 5), MathSymbol.class);
-        JBTable jbTable = new JBTable(tableModel);
-        Query query = new Query();
-        tableModel.setFilter(symbol -> {
-            if (StringUtils.isEmpty(query.text))
-                return true;
-
-            if (query.text.startsWith("\\")) {
-                return StringUtils.startsWith(symbol.latex, query.text);
-            }
-
-            String[] searchWords = query.words;
-            String[] targets = StringUtils.splitByWholeSeparator(symbol.title, null);
-
-            if (searchWords.length > targets.length)
-                return false;
-
-            for (int i = 0; i < searchWords.length; i ++) {
-                if (StringUtils.startsWith(targets[i], searchWords[i]))
-                    continue;
-
-                return false;
-            }
-
-            logger.info("targets: " + StringUtils.join(targets, "|"));
-
-            return true;
-        });
-
+        JBTable jbTable = new JBTable(wholeTableModel);
         jbTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jbTable.setTableHeader(null);
         jbTable.setCellSelectionEnabled(true);
@@ -109,15 +53,14 @@ public class PopupAction extends AnAction {
         JBPopupFactory factory = JBPopupFactory.getInstance();
         PopupChooserBuilder<MathSymbol> builder = factory.createPopupChooserBuilder(jbTable);
         builder
-            .setAdText(query.text)
             .setAutoselectOnMouseMove(true)
             .setResizable(true)
+            .addAdditionalChooseKeystroke(KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0))
             .setItemChoosenCallback(() -> {
                 int row = jbTable.getSelectedRow();
                 int col = jbTable.getSelectedColumn();
 
-                MathSymbol symbol = (MathSymbol) tableModel.getValueAt(row, col);
-                logger.info("## (" +  + row + ",  " + col + ") " + symbol);
+                MathSymbol symbol = (MathSymbol) jbTable.getModel().getValueAt(row, col);
 
                 if (symbol == null) {
                     return;
@@ -141,9 +84,40 @@ public class PopupAction extends AnAction {
 
         JBPopup popup = builder.createPopup();
         jbTable.addKeyListener(new KeyAdapter() {
-            private void setAdText() {
-                popup.setAdText(query.text.trim(), SwingConstants.LEFT);
-                tableModel.refilter();
+            private String text = "";
+
+            private void refresh() {
+                popup.setAdText(text.trim(), SwingConstants.LEFT);
+
+                if (StringUtils.isEmpty(text)) {
+                    jbTable.setModel(wholeTableModel);
+                    return;
+                }
+
+                String[] searchWords = StringUtils.splitByWholeSeparator(text, null);
+
+                List<MathSymbol> filteredSymbols = MathSymbol.symbols.stream().filter(symbol -> {
+                    if (text.startsWith("\\")) {
+                        return StringUtils.startsWith(symbol.latex, text);
+                    }
+
+                    String[] targets = StringUtils.splitByWholeSeparator(symbol.title, null);
+
+                    if (searchWords.length > targets.length)
+                        return false;
+
+                    for (int i = 0; i < searchWords.length; i++) {
+                        if (StringUtils.startsWith(targets[i], searchWords[i]))
+                            continue;
+
+                        return false;
+                    }
+
+                    return true;
+                }).collect(Collectors.toList());
+                jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
+                jbTable.setRowSelectionInterval(0, 0);
+                jbTable.setColumnSelectionInterval(0, 0);
             }
 
             @Override
@@ -155,11 +129,12 @@ public class PopupAction extends AnAction {
                     return;
 
                 if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                    if (StringUtils.isEmpty(query.text)) {
+                    if (StringUtils.isEmpty(text)) {
                         return;
                     }
-                    query.backspace();
-                    setAdText();
+                    e.consume();
+                    text = text.substring(0, text.length() - 1);
+                    refresh();
                     return;
                 }
 
@@ -168,12 +143,11 @@ public class PopupAction extends AnAction {
                     return;
                 }
                 e.consume();
-                query.append(keyChar);
-                setAdText();
+                text = text + keyChar;
+                refresh();
             }
         });
 
-        popup.setMinimumSize(new Dimension(160, 40));
         popup.showInBestPositionFor(editor);
     }
 

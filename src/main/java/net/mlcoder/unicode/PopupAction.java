@@ -10,9 +10,7 @@ import com.intellij.openapi.editor.Caret;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.popup.JBPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.PopupChooserBuilder;
+import com.intellij.openapi.ui.popup.*;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.components.FixedColumnsModel;
 import com.intellij.ui.components.JBLabel;
@@ -25,6 +23,7 @@ import net.mlcoder.unicode.category.MathSymbol;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nullable;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
@@ -106,6 +105,7 @@ public class PopupAction extends AnAction {
 
     @Override
     public void update(@NotNull AnActionEvent e) {
+
     }
 
     private static class MathTableCellRender extends DefaultTableCellRenderer {
@@ -132,6 +132,9 @@ public class PopupAction extends AnAction {
         private final JBTable jbTable;
         private final JBPopup popup;
         private String text = "";
+
+        @Nullable
+        private Balloon balloon;
 
         public MathTableKeyListener(JBTable table, JBPopup popup) {
             this.jbTable = table;
@@ -189,7 +192,45 @@ public class PopupAction extends AnAction {
         }
 
         @Override
+        public void keyPressed(KeyEvent e) {
+            if (balloon != null && !balloon.isDisposed()) {
+                balloon.dispose();
+                balloon = null;
+            }
+
+            if (e.getKeyCode() != KeyEvent.VK_ALT)
+                return;
+
+            int row = jbTable.getSelectedRow();
+            if (row < 0)
+                return;
+
+            int col = jbTable.getSelectedColumn();
+            if (col < 0)
+                return;
+
+            FixedColumnsModel model = (FixedColumnsModel) jbTable.getModel();
+            MathSymbol symbol = (MathSymbol) model.getValueAt(row, col);
+            if (symbol == null) {
+                return;
+            }
+
+            JBLabel ballonText = new JBLabel(UIUtil.getBalloonInformationIcon());
+            JBPopupFactory factory = JBPopupFactory.getInstance();
+            ballonText.setText(symbol.desc);
+
+            BalloonBuilder builder = factory.createBalloonBuilder(ballonText);
+            balloon = builder.createBalloon();
+            balloon.showInCenterOf(jbTable);
+        }
+
+        @Override
         public void keyReleased(KeyEvent e) {
+            if (balloon != null && !balloon.isDisposed()) {
+                balloon.dispose();
+                balloon = null;
+            }
+
             if (e.isActionKey())
                 return;
 

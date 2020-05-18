@@ -14,6 +14,7 @@
     <action id="net.mlcoder.unicode.PopupAction" class="net.mlcoder.unicode.PopupAction" text="Math Symbols"
             description="Example">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
+      <keyboard-shortcut first-keystroke="ctrl U" keymap="$default"/>
     </action>
   </actions>
 </idea-plugin>

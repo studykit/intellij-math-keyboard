@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Resources;
 import org.apache.commons.lang3.Range;
-import org.apache.commons.lang3.StringUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.templatemode.TemplateMode;
@@ -116,13 +115,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        String alpha = "alpha";
-
-        String[] strings = StringUtils.splitByWholeSeparator("a", null);
-        System.out.println(strings.length);
-
-
-//        UniMath.init();
-//        new Main().run();
+        UniMath.init();
+        new Main().run();
     }
 }

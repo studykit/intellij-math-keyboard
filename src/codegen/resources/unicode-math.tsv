@@ -58,67 +58,50 @@
 00332	\mathunderbar	bottom accent wide	combining low line
 00338	\notaccent	accentoverlay	combining long solidus overlay
 0034D	\underleftrightarrow	bottom accent wide	underleftrightarrow accent
-00391	\mupAlpha	letter	capital alpha, greek
-00392	\mupBeta	letter	capital beta, greek
-00393	\mupGamma	letter	capital gamma, greek
-00394	\mupDelta	letter	capital delta, greek
-00395	\mupEpsilon	letter	capital epsilon, greek
-00396	\mupZeta	letter	capital zeta, greek
-00397	\mupEta	letter	capital eta, greek
-00398	\mupTheta	letter	capital theta, greek
-00399	\mupIota	letter	capital iota, greek
-0039A	\mupKappa	letter	capital kappa, greek
-0039B	\mupLambda	letter	capital lambda, greek
-0039C	\mupMu	letter	capital mu, greek
-0039D	\mupNu	letter	capital nu, greek
-0039E	\mupXi	letter	capital xi, greek
-0039F	\mupOmicron	letter	capital omicron, greek
-003A0	\mupPi	letter	capital pi, greek
-003A1	\mupRho	letter	capital rho, greek
-003A3	\mupSigma	letter	capital sigma, greek
-003A4	\mupTau	letter	capital tau, greek
-003A5	\mupUpsilon	letter	capital upsilon, greek
-003A6	\mupPhi	letter	capital phi, greek
-003A7	\mupChi	letter	capital chi, greek
-003A8	\mupPsi	letter	capital psi, greek
-003A9	\mupOmega	letter	capital omega, greek
-003B1	\mupalpha	letter	small alpha, greek
-003B2	\mupbeta	letter	small beta, greek
-003B3	\mupgamma	letter	small gamma, greek
-003B4	\mupdelta	letter	small delta, greek
-003B5	\mupvarepsilon	letter	rounded small varepsilon, greek
-003B6	\mupzeta	letter	small zeta, greek
-003B7	\mupeta	letter	small eta, greek
-003B8	\muptheta	letter	straight theta, small theta, greek
-003B9	\mupiota	letter	small iota, greek
-003BA	\mupkappa	letter	small kappa, greek
-003BB	\muplambda	letter	small lambda, greek
-003BC	\mupmu	letter	small mu, greek
-003BD	\mupnu	letter	small nu, greek
-003BE	\mupxi	letter	small xi, greek
-003BF	\mupomicron	letter	small omicron, greek
-003C0	\muppi	letter	small pi, greek
-003C1	\muprho	letter	small rho, greek
-003C2	\mupvarsigma	letter	terminal sigma, greek
-003C3	\mupsigma	letter	small sigma, greek
-003C4	\muptau	letter	small tau, greek
-003C5	\mupupsilon	letter	small upsilon, greek
-003C6	\mupvarphi	letter	curly or open small phi, greek
-003C7	\mupchi	letter	small chi, greek
-003C8	\muppsi	letter	small psi, greek
-003C9	\mupomega	letter	small omega, greek
-003D1	\mupvartheta	letter	/vartheta - curly or open theta
-003D5	\mupphi	letter	/straightphi - small phi, greek
-003D6	\mupvarpi	letter	rounded small pi (pomega), greek
+00393	\Gamma	letter	capital gamma, greek
+00394	\Delta	letter	capital delta, greek
+00398	\Theta	letter	capital theta, greek
+0039B	\Lambda	letter	capital lambda, greek
+0039E	\Xi	letter	capital xi, greek
+003A0	\Pi	letter	capital pi, greek
+003A3	\Sigma	letter	capital sigma, greek
+003A5	\Upsilon	letter	capital upsilon, greek
+003A6	\Phi	letter	capital phi, greek
+003A8	\Psi	letter	capital psi, greek
+003A9	\Omega	letter	capital omega, greek
+003B1	\alpha	letter	small alpha, greek
+003B2	\beta	letter	small beta, greek
+003B3	\gamma	letter	small gamma, greek
+003B4	\delta	letter	small delta, greek
+003B5	\varepsilon	letter	rounded small varepsilon, greek
+003B6	\zeta	letter	small zeta, greek
+003B7	\eta	letter	small eta, greek
+003B8	\theta	letter	straight theta, small theta, greek
+003B9	\iota	letter	small iota, greek
+003BA	\kappa	letter	small kappa, greek
+003BB	\lambda	letter	small lambda, greek
+003BC	\mu	letter	small mu, greek
+003BD	\nu	letter	small nu, greek
+003BE	\xi	letter	small xi, greek
+003C0	\pi	letter	small pi, greek
+003C1	\rho	letter	small rho, greek
+003C2	\varsigma	letter	terminal sigma, greek
+003C3	\sigma	letter	small sigma, greek
+003C4	\tau	letter	small tau, greek
+003C5	\upsilon	letter	small upsilon, greek
+003C6	\varphi	letter	curly or open small phi, greek
+003C7	\chi	letter	small chi, greek
+003C8	\psi	letter	small psi, greek
+003C9	\omega	letter	small omega, greek
+003D1	\vartheta	letter	/vartheta - curly or open theta
+003D5	\phi	letter	/straightphi - small phi, greek
+003D6	\varpi	letter	rounded small pi (pomega), greek
 003DC	\upDigamma	letter	capital digamma
 003DD	\updigamma	letter	old greek small letter digamma
-003F0	\mupvarkappa	letter	rounded small kappa, greek
-003F1	\mupvarrho	letter	rounded small rho, greek
-003F4	\mupvarTheta	letter	greek capital theta symbol
-003F5	\mupepsilon	letter	greek lunate varepsilon symbol
+003F1	\varrho	letter	rounded small rho, greek
+003F4	\varTheta	letter	greek capital theta symbol
+003F5	\epsilon	letter	greek lunate varepsilon symbol
 003F6	\upbackepsilon	ordinal	greek reversed lunate epsilon symbol
-02010	\mathhyphen	letter	hyphen
-02015	\horizbar	ordinal	horizontal bar
 02016	\Vert	fence	double vertical bar
 02017	\twolowline	ordinal	double low line (spacing)
 02020	\dagger	binary relation	dagger relation

@@ -14,7 +14,7 @@ public class UnicodeData {
     public final int codePoint;
     public final String hexCodePoint;
     public final String chars;
-    public final String title;
+    public final String desc;
     public final GeneralCategory generalCategory;
     public final CombiningClass combiningClass;
 
@@ -35,13 +35,13 @@ public class UnicodeData {
     }
 
     public UnicodeData(String hexCodePoint,
-                       String title,
+                       String desc,
                        GeneralCategory generalCategory,
                        CombiningClass combiningClass) {
         this.codePoint = Integer.parseInt(hexCodePoint, 16);
         this.hexCodePoint = hexCodePoint;
         this.chars = Character.toString(codePoint);
-        this.title = shorten(title);
+        this.desc = shorten(desc);
         this.generalCategory = generalCategory;
         this.combiningClass = combiningClass;
         this.latex = UniMath.codePointToLatex.get(codePoint);
@@ -52,7 +52,7 @@ public class UnicodeData {
         return "UnicodeData{" +
             "chars='" + chars + '\'' +
             ", codePoint=" + Integer.toHexString(codePoint) +
-            ", name='" + title + '\'' +
+            ", name='" + desc + '\'' +
             ", generalCategory=" + generalCategory +
             ", combiningClass=" + combiningClass +
             '}';
@@ -61,6 +61,20 @@ public class UnicodeData {
     static String[] replacements = {
         "small capital ",
         "capital ",
+        "capital small "
+    };
+
+    static String[] replaceDigit = {
+        "digit zero",
+        "digit one",
+        "digit two",
+        "digit three",
+        "digit four",
+        "digit five",
+        "digit six",
+        "digit seven",
+        "digit eight",
+        "digit nine",
     };
 
     public static String shorten(String title) {
@@ -68,7 +82,11 @@ public class UnicodeData {
 
         t = t.replace("letter ", "");
         t = t.replace("greek ", "");
-        t = t.replace("digit ", "");
+        t = t.replace("symbol ", "");
+
+        for (int i = 0; i < replaceDigit.length; i++) {
+            t = t.replace(replaceDigit[i], "" + i);
+        }
 
         if (t.contains("superscript ")) {
             t = "^" + t.replace("superscript ", "");

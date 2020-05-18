@@ -1,5 +1,6 @@
 package net.mlcoder.unicode;
 
+import com.intellij.ide.plugins.newui.VerticalLayout;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -14,13 +15,20 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.components.FixedColumnsModel;
+import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.table.JBTable;
+import com.intellij.util.ui.JBFont;
+import com.intellij.util.ui.JBUI;
+import com.intellij.util.ui.UIUtil;
 import net.mlcoder.unicode.category.MathSymbol;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -30,6 +38,16 @@ public class PopupAction extends AnAction {
     private static final Logger logger = Logger.getInstance(PopupAction.class);
     private static final FixedColumnsModel wholeTableModel =
         new FixedColumnsModel(new CollectionListModel<>(MathSymbol.symbols, true), 5);
+
+    private static JBTable createMathTable() {
+        JBTable jbTable = new JBTable(wholeTableModel);
+        jbTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        jbTable.setTableHeader(null);
+        jbTable.setCellSelectionEnabled(true);
+        jbTable.setDefaultRenderer(Object.class, new MathRichTableCellRender());
+
+        return jbTable;
+    }
 
     @Override
     @SuppressWarnings("unchecked")
@@ -44,13 +62,8 @@ public class PopupAction extends AnAction {
             return;
         }
 
-        JBTable jbTable = new JBTable(wholeTableModel);
-        jbTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        jbTable.setTableHeader(null);
-        jbTable.setCellSelectionEnabled(true);
-        jbTable.setDefaultRenderer(Object.class, new MathTableCellRender());
-
         JBPopupFactory factory = JBPopupFactory.getInstance();
+        JBTable jbTable = createMathTable();
         PopupChooserBuilder<MathSymbol> builder = factory.createPopupChooserBuilder(jbTable);
         builder
             .setAutoselectOnMouseMove(true)
@@ -83,70 +96,9 @@ public class PopupAction extends AnAction {
             });
 
         JBPopup popup = builder.createPopup();
-        jbTable.addKeyListener(new KeyAdapter() {
-            private String text = "";
-
-            private void refresh() {
-                popup.setAdText(text.trim(), SwingConstants.LEFT);
-
-                if (StringUtils.isEmpty(text)) {
-                    jbTable.setModel(wholeTableModel);
-                    return;
-                }
-
-                String[] searchWords = StringUtils.splitByWholeSeparator(text, null);
-
-                List<MathSymbol> filteredSymbols = MathSymbol.symbols.stream().filter(symbol -> {
-                    if (text.startsWith("\\")) {
-                        return StringUtils.startsWith(symbol.latex, text);
-                    }
-
-                    String[] targets = StringUtils.splitByWholeSeparator(symbol.title, null);
-
-                    if (searchWords.length > targets.length)
-                        return false;
-
-                    for (int i = 0; i < searchWords.length; i++) {
-                        if (StringUtils.startsWith(targets[i], searchWords[i]))
-                            continue;
-
-                        return false;
-                    }
-
-                    return true;
-                }).collect(Collectors.toList());
-                jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
-                jbTable.setRowSelectionInterval(0, 0);
-                jbTable.setColumnSelectionInterval(0, 0);
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                if (e.isActionKey())
-                    return;
-
-                if (e.isConsumed())
-                    return;
-
-                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-                    if (StringUtils.isEmpty(text)) {
-                        return;
-                    }
-                    e.consume();
-                    text = text.substring(0, text.length() - 1);
-                    refresh();
-                    return;
-                }
-
-                char keyChar = e.getKeyChar();
-                if (!StringUtils.isAsciiPrintable("" + keyChar)) {
-                    return;
-                }
-                e.consume();
-                text = text + keyChar;
-                refresh();
-            }
-        });
+        popup.setMinimumSize(new Dimension(400, 500));
+        popup.setRequestFocus(true);
+        jbTable.addKeyListener(new MathTableKeyListener(jbTable, popup));
 
         popup.showInBestPositionFor(editor);
     }
@@ -167,11 +119,131 @@ public class PopupAction extends AnAction {
             MathSymbol letter = (MathSymbol) value;
             setText(letter.chars);
 
-            String tooltip = "[" + letter.title + "]";
+            String tooltip = "[" + letter.desc + "]";
             if (letter.latex != null) {
                 tooltip = "(" + letter.latex + ") " + tooltip;
             }
             setToolTipText(tooltip);
+        }
+    }
+
+    private static class MathTableKeyListener extends KeyAdapter {
+        private final JBTable jbTable;
+        private final JBPopup popup;
+        private String text = "";
+
+        public MathTableKeyListener(JBTable table, JBPopup popup) {
+            this.jbTable = table;
+            this.popup = popup;
+        }
+
+        private void refresh() {
+            popup.setAdText(text.trim(), SwingConstants.LEFT);
+
+            if (StringUtils.isEmpty(text)) {
+                jbTable.setModel(wholeTableModel);
+                return;
+            }
+
+            String[] searchWords = StringUtils.splitByWholeSeparator(text, null);
+
+            List<MathSymbol> filteredSymbols = MathSymbol.symbols.stream().filter(symbol -> {
+                if (text.startsWith("\\")) {
+                    return StringUtils.startsWith(symbol.latex, text);
+                }
+
+                String[] targets = StringUtils.splitByWholeSeparator(symbol.desc, null);
+
+                if (searchWords.length > targets.length)
+                    return false;
+
+                for (int i = 0; i < searchWords.length; i++) {
+                    if (StringUtils.startsWith(targets[i], searchWords[i]))
+                        continue;
+
+                    return false;
+                }
+
+                return true;
+            }).collect(Collectors.toList());
+            jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
+            jbTable.setRowSelectionInterval(0, 0);
+            jbTable.setColumnSelectionInterval(0, 0);
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if (e.isActionKey())
+                return;
+
+            if (e.isConsumed())
+                return;
+
+            if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                if (StringUtils.isEmpty(text)) {
+                    return;
+                }
+                e.consume();
+                text = text.substring(0, text.length() - 1);
+                refresh();
+                return;
+            }
+
+            char keyChar = e.getKeyChar();
+            if (!StringUtils.isAsciiPrintable("" + keyChar)) {
+                return;
+            }
+            e.consume();
+            text = text + keyChar;
+            refresh();
+        }
+    }
+
+    @SuppressWarnings("rawtypes")
+    private static class MathRichTableCellRender implements TableCellRenderer {
+        private final JBFont symbolFont = JBFont.label().biggerOn(3f);
+        private final JBFont latexFont = JBUI.Fonts.create(Font.MONOSPACED, JBUI.Fonts.smallFont().getSize()).asItalic();
+
+        private final JBPanel emptyContainer = new JBPanel()
+            .withBackground(UIUtil.getPanelBackground());
+
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            if (!(value instanceof MathSymbol)) {
+                return emptyContainer;
+            }
+
+            MathSymbol symbol = (MathSymbol) value;
+
+            if (symbol.latex == null) {
+                JBLabel symbolLabel = new JBLabel(symbol.chars, SwingConstants.CENTER)
+                    .withFont(symbolFont).andOpaque();
+
+                symbolLabel.setBackground(UIUtil.getTableBackground(isSelected, hasFocus));
+                symbolLabel.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
+                symbolLabel.withBorder(isSelected ? UIUtil.getTableFocusCellHighlightBorder() : symbolLabel.getBorder());
+                symbolLabel.setToolTipText(symbol.desc);
+                return symbolLabel;
+            }
+
+            JBPanel container = new JBPanel(new VerticalLayout(10))
+                .withBackground(UIUtil.getTableBackground(isSelected, hasFocus));
+
+            container.setToolTipText(symbol.desc);
+            if (isSelected) {
+                container.withBorder(UIUtil.getTableFocusCellHighlightBorder());
+            }
+
+            JBLabel symbolLabel = new JBLabel(symbol.chars, SwingConstants.CENTER).withFont(symbolFont);
+            symbolLabel.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
+
+            JBLabel latex = new JBLabel(symbol.latex, SwingConstants.CENTER).withFont(latexFont);
+            latex.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
+
+            container.add(symbolLabel, VerticalLayout.FILL_HORIZONTAL);
+            container.add(latex, VerticalLayout.FILL_HORIZONTAL);
+            return container;
         }
     }
 }

@@ -218,6 +218,7 @@ public class PopupAction extends AnAction {
                 BalloonBuilder builder = factory.createBalloonBuilder(ballonText);
                 balloon = builder.createBalloon();
                 balloon.showInCenterOf(jbTable);
+                e.consume();
                 return;
             }
 
@@ -229,7 +230,30 @@ public class PopupAction extends AnAction {
                     return;
                 }
                 text = text.substring(0, text.length() - 1);
+                e.consume();
                 refresh();
+                return;
+            }
+
+            if (e.isControlDown()) {
+                if (jbTable.getRowCount() <= 0)
+                    return;
+
+                if (jbTable.getColumnCount() <= 0)
+                    return;
+
+                int column;
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_A: column = 0; break;
+                    case KeyEvent.VK_E: column = jbTable.getColumnCount() - 1; break;
+                    default: return;
+                }
+
+                int row = jbTable.getSelectedRow();
+
+                jbTable.setRowSelectionInterval(Math.max(0, row), Math.max(0, row));
+                jbTable.setColumnSelectionInterval(column, column);
+                e.consume();
                 return;
             }
 
@@ -237,6 +261,8 @@ public class PopupAction extends AnAction {
             if (!StringUtils.isAsciiPrintable("" + keyChar)) {
                 return;
             }
+
+            e.consume();
             text = text + keyChar;
             refresh();
         }

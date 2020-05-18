@@ -42,3 +42,11 @@ patchPluginXml {
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
 }
+
+task createSymbols(type: JavaExec) {
+    group = "script"
+    classpath = sourceSets.codegen.runtimeClasspath
+    workingDir("${project.rootDir}/src/main/java/net/mlcoder/unicode/category")
+
+    main = "net.mlcoder.unicode.Main"
+}

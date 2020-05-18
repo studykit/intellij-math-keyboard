@@ -31,6 +31,7 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -140,43 +141,56 @@ public class PopupAction extends AnAction {
         private void refresh() {
             popup.setAdText(text.trim(), SwingConstants.LEFT);
 
-            if (StringUtils.isEmpty(text)) {
+            if (StringUtils.isEmpty(text) ||(text.length() == 1 && (text.charAt(0) == '/' || text.charAt(0) == '\\'))) {
+                if (jbTable.getModel() == wholeTableModel)
+                    return;
+
                 jbTable.setModel(wholeTableModel);
+                jbTable.setRowSelectionInterval(0, 0);
+                jbTable.setColumnSelectionInterval(0, 0);
                 return;
             }
 
-            String[] searchWords = StringUtils.splitByWholeSeparator(text, null);
+            final boolean latexSearch = text.startsWith("\\");
+            final boolean seqPrefixSearch = text.startsWith("/");
+            List<String> searchWords = Arrays.asList(StringUtils.split(text, " /\\"));
+
+            String noCommandPrefix = (latexSearch || seqPrefixSearch) ? text.substring(1) : text;
 
             List<MathSymbol> filteredSymbols = MathSymbol.symbols.stream().filter(symbol -> {
-                if (text.startsWith("\\")) {
-                    return StringUtils.startsWith(symbol.latex, text);
+                if (latexSearch) {
+                    return StringUtils.contains(symbol.latex, noCommandPrefix);
                 }
 
-                String[] targets = StringUtils.splitByWholeSeparator(symbol.desc, null);
+                if (seqPrefixSearch) {
+                    String[] targets = StringUtils.splitByWholeSeparator(symbol.desc, null);
 
-                if (searchWords.length > targets.length)
-                    return false;
+                    if (searchWords.size() > targets.length)
+                        return false;
 
-                for (int i = 0; i < searchWords.length; i++) {
-                    if (StringUtils.startsWith(targets[i], searchWords[i]))
-                        continue;
+                    for (int i = 0; i < searchWords.size(); i++) {
+                        if (StringUtils.startsWith(targets[i], searchWords.get(i)))
+                            continue;
 
-                    return false;
+                        return false;
+                    }
+
+                    return true;
                 }
 
-                return true;
+                List<String> targets = Arrays.asList(StringUtils.splitByWholeSeparator(symbol.desc + (symbol.latex != null ? " " + symbol.latex : ""), null));
+                return searchWords.stream().allMatch(k -> targets.stream().anyMatch(t -> t.contains(k)));
             }).collect(Collectors.toList());
             jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
-            jbTable.setRowSelectionInterval(0, 0);
-            jbTable.setColumnSelectionInterval(0, 0);
+            if (filteredSymbols.size() > 0) {
+                jbTable.setRowSelectionInterval(0, 0);
+                jbTable.setColumnSelectionInterval(0, 0);
+            }
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             if (e.isActionKey())
-                return;
-
-            if (e.isConsumed())
                 return;
 
             if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {

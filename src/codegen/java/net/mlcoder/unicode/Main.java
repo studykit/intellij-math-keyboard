@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.Resources;
 import org.apache.commons.lang3.Range;
+import org.apache.commons.lang3.StringUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.templatemode.TemplateMode;
@@ -115,7 +116,10 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        UniMath.init();
-        new Main().run();
+//        UniMath.init();
+//        new Main().run();
+        String text ="/command two";
+        String[] searchWords = StringUtils.split(text, " /\\");
+        System.out.println(StringUtils.join(searchWords, ","));
     }
 }

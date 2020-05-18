@@ -14,7 +14,9 @@
     <action id="net.mlcoder.unicode.PopupAction" class="net.mlcoder.unicode.PopupAction" text="Math Symbols"
             description="Example">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
-      <keyboard-shortcut first-keystroke="ctrl U" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="control U" keymap="$default"/>
+      <keyboard-shortcut keymap="Mac OS X" first-keystroke="control U" remove="true"/>
+      <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="control U" replace-all="true"/>
     </action>
   </actions>
 </idea-plugin>

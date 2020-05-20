@@ -1,0 +1,526 @@
+<templateSet group="Latex">
+  <template name="\Vmatrix" value="\begin{Vmatrix}&#10;  $EXPR$&#10;\end{Vmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="Vmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\Bmatrix" value="\begin{Bmatrix}&#10;  $EXPR$&#10;\end{Bmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="Bmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\align" value="\begin{align}&#10;  $EXPR$&#10;\end{align}&#10;&#10;$SELECTION$&#10;"
+            description="align environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\align*" value="\begin{align*}&#10;  $EXPR$&#10;\end{align*}&#10;&#10;$SELECTION$&#10;"
+            description="align* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\aligned" value="\begin{aligned}&#10;  $EXPR$&#10;\end{aligned}&#10;&#10;$SELECTION$&#10;"
+            description="aligned environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\alignedat" value="\begin{alignedat}&#10;  $EXPR$&#10;\end{alignedat}&#10;&#10;$SELECTION$&#10;"
+            description="alignedat environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\array" value="\begin{array}&#10;  $EXPR$&#10;\end{array}&#10;&#10;$SELECTION$&#10;"
+            description="array environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\bmatrix" value="\begin{bmatrix}&#10;  $EXPR$&#10;\end{bmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="bmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\cases" value="\begin{cases}&#10;  $EXPR$&#10;\end{cases}&#10;&#10;$SELECTION$&#10;"
+            description="cases environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\center" value="\begin{center}&#10;  $EXPR$&#10;\end{center}&#10;&#10;$SELECTION$&#10;"
+            description="center environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\corollary" value="\begin{corollary}&#10;  $EXPR$&#10;\end{corollary}&#10;&#10;$SELECTION$&#10;"
+            description="corollary environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\definition" value="\begin{definition}&#10;  $EXPR$&#10;\end{definition}&#10;&#10;$SELECTION$&#10;"
+            description="definition environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\description" value="\begin{description}&#10;  $EXPR$&#10;\end{description}&#10;&#10;$SELECTION$&#10;"
+            description="description environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\displaymath" value="\begin{displaymath}&#10;  $EXPR$&#10;\end{displaymath}&#10;&#10;$SELECTION$&#10;"
+            description="displaymath environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\document" value="\begin{document}&#10;  $EXPR$&#10;\end{document}&#10;&#10;$SELECTION$&#10;"
+            description="document environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\enumerate" value="\begin{enumerate}&#10;  $EXPR$&#10;\end{enumerate}&#10;&#10;$SELECTION$&#10;"
+            description="enumerate environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\eqnarray" value="\begin{eqnarray}&#10;  $EXPR$&#10;\end{eqnarray}&#10;&#10;$SELECTION$&#10;"
+            description="eqnarray environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\equation" value="\begin{equation}&#10;  $EXPR$&#10;\end{equation}&#10;&#10;$SELECTION$&#10;"
+            description="equation environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\equation*" value="\begin{equation*}&#10;  $EXPR$&#10;\end{equation*}&#10;&#10;$SELECTION$&#10;"
+            description="equation* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\example" value="\begin{example}&#10;  $EXPR$&#10;\end{example}&#10;&#10;$SELECTION$&#10;"
+            description="example environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\flalign" value="\begin{flalign}&#10;  $EXPR$&#10;\end{flalign}&#10;&#10;$SELECTION$&#10;"
+            description="flalign environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\flalign*" value="\begin{flalign*}&#10;  $EXPR$&#10;\end{flalign*}&#10;&#10;$SELECTION$&#10;"
+            description="flalign* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\flushleft" value="\begin{flushleft}&#10;  $EXPR$&#10;\end{flushleft}&#10;&#10;$SELECTION$&#10;"
+            description="flushleft environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\flushright" value="\begin{flushright}&#10;  $EXPR$&#10;\end{flushright}&#10;&#10;$SELECTION$&#10;"
+            description="flushright environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\gather" value="\begin{gather}&#10;  $EXPR$&#10;\end{gather}&#10;&#10;$SELECTION$&#10;"
+            description="gather environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\gather*" value="\begin{gather*}&#10;  $EXPR$&#10;\end{gather*}&#10;&#10;$SELECTION$&#10;"
+            description="gather* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\gathered" value="\begin{gathered}&#10;  $EXPR$&#10;\end{gathered}&#10;&#10;$SELECTION$&#10;"
+            description="gathered environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\itemize" value="\begin{itemize}&#10;  $EXPR$&#10;\end{itemize}&#10;&#10;$SELECTION$&#10;"
+            description="itemize environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\lemma" value="\begin{lemma}&#10;  $EXPR$&#10;\end{lemma}&#10;&#10;$SELECTION$&#10;"
+            description="lemma environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\math" value="\begin{math}&#10;  $EXPR$&#10;\end{math}&#10;&#10;$SELECTION$&#10;"
+            description="math environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\matrix" value="\begin{matrix}&#10;  $EXPR$&#10;\end{matrix}&#10;&#10;$SELECTION$&#10;"
+            description="matrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\minipage" value="\begin{minipage}&#10;  $EXPR$&#10;\end{minipage}&#10;&#10;$SELECTION$&#10;"
+            description="minipage environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\multline" value="\begin{multline}&#10;  $EXPR$&#10;\end{multline}&#10;&#10;$SELECTION$&#10;"
+            description="multline environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\multline*" value="\begin{multline*}&#10;  $EXPR$&#10;\end{multline*}&#10;&#10;$SELECTION$&#10;"
+            description="multline* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\picture" value="\begin{picture}&#10;  $EXPR$&#10;\end{picture}&#10;&#10;$SELECTION$&#10;"
+            description="picture environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\pmatrix" value="\begin{pmatrix}&#10;  $EXPR$&#10;\end{pmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="pmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\proof" value="\begin{proof}&#10;  $EXPR$&#10;\end{proof}&#10;&#10;$SELECTION$&#10;"
+            description="proof environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\quotation" value="\begin{quotation}&#10;  $EXPR$&#10;\end{quotation}&#10;&#10;$SELECTION$&#10;"
+            description="quotation environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\quote" value="\begin{quote}&#10;  $EXPR$&#10;\end{quote}&#10;&#10;$SELECTION$&#10;"
+            description="quote environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\smallmatrix" value="\begin{smallmatrix}&#10;  $EXPR$&#10;\end{smallmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="smallmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\snippet" value="\begin{snippet}&#10;  $EXPR$&#10;\end{snippet}&#10;&#10;$SELECTION$&#10;"
+            description="snippet environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\snippet" value="\begin{snippet}&#10;  $EXPR$&#10;\end{snippet}&#10;&#10;$SELECTION$&#10;"
+            description="snippet environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\snippet" value="\begin{snippet}&#10;  $EXPR$&#10;\end{snippet}&#10;&#10;$SELECTION$&#10;"
+            description="snippet environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\split" value="\begin{split}&#10;  $EXPR$&#10;\end{split}&#10;&#10;$SELECTION$&#10;"
+            description="split environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\subarray" value="\begin{subarray}&#10;  $EXPR$&#10;\end{subarray}&#10;&#10;$SELECTION$&#10;"
+            description="subarray environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\subequations"
+            value="\begin{subequations}&#10;  $EXPR$&#10;\end{subequations}&#10;&#10;$SELECTION$&#10;"
+            description="subequations environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\subequations*"
+            value="\begin{subequations*}&#10;  $EXPR$&#10;\end{subequations*}&#10;&#10;$SELECTION$&#10;"
+            description="subequations* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\tabbing" value="\begin{tabbing}&#10;  $EXPR$&#10;\end{tabbing}&#10;&#10;$SELECTION$&#10;"
+            description="tabbing environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\table" value="\begin{table}&#10;  $EXPR$&#10;\end{table}&#10;&#10;$SELECTION$&#10;"
+            description="table environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\tabular" value="\begin{tabular}&#10;  $EXPR$&#10;\end{tabular}&#10;&#10;$SELECTION$&#10;"
+            description="tabular environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\thebibliography"
+            value="\begin{thebibliography}&#10;  $EXPR$&#10;\end{thebibliography}&#10;&#10;$SELECTION$&#10;"
+            description="thebibliography environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\theorem" value="\begin{theorem}&#10;  $EXPR$&#10;\end{theorem}&#10;&#10;$SELECTION$&#10;"
+            description="theorem environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\titlepage" value="\begin{titlepage}&#10;  $EXPR$&#10;\end{titlepage}&#10;&#10;$SELECTION$&#10;"
+            description="titlepage environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\verbatim" value="\begin{verbatim}&#10;  $EXPR$&#10;\end{verbatim}&#10;&#10;$SELECTION$&#10;"
+            description="verbatim environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\verse" value="\begin{verse}&#10;  $EXPR$&#10;\end{verse}&#10;&#10;$SELECTION$&#10;"
+            description="verse environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\vmatrix" value="\begin{vmatrix}&#10;  $EXPR$&#10;\end{vmatrix}&#10;&#10;$SELECTION$&#10;"
+            description="vmatrix environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\xalignat" value="\begin{xalignat}&#10;  $EXPR$&#10;\end{xalignat}&#10;&#10;$SELECTION$&#10;"
+            description="xalignat environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+
+  <template name="\xalignat*" value="\begin{xalignat*}&#10;  $EXPR$&#10;\end{xalignat*}&#10;&#10;$SELECTION$&#10;"
+            description="xalignat* environemnt" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
+    <context>
+      <option name="AsciiDoc" value="true"/>
+      <option name="LATEX" value="true"/>
+    </context>
+  </template>
+</templateSet>

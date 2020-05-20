@@ -1,4 +1,6 @@
-package net.mlcoder.unicode;
+package net.mlcoder.unimath;
+
+import lombok.Getter;
 
 import javax.annotation.Nullable;
 
@@ -31,6 +33,7 @@ public enum CombiningClass {
     IOTA_SUBSCRIPT(240),
     ;
 
+    @Getter
     public final int value;
 
     CombiningClass(int value) {
@@ -43,7 +46,7 @@ public enum CombiningClass {
             return CCC_10;
         }
 
-        for (CombiningClass cc : values()) {
+        for (CombiningClass cc : CombiningClass.values()) {
             if (cc.value == value)
                 return cc;
         }

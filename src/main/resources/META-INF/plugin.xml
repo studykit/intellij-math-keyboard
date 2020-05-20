@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>net.mlcoder.unicode.keyboard</id>
+  <id>net.mlcoder.unimath.keyboard</id>
   <name>Unicode Keyboard</name>
   <vendor email="myungo@gmail.com" url="https://mlcoder.net">mlcoder.net</vendor>
 
@@ -11,7 +11,7 @@
 
   <!-- Add your actions here -->
   <actions>
-    <action id="net.mlcoder.unicode.PopupAction" class="net.mlcoder.unicode.PopupAction" text="Math Symbols"
+    <action id="net.mlcoder.unimath.PopupAction" class="net.mlcoder.unimath.PopupAction" text="Math Symbols"
             description="Example">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
       <keyboard-shortcut first-keystroke="control U" keymap="$default"/>

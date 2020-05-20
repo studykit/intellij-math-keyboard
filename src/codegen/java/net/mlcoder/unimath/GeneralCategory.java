@@ -1,6 +1,7 @@
-package net.mlcoder.unicode;
+package net.mlcoder.unimath;
 
 import com.google.common.collect.Maps;
+import lombok.Getter;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
@@ -62,7 +63,7 @@ public enum GeneralCategory {
 
     private static final Map<String, GeneralCategory> container = Maps.newHashMap();
     static {
-        for (GeneralCategory gc : values()) {
+        for (GeneralCategory gc : GeneralCategory.values()) {
             container.put(gc.abbr, gc);
         }
     }
@@ -72,7 +73,7 @@ public enum GeneralCategory {
         return container.get(abbr);
     }
 
-    @Nonnull
+    @Nonnull @Getter
     public final String abbr;
 
     GeneralCategory(String abbr) {

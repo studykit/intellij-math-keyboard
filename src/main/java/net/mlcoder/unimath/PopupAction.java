@@ -1,4 +1,4 @@
-package net.mlcoder.unicode;
+package net.mlcoder.unimath;
 
 import com.intellij.ide.plugins.newui.VerticalLayout;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -19,7 +19,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.util.ui.JBFont;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
-import net.mlcoder.unicode.category.*;
+import net.mlcoder.unimath.category.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 

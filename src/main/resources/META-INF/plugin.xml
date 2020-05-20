@@ -3,11 +3,16 @@
   <name>Unicode Keyboard</name>
   <vendor email="myungo@gmail.com" url="https://mlcoder.net">mlcoder.net</vendor>
 
-  <description><![CDATA[Unicode Keyboard for Math Symbols. For math syumbols]]></description>
+  <description><![CDATA[Provide Unicode Keyboard, Latex Live Templates, and Emoji]]></description>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
   <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <defaultLiveTemplates file="/templates/latex/Latex.xml"/>
+    <liveTemplateContext implementation="net.mlcoder.unimath.UnimathContextType"/>
+  </extensions>
 
   <!-- Add your actions here -->
   <actions>

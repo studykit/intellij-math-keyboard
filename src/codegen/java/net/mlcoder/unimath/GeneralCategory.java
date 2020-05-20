@@ -2,11 +2,14 @@ package net.mlcoder.unimath;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.Objects;
 
+@Getter
+@RequiredArgsConstructor
 public enum GeneralCategory {
     LETTER_UPPERCASE("Lu"),
     LETTER_LOWERCASE("Ll"),
@@ -68,17 +71,10 @@ public enum GeneralCategory {
         }
     }
 
-    @Nonnull
-    public static GeneralCategory of(String abbr) {
+    @Nonnull public static GeneralCategory of(String abbr) {
         return container.get(abbr);
     }
-
-    @Nonnull @Getter
-    public final String abbr;
-
-    GeneralCategory(String abbr) {
-        this.abbr = Objects.requireNonNull(abbr);
-    }
+    @Nonnull public final String abbr;
 
     public boolean isKindOf(String abbr) {
         return this.abbr.startsWith(abbr);

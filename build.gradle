@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.mlcoder'
-version '0.0.1'
+version '0.0.2'
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
@@ -48,7 +48,15 @@ patchPluginXml {
       <em>most HTML tags may be used</em>"""
 }
 
-task createSymbols(type: JavaExec) {
+task generateLatexTemplate(type: JavaExec) {
+    group = "script"
+    classpath = sourceSets.codegen.runtimeClasspath
+    workingDir("${project.rootDir}/src/main/resources/templates/latex")
+
+    main = "net.mlcoder.codegen.LatexTemplateGenerator"
+}
+
+task generateSymbols(type: JavaExec) {
     group = "script"
     classpath = sourceSets.codegen.runtimeClasspath
     workingDir("${project.rootDir}/src/main/java/net/mlcoder/unimath/category")

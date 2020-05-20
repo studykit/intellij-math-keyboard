@@ -1,9 +1,11 @@
 package net.mlcoder.unimath;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import javax.annotation.Nullable;
 
+@RequiredArgsConstructor
 public enum CombiningClass {
     NOT_REORDERED(0),
     OVERLAY(1),
@@ -35,10 +37,6 @@ public enum CombiningClass {
 
     @Getter
     public final int value;
-
-    CombiningClass(int value) {
-        this.value = value;
-    }
 
     @Nullable
     public static CombiningClass of(int value) {

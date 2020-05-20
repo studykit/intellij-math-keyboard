@@ -2,21 +2,15 @@ package net.mlcoder.unimath;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-import javax.annotation.Nullable;
 import java.util.Map;
 
+@Getter
+@RequiredArgsConstructor
 public class Symbol {
-    @Getter
     public final Unicode unicode;
-
-    @Nullable @Getter
     public final Tex tex;
-
-    private Symbol(Unicode unicode, @Nullable Tex tex) {
-        this.unicode = unicode;
-        this.tex = tex;
-    }
 
     public static Map<Integer, Symbol> load() throws Exception {
         Map<Integer, Symbol> result = Maps.newTreeMap();

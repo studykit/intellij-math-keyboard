@@ -15,18 +15,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @ToString
+@Getter
 public class Unicode {
     public static int CODE_POINT = 0;
     public static int DESC = 1;
     public static int GENERAL_CATEGORY = 2;
     public static int CANONICAL_COMBINING_CLASS = 3;
 
-    @Getter public final int codePoint;
-    @Getter public final String desc;
-    @Getter public final String hexCodePoint;
-    @Getter public final String chars;
-    @Getter public final GeneralCategory generalCategory;
-    @Getter public final CombiningClass combiningClass;
+    public final int codePoint;
+    public final String desc;
+    public final String hexCodePoint;
+    public final String chars;
+    public final GeneralCategory generalCategory;
+    public final CombiningClass combiningClass;
 
     private Unicode(String hexCodePoint,
                     String desc,

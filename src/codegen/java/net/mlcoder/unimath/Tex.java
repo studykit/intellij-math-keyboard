@@ -15,23 +15,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @ToString
+@Getter
 public class Tex {
     @Getter
-    public final int codePoint;
+    public int codePoint;
 
-    @Nullable @Getter
+    public String chars;
+
+    @Nullable
     public String latex;
 
-    @Nullable @Getter
+    @Nullable
     public String ulatex;
 
     @Nullable
     public UniMathCategory category;
 
-    private Tex(int codePoint, @Nullable String latex, @Nullable String ulatex, UniMathCategory category) {
+    public Tex(int codePoint, @Nullable String latex, @Nullable String ulatex, @Nullable UniMathCategory category) {
+        this.codePoint = codePoint;
+        this.chars = Character.toString(codePoint);
         this.latex = latex;
         this.ulatex = ulatex;
-        this.codePoint = codePoint;
         this.category = category;
     }
 

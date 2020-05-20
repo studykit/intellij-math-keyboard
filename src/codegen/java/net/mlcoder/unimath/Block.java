@@ -1,15 +1,12 @@
 package net.mlcoder.unimath;
 
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.Range;
 
+@RequiredArgsConstructor
 public class Block {
     public final Range<Integer> range;
     public final String desc;
-
-    public Block(Range<Integer> range, String desc) {
-        this.range = range;
-        this.desc = desc;
-    }
 
     public boolean has(int codePoint) {
         return range.contains(codePoint);

@@ -32,6 +32,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PopupAction extends AnAction {
@@ -155,31 +156,33 @@ public class PopupAction extends AnAction {
 
             List<UniCode> filteredSymbols = allUniCodes.stream().filter(symbol -> {
                 if (latexSearch) {
-                    return StringUtils.startsWith(symbol.latex(), keywords);
+                    return StringUtils.startsWith(symbol.latex(), keywords) || StringUtils.startsWith(symbol.ulatex(), keywords);
                 }
 
                 if (exactMatch) {
-                    return StringUtils.equals(symbol.latex(), keywords) || StringUtils.equals(symbol.desc(), keywords);
+                    return StringUtils.equals(symbol.latex(), keywords) || StringUtils.equals(symbol.ulatex(), keywords) || StringUtils.equals(symbol.desc(), keywords);
                 }
 
                 if (seqPrefixSearch) {
-                    String[] targets = StringUtils.splitByWholeSeparator(symbol.desc(), null);
-
-                    if (searchWords.size() > targets.length)
+                    if (searchWords.size() > symbol.tokenized().length)
                         return false;
 
-                    for (int i = 0; i < searchWords.size(); i++) {
-                        if (StringUtils.startsWith(targets[i], searchWords.get(i)))
-                            continue;
+                    String[] tokenized = symbol.tokenized();
 
-                        return false;
+                    int j = 0;
+                    for (String keyword : searchWords) {
+                        for  (;j < tokenized.length; j++) {
+                            if (StringUtils.startsWith(tokenized[j], keyword))
+                                break;
+                        }
+
+                        if (j >= tokenized.length)
+                            return false;
                     }
-
                     return true;
                 }
 
-                List<String> targets = Arrays.asList(StringUtils.splitByWholeSeparator(symbol.desc() + (symbol.latex() != null ? " " + symbol.latex() : ""), null));
-                return searchWords.stream().allMatch(k -> targets.stream().anyMatch(t -> t.contains(k)));
+                return searchWords.stream().allMatch(k -> Arrays.stream(symbol.tokenized()).anyMatch(t -> t.contains(k)));
             }).collect(Collectors.toList());
 
             jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
@@ -213,7 +216,7 @@ public class PopupAction extends AnAction {
 
                 JBLabel ballonText = new JBLabel(UIUtil.getBalloonInformationIcon());
                 JBPopupFactory factory = JBPopupFactory.getInstance();
-                ballonText.setText(symbol.desc());
+                ballonText.setText(toolTipText(symbol));
 
                 BalloonBuilder builder = factory.createBalloonBuilder(ballonText);
                 balloon = builder.createBalloon();
@@ -293,21 +296,21 @@ public class PopupAction extends AnAction {
 
             UniCode symbol = (UniCode) value;
 
-            if (symbol.latex() == null) {
+            if (symbol.latex() == null && symbol.ulatex() == null) {
                 JBLabel symbolLabel = new JBLabel(symbol.chars(), SwingConstants.CENTER)
                     .withFont(symbolFont).andOpaque();
 
                 symbolLabel.setBackground(UIUtil.getTableBackground(isSelected, hasFocus));
                 symbolLabel.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
                 symbolLabel.withBorder(isSelected ? UIUtil.getTableFocusCellHighlightBorder() : symbolLabel.getBorder());
-                symbolLabel.setToolTipText(symbol.desc());
+                symbolLabel.setToolTipText(toolTipText(symbol));
                 return symbolLabel;
             }
 
             JBPanel container = new JBPanel(new VerticalLayout(10))
                 .withBackground(UIUtil.getTableBackground(isSelected, hasFocus));
 
-            container.setToolTipText(symbol.desc());
+            container.setToolTipText(toolTipText(symbol));
             if (isSelected) {
                 container.withBorder(UIUtil.getTableFocusCellHighlightBorder());
             }
@@ -315,7 +318,7 @@ public class PopupAction extends AnAction {
             JBLabel symbolLabel = new JBLabel(symbol.chars(), SwingConstants.CENTER).withFont(symbolFont);
             symbolLabel.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
 
-            JBLabel latex = new JBLabel(symbol.latex(), SwingConstants.CENTER).withFont(latexFont);
+            JBLabel latex = new JBLabel(Objects.requireNonNull(symbol.latex() != null ? symbol.latex() : symbol.ulatex()), SwingConstants.CENTER).withFont(latexFont);
             latex.setForeground(UIUtil.getTableForeground(isSelected, hasFocus));
 
             container.add(symbolLabel, VerticalLayout.FILL_HORIZONTAL);
@@ -323,4 +326,9 @@ public class PopupAction extends AnAction {
             return container;
         }
     }
+
+    private static String toolTipText(UniCode uniCode) {
+        return uniCode.ulatex() == null ? uniCode.desc() : uniCode.desc() + " [" + uniCode.ulatex() + "]";
+    }
+
 }

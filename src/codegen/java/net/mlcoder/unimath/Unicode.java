@@ -8,6 +8,7 @@ import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -115,8 +116,10 @@ public class Unicode {
     }
 
     public static void main(String[] args) throws Exception{
-        Map<Integer, Unicode> datas = loadUnicodeData();
-        datas.values()
-            .forEach(System.out::println);
+        String text = "";
+
+        String[] result = Arrays.stream("text".split("([ /])"))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
+
     }
 }

@@ -12,4 +12,5 @@ public interface UniCode {
     // Unicde-Math Latex
     @Nullable String ulatex();
     @Nullable String mathCategory();
+    String[] tokenized();
 }

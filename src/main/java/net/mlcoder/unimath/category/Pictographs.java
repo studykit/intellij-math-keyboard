@@ -2,6 +2,7 @@ package net.mlcoder.unimath.category;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -13,6 +14,7 @@ public class Pictographs implements UniCode {
     public final String chars;
     public final String generalCategory;
     public final int combiningClass;
+    public final String[] tokenized;
 
     @Nullable
     public final String latex;
@@ -63,11 +65,17 @@ public class Pictographs implements UniCode {
         return mathCategory;
     }
 
+    @Override @Nullable
+    public String[] tokenized() {
+        return tokenized;
+    }
+
     Pictographs(int codePoint, String desc, String chars, String generalCategory, int combiningClass) {
         this(codePoint, desc, chars, generalCategory, combiningClass, null, null, null);
     }
 
-    Pictographs(int codePoint, String desc, String chars, String generalCategory, int combiningClass, String latex, String ulatex, String mathCategory) {
+    Pictographs(int codePoint, String desc, String chars, String generalCategory, int combiningClass,
+                 @Nullable String latex, @Nullable String ulatex, @Nullable String mathCategory) {
         this.codePoint = codePoint;
         this.desc = desc;
         this.generalCategory = generalCategory;
@@ -76,6 +84,8 @@ public class Pictographs implements UniCode {
         this.latex = latex;
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
+        this.tokenized = Arrays.stream(desc.split(" "))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
     @Override

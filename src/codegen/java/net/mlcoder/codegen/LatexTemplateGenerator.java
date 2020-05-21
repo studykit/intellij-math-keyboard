@@ -1,9 +1,6 @@
 package net.mlcoder.codegen;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,161 +8,255 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import lombok.*;
+import lombok.Getter;
+import lombok.ToString;
 import net.mlcoder.unimath.Tex;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.text.StringEscapeUtils;
 
 import javax.annotation.Nullable;
 import java.io.FileWriter;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.function.Predicate;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import static net.mlcoder.codegen.Snippet.extractVariable;
-import static net.mlcoder.codegen.Snippet.liveTemplateValueFrom;
-
-
-class Snippet {
-    static final String NEWLINE = "&#10;";
-    static Pattern variablePattern = Pattern.compile("\\$([0-9]+)|\\$\\{([0-9]+)}|\\$\\{[0-9]+:<??(\\p{Alnum}+)>??}");
-    static final Predicate<String> hasVariable = variablePattern.asPredicate();
-
-    static List<String> extractVariable(String snippet) {
-        if (StringUtils.isEmpty(snippet))
-            return Collections.emptyList();
-
-        List<String> vars = variablePattern.matcher(snippet)
-            .results()
-            .map(mr -> {
-                String result = RegExUtils.replaceAll(mr.group(), "\\$([0-9]+)", "$1,\\$VAR$1\\$");
-                result = RegExUtils.replaceAll(result, "\\$\\{([0-9]+)\\}", "$1,\\$VAR$1\\$");
-                result = RegExUtils.replaceAll(result, "\\$\\{([0-9]+):<??(\\p{Alnum}+)>??\\}", "$1,$2\\$");
-                return StringUtils.remove(result, "$");
-            }).collect(Collectors.toList());
-        vars.sort(String::compareTo);
-        return vars.stream()
-            .map(s -> RegExUtils.removePattern(s, "^\\d+,"))
-            .collect(Collectors.toList());
-    }
-
-    static String liveTemplateValueFrom(String commandname, String snippet) {
-        if (StringUtils.isEmpty(snippet)) {
-            return "\\" + commandname + " $END$";
-        }
-
-        String result = StringUtils.replace(snippet, "\n", NEWLINE);
-        result = StringUtils.replace(result, "\t", "  ");
-        result = RegExUtils.replaceAll(result, "\\$([0-9]+)", "\\$VAR$1\\$");
-        result = RegExUtils.replaceAll(result, "\\$\\{([0-9]+)\\}", "\\$VAR$1\\$");
-        result = RegExUtils.replaceAll(result, "\\$\\{[0-9]+:<??(\\p{Alnum}+)>??\\}", "\\$$1\\$");
-        return "\\" + result + (StringUtils.contains(snippet, "\\end") ? NEWLINE + "$END$" : " $END$");
-    }
-}
-
 
 public class LatexTemplateGenerator {
-    private static String resourceDir;
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
         .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.PUBLIC_ONLY)
         .setDefaultPropertyInclusion(JsonInclude.Include.NON_NULL)
         .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
-    private static List<String> skipCommands = Arrays.asList("begin", "llbracket");
+    private static final String NEWLINE = "&#10;";
+    private static final Pattern varNumPattern = Pattern.compile("\\$([0-9]+)");
+    private static final Pattern varNumCurlyPattern = Pattern.compile("\\$\\{([0-9]+)}");
+//    private static final Pattern varNumNamePattern = Pattern.compile("\\$\\{([0-9]+):([a-zA-Z0-9_<>=,%& -]+)}");
+    private static final Pattern varNumNamePattern = Pattern.compile("\\$\\{([0-9]+):((\\p{Alnum}|[0-9_<>=,%& -])+)}");
+    private static final Pattern variablePattern = Pattern.compile(varNumPattern.pattern() + "|" + varNumCurlyPattern.pattern() + "|" + varNumNamePattern.pattern());
 
-    private static TypeReference<Map<String, Command>> type = new TypeReference<>() {};
+    private static Pair<String, List<String>> toLiveTemplate(String snippet) {
+        if (StringUtils.isEmpty(snippet))
+            return Pair.of(snippet, Collections.emptyList());
 
-    public static Collection<Command> commands() throws Exception {
-        Map<String, Tex> texes = Maps.newHashMap();
+        Matcher matcher = variablePattern.matcher(snippet);
 
-        for (Tex tex : Tex.load().values()) {
-            if (tex.latex != null)
-                texes.put(tex.latex.substring(1), tex);
+        if (!matcher.find())
+            return Pair.of(snippet, Collections.emptyList());
 
-            if (tex.ulatex != null)
-                texes.put(tex.ulatex.substring(1), tex);
-        }
+        List<String> vars = Lists.newArrayList();
 
-        List<Command> cmds = Lists.newArrayList();
-        cmds.addAll(OBJECT_MAPPER.readValue(Files.readString(Path.of(resourceDir, "latex/commands.json")), type).values());
+        String result = snippet;
 
-//        DirectoryStream<Path> paths = Files.newDirectoryStream(Path.of(resourceDir, "latex", "packages"), "*_cmd.json");
-//        for (Path p : paths) {
-//            cmds.addAll(OBJECT_MAPPER.readValue(Files.readString(p), type).values());
-//        }
-//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amsmath_env.json"), type).values());
-//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amsmath_cmd.json"), type).values());
-//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amssymb_cmd.json"), type).values());
+        Matcher vmr = varNumPattern.matcher(result);
+        result = vmr.replaceAll(mr -> {
+            vars.add(mr.group(1) + ":VAR" + mr.group(1));
+            return "\\$VAR" + mr.group(1) + "\\$";
+        });
 
-        for (Command c : cmds) {
-            Tex tex = texes.get(c.command);
+        vmr = varNumCurlyPattern.matcher(result);
+        result = vmr.replaceAll(mr -> {
+            vars.add(mr.group(1) + ":VAR" + mr.group(1));
+            return "\\$VAR" + mr.group(1) + "\\$";
+        });
 
-            c.vars = extractVariable(c.snippet);
+        vmr = varNumNamePattern.matcher(result);
+        result = vmr.replaceAll(mr -> {
+            String sanitized = RegExUtils.replacePattern(mr.group(2), "\\s+|-", "_");
+            sanitized = RegExUtils.removePattern(sanitized, "[%<>=&,]+").toUpperCase();
+            vars.add(mr.group(1) + ":" + sanitized);
+            return "\\$" + sanitized + "\\$";
+        });
 
-            if (tex != null && c.vars.size() == 0) {
-                c.label = tex.chars;
-                c.snippet = "\\" + c.command +" $END$";
-                continue;
-            }
+        result = StringEscapeUtils.escapeXml10(result);
 
-            c.snippet = liveTemplateValueFrom(c.command, c.snippet);
-
-            if (StringUtils.isEmpty(c.label) && StringUtils.isNotEmpty(c.detail)) {
-                c.label = c.detail;
-                continue;
-            }
-
-            c.label = c.command;
-        }
-
-        return cmds;
+        vars.sort(String::compareTo);
+        List<String> r = vars.stream()
+            .map(s -> RegExUtils.removePattern(s, "^\\d+:"))
+            .collect(Collectors.toList());
+        return Pair.of(result, r);
     }
 
-    public static List<Environment> environments() throws Exception {
-        List<String> lines = Util.readlLines("latex/environments.txt");
-        List<Environment> envs = Lists.newArrayList();
-        for (String l : lines) {
-            if (StringUtils.isEmpty(l))
-                continue;
-            if (skipCommands.contains(l))
-                continue;
-
-            envs.add(new Environment(l, String.format("\\begin{%s}&#10;  $EXPR$&#10;\\end{%s}&#10;&#10;$SELECTION$&#10;", l, l)));
-        }
-        return envs;
-    }
-
-
-    @RequiredArgsConstructor
     @ToString @Getter
     public static class Environment {
-        public final String command;
-        public final String snippet;
+        private static final List<String> skipCommands = Arrays.asList("begin", "/");
+        public static TypeReference<Map<String, Environment>> type = new TypeReference<>() {};
+
+        @Nullable @JsonProperty("package") public String packageName;
+        @Nullable public String snippet;
+        public String name;
+
+        @JsonIgnore public String abbr;
+        @JsonIgnore public List<String> vars = Collections.emptyList();
+
+        public static List<Environment> of(Path envFile) throws Exception {
+            List<Environment> envs = Lists.newArrayList();
+
+            OBJECT_MAPPER.readValue(Files.readString(envFile), type).forEach((abbr, e) -> {
+                if (skipCommands.contains(e.name))
+                    return;
+
+                if (StringUtils.isEmpty(e.name))
+                    return;
+
+                e.init(abbr);
+                envs.add(e);
+            });
+
+            return envs;
+        }
+
+        public void init(String abbr) {
+            this.abbr = StringEscapeUtils.escapeXml11(abbr);
+
+            Pair<String, List<String>> result = toLiveTemplate(snippet);
+            vars = result.getRight();
+            snippet = String.format("\\begin{%s}%s&#10;  $EXPR$&#10;\\end{%s}&#10;&#10;$END$&#10;", name, StringUtils.isNoneEmpty(result.getLeft()) ? result.getLeft() : "", name);
+        }
     }
 
     @Getter @ToString
-    @AllArgsConstructor @NoArgsConstructor
     public static class Command {
+        private static final List<String> skipCommands = Arrays.asList("llbracket",
+            "onlyInPDF<PDF text>",
+            "onlyInPS<PS text>",
+            "extrarowsep =_%<dimen%>",
+            "extrarowsep =_%<dimen%>^%<dimen%>",
+            "tabulinesep = %<dimen%>",
+            "company{}"
+        );
+        public static TypeReference<Map<String, Command>> mapType = new TypeReference<>() {};
+        public static Map<String, Tex> texes = Maps.newHashMap();
+
+        @JsonIgnore public String abbr;
         @Nullable public String command;
         @Nullable public String detail;
         @Nullable public String label;
         @Nullable public String snippet;
-        @JsonIgnore public List<String> vars;
+        @Nullable public String packageName;
+
+        @JsonIgnore
+        public List<String> vars = Collections.emptyList();
+
+        static {
+            for (Tex tex : Tex.load().values()) {
+                if (tex.latex != null)
+                    texes.put(tex.latex.substring(1), tex);
+
+                if (tex.ulatex != null)
+                    texes.put(tex.ulatex.substring(1), tex);
+            }
+        }
+
+        public static List<Command> of(Path cmdFile) throws Exception {
+            List<Command> cmds = Lists.newArrayList();
+            OBJECT_MAPPER.readValue(Files.readString(cmdFile), mapType).forEach((abbr, c) -> {
+                if (skipCommands.contains(c.command))
+                    return;
+
+                if (StringUtils.contains(c.command, "extrarowsep"))
+                    return;
+
+                c.init(abbr);
+                cmds.add(c);
+            });
+
+            return cmds;
+        }
+
+        private void init(String abbr) {
+            try {
+                this.abbr = StringEscapeUtils.escapeXml11(abbr);
+
+                Tex tex = texes.get(command);
+
+                Pair<String, List<String>> templ = toLiveTemplate(snippet);
+
+                this.vars = templ.getRight();
+                if (tex != null && vars.size() == 0) {
+                    label = tex.chars;
+                    snippet = "\\" + command +" $END$";
+                    return;
+                }
+
+                String result = StringUtils.replace(templ.getLeft(), "\n", NEWLINE);
+                result = StringUtils.replace(result, "\t", "  ");
+
+                if (StringUtils.isEmpty(templ.getLeft()) || vars.size() == 0) {
+                    snippet = "\\" + command + " $END$";
+                } else {
+                    snippet = "\\" + result + (StringUtils.contains(snippet, "\\end") ? NEWLINE + "$END$" : " $END$");
+                }
+
+                if (StringUtils.isEmpty(label) && StringUtils.isNotEmpty(detail)) {
+                    label = detail;
+                    return;
+                }
+
+                label = command;
+            } finally {
+                label = StringEscapeUtils.escapeXml11(label);
+                if (StringUtils.equals(abbr, "latexdisplaymath")) {
+                    this.abbr = "[";
+                }
+
+                if (StringUtils.equals(abbr, "latexinlinemath")) {
+                    this.abbr = "(";
+                }
+
+            }
+        }
     }
 
     public static void main(String[] args) throws Exception {
-        resourceDir = Objects.requireNonNull(args[0]);
+        String resourceDir = Objects.requireNonNull(args[0]);
 
         Configuration configuration = Util.freeMarkerConfiguration();
         Template template = configuration.getTemplate("live-template.xml.ftl");
 
         Map<String, Object> root = Maps.newHashMap();
-        root.put("envs", environments());
-        root.put("cmds", commands());
+        root.put("envs", Environment.of(Path.of(resourceDir, "environments.json")));
+        root.put("cmds", Command.of(Path.of(resourceDir, "commands.json")));
         root.put("name", "Latex");
         template.process(root, new FileWriter("Latex.xml"));
+
+        DirectoryStream<Path> packages = Files.newDirectoryStream(Path.of(resourceDir, "packages"));
+        Map<String, List<Path>> pkgs = Maps.newTreeMap();
+        packages.forEach(latexPkg -> {
+            Path fileName = latexPkg.getFileName();
+            String pkgname = StringUtils.remove(fileName.toString(), "_cmd.json");
+            pkgname = StringUtils.remove(pkgname, "_env.json");
+
+            List<Path> paths = MapUtils.getObject(pkgs, pkgname, Lists.newArrayList());
+            paths.add(latexPkg);
+            pkgs.put(pkgname, paths);
+        });
+
+        for (Map.Entry<String, List<Path>>entry : pkgs.entrySet()) {
+            String pkgname = entry.getKey();
+
+            if (Objects.equals(pkgname, "yathesis"))
+                continue;
+
+            Map<String, Object> model = Maps.newHashMap();
+            model.put("envs", Collections.emptyList());
+            model.put("cmds", Collections.emptyList());
+            model.put("name", "Latex (" + pkgname + ")");
+            for (Path p : entry.getValue()) {
+                if (p.toString().endsWith("_env.json")) {
+                    model.put("envs", Environment.of(p));
+                }
+                if (p.toString().endsWith("_cmd.json")) {
+                    model.put("cmds", Command.of(p));
+                }
+            }
+            template.process(model, new FileWriter(String.format("Latex(%s).xml", pkgname)));
+        }
     }
 }

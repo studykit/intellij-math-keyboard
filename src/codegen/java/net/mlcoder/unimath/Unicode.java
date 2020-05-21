@@ -8,7 +8,6 @@ import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -42,7 +41,7 @@ public class Unicode {
     }
 
     public static Map<Integer, Unicode> loadUnicodeData() throws Exception {
-        List<String> lines = Util.readlLines("unimath/UnicodeData.txt");
+        List<String> lines = Util.readlLines("data/UnicodeData.txt");
         Map<Integer, Unicode> result = Maps.newLinkedHashMap();
 
         for (String line : lines) {
@@ -121,13 +120,5 @@ public class Unicode {
         }
 
         return StringUtils.normalizeSpace(t);
-    }
-
-    public static void main(String[] args) throws Exception{
-        String text = "";
-
-        String[] result = Arrays.stream("text".split("([ /])"))
-            .filter(s -> s.length() != 0).toArray(String[]::new);
-
     }
 }

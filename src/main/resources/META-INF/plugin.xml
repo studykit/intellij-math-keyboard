@@ -11,6 +11,14 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplates file="/templates/latex/Latex.xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amsbsy).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amsfonts).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amsmath).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amsopn).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amssymb).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(amsthm).xml"/>
+    <defaultLiveTemplates file="/templates/latex/Latex(tex).xml"/>
+
     <liveTemplateContext implementation="net.mlcoder.unimath.UnimathContextType"/>
   </extensions>
 

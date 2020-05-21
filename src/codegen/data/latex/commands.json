@@ -1,10 +1,4 @@
 {
-  "begin":{
-    "command":"begin",
-    "snippet":"begin{",
-    "detail":"Begin a new environment",
-    "postAction":"editor.action.triggerSuggest"
-  },
   "lrparen":{
     "command":"left(",
     "snippet":"left(${1}\\right)",

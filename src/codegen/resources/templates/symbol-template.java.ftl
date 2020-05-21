@@ -1,6 +1,7 @@
 package net.mlcoder.unimath.category;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import javax.annotation.Nullable;

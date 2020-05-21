@@ -54,7 +54,7 @@ public class Tex {
 
     private static Map<Integer, Tex> loadUniMathSymbols() throws Exception {
         //code^chr^LaTeX^unicode-math^cls^category^requirements^comments
-        List<String> lines = Util.readlLines("unimath/unimathsymbols.txt");
+        List<String> lines = Util.readlLines("data/unimathsymbols.txt");
 
         Map<Integer, Tex> result = Maps.newLinkedHashMap();
         for (String ln : lines) {
@@ -92,7 +92,7 @@ public class Tex {
 
     private static final Pattern uniMathTable = Pattern.compile("^\\\\UnicodeMathSymbol\\{\"(\\w+)\\}\\{(\\\\\\w+)\\s*\\}\\{\\\\(\\w+)\\}.*");
     private static Map<Integer, Tex> loadUniMathTable() throws Exception {
-        List<String> lines = Util.readlLines("unimath/unicode-math-table.tex");
+        List<String> lines = Util.readlLines("data/unicode-math-table.tex");
         Map<Integer, Tex> result = Maps.newLinkedHashMap();
 
         for (String line : lines) {
@@ -112,9 +112,15 @@ public class Tex {
         return result;
     }
 
-    public static Map<Integer, Tex> load() throws Exception {
-        Map<Integer, Tex> mathSymbols = loadUniMathSymbols();
-        Map<Integer, Tex> mathTable = loadUniMathTable();
+    public static Map<Integer, Tex> load() {
+        Map<Integer, Tex> mathSymbols;
+        Map<Integer, Tex> mathTable;
+        try {
+            mathSymbols = loadUniMathSymbols();
+            mathTable = loadUniMathTable();
+        } catch (Exception e) {
+            return Collections.emptyMap();
+        }
 
         Map<Integer, Tex> result = Maps.newTreeMap();
         for (Tex symbol : mathSymbols.values()) {

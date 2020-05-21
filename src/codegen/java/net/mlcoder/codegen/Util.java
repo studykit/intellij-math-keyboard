@@ -20,15 +20,7 @@ public class Util {
         return cfg;
     }
 
-    public static String readAll(String resourceName) throws Exception {
-        return Resources.toString(Resources.getResource(resourceName), StandardCharsets.UTF_8);
-    }
-
     public static List<String> readlLines(String file) throws Exception {
         return Resources.readLines(Resources.getResource(file), StandardCharsets.UTF_8);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(String.format("%s", null));
     }
 }

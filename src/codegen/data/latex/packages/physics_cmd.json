@@ -15,9 +15,9 @@
     "snippet": "PV{${1:expression}}"
   },
   "Pmqty{}": {
-    "command": "Pmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "Pmqty{MAT4}",
     "package": "physics",
-    "snippet": "Pmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "Pmqty{${1:MAT4}}"
   },
   "Pr(expression)": {
     "command": "Pr(expression)",
@@ -260,9 +260,9 @@
     "snippet": "atangent"
   },
   "bmqty{}": {
-    "command": "bmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "bmqty{MAT4}",
     "package": "physics",
-    "snippet": "bmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "bmqty{${1:MAT4}}"
   },
   "bqty{}": {
     "command": "bqty{expression}",
@@ -852,9 +852,9 @@
     "snippet": "logarithm"
   },
   "matrixdeterminant{}": {
-    "command": "matrixdeterminant{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}",
+    "command": "matrixdeterminant{MAT4}",
     "package": "physics",
-    "snippet": "matrixdeterminant{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}}"
+    "snippet": "matrixdeterminant{${1:MAT4}}"
   },
   "matrixel*{}{}{}": {
     "command": "matrixel*{expression1}{expression2}{expression3}",
@@ -876,20 +876,20 @@
     "package": "physics",
     "snippet": "matrixel{${1:expression1}}{${2:expression2}}{${3:expression3}}"
   },
-  "matrixquantity(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)": {
-    "command": "matrixquantity(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)",
+  "matrixquantity(MAT4)": {
+    "command": "matrixquantity(MAT4)",
     "package": "physics",
-    "snippet": "matrixquantity(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)"
+    "snippet": "matrixquantity(MAT4)"
   },
   "matrixquantity{}": {
-    "command": "matrixquantity{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "matrixquantity{MAT4}",
     "package": "physics",
-    "snippet": "matrixquantity{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "matrixquantity{${1:MAT4}}"
   },
   "mdet{}": {
-    "command": "mdet{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}",
+    "command": "mdet{MAT4}",
     "package": "physics",
-    "snippet": "mdet{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}}"
+    "snippet": "mdet{${1:MAT4}}"
   },
   "mel**{}{}{}": {
     "command": "mel**{expression1}{expression2}{expression3}",
@@ -976,30 +976,30 @@
     "package": "physics",
     "snippet": "mqty(\\zmat{${1:n}}{${2:m}})"
   },
-  "mqty(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)": {
-    "command": "mqty(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)",
+  "mqty(MAT4)": {
+    "command": "mqty(MAT4)",
     "package": "physics",
-    "snippet": "mqty(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)"
+    "snippet": "mqty(MAT4)"
   },
-  "mqty*(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)": {
-    "command": "mqty*(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)",
+  "mqty*(MAT4)": {
+    "command": "mqty*(MAT4)",
     "package": "physics",
-    "snippet": "mqty*(matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4)"
+    "snippet": "mqty*(MAT4)"
   },
   "mqty[]": {
-    "command": "mqty[matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4]",
+    "command": "mqty[MAT4]",
     "package": "physics",
-    "snippet": "mqty[${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}]"
+    "snippet": "mqty[${1:MAT4}]"
   },
   "mqty{}": {
-    "command": "mqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "mqty{MAT4}",
     "package": "physics",
-    "snippet": "mqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "mqty{${1:MAT4}}"
   },
-  "mqty|matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4|": {
-    "command": "mqty|matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4|",
+  "mqty|MAT4|": {
+    "command": "mqty|MAT4|",
     "package": "physics",
-    "snippet": "mqty|matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4|"
+    "snippet": "mqty|MAT4|"
   },
   "naturallogarithm": {
     "command": "naturallogarithm",
@@ -1087,9 +1087,9 @@
     "snippet": "pdv{${1:f}}{${2:x}}{${3:y}}"
   },
   "pmqty{}": {
-    "command": "pmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "pmqty{MAT4}",
     "package": "physics",
-    "snippet": "pmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "pmqty{${1:MAT4}}"
   },
   "poissonbracket{}{}": {
     "command": "poissonbracket{expression1}{expression2}",
@@ -1362,14 +1362,14 @@
     "snippet": "real"
   },
   "sPmqty{}": {
-    "command": "sPmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "sPmqty{MAT4}",
     "package": "physics",
-    "snippet": "sPmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "sPmqty{${1:MAT4}}"
   },
   "sbmqty{}": {
-    "command": "sbmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "sbmqty{MAT4}",
     "package": "physics",
-    "snippet": "sbmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "sbmqty{${1:MAT4}}"
   },
   "sec(expression)": {
     "command": "sec(expression)",
@@ -1422,49 +1422,49 @@
     "snippet": "sinh[${1:power}](expression)"
   },
   "smallmatrixquantity{}": {
-    "command": "smallmatrixquantity{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "smallmatrixquantity{MAT4}",
     "package": "physics",
-    "snippet": "smallmatrixquantity{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "smallmatrixquantity{${1:MAT4}}"
   },
   "smdet{}": {
-    "command": "smdet{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}",
+    "command": "smdet{MAT4}",
     "package": "physics",
-    "snippet": "smdet{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element}}"
+    "snippet": "smdet{${1:MAT4}}"
   },
   "smqty({})": {
-    "command": "smqty({matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4})",
+    "command": "smqty({MAT4})",
     "package": "physics",
-    "snippet": "smqty({${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}})"
+    "snippet": "smqty({${1:MAT4}})"
   },
   "smqty*({})": {
-    "command": "smqty*({matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4})",
+    "command": "smqty*({MAT4})",
     "package": "physics",
-    "snippet": "smqty*({${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}})"
+    "snippet": "smqty*({${1:MAT4}})"
   },
   "smqty[{]": {
-    "command": "smqty[{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}]",
+    "command": "smqty[{MAT4}]",
     "package": "physics",
-    "snippet": "smqty[{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}]"
+    "snippet": "smqty[{${1:MAT4}}]"
   },
   "smqty{}": {
-    "command": "smqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "smqty{MAT4}",
     "package": "physics",
-    "snippet": "smqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "smqty{${1:MAT4}}"
   },
   "smqty|{}|": {
-    "command": "smqty|{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}|",
+    "command": "smqty|{MAT4}|",
     "package": "physics",
-    "snippet": "smqty|{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}|"
+    "snippet": "smqty|{${1:MAT4}}|"
   },
   "spmqty{}": {
-    "command": "spmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "spmqty{MAT4}",
     "package": "physics",
-    "snippet": "spmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "spmqty{${1:MAT4}}"
   },
   "svmqty{}": {
-    "command": "svmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "svmqty{MAT4}",
     "package": "physics",
-    "snippet": "svmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "svmqty{${1:MAT4}}"
   },
   "tan(expression)": {
     "command": "tan(expression)",
@@ -1562,9 +1562,9 @@
     "snippet": "vectorunit{${1:expression}}"
   },
   "vmqty{}": {
-    "command": "vmqty{matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}",
+    "command": "vmqty{MAT4}",
     "package": "physics",
-    "snippet": "vmqty{${1:matrix element 1 & matrix element 2  \\\\ matrix element 3 & matrix element 4}}"
+    "snippet": "vmqty{${1:MAT4}}"
   },
   "vqty{}": {
     "command": "vqty{expression}",

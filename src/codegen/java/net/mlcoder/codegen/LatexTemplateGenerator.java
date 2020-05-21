@@ -18,10 +18,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
 import java.io.FileWriter;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -69,10 +68,13 @@ class Snippet {
 
 
 public class LatexTemplateGenerator {
+    private static String resourceDir;
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
         .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.PUBLIC_ONLY)
         .setDefaultPropertyInclusion(JsonInclude.Include.NON_NULL)
         .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+
+    private static List<String> skipCommands = Arrays.asList("begin", "llbracket");
 
     private static TypeReference<Map<String, Command>> type = new TypeReference<>() {};
 
@@ -87,7 +89,16 @@ public class LatexTemplateGenerator {
                 texes.put(tex.ulatex.substring(1), tex);
         }
 
-        Collection<Command> cmds = OBJECT_MAPPER.readValue(Util.readAll("latex/commands.json"), type).values();
+        List<Command> cmds = Lists.newArrayList();
+        cmds.addAll(OBJECT_MAPPER.readValue(Files.readString(Path.of(resourceDir, "latex/commands.json")), type).values());
+
+//        DirectoryStream<Path> paths = Files.newDirectoryStream(Path.of(resourceDir, "latex", "packages"), "*_cmd.json");
+//        for (Path p : paths) {
+//            cmds.addAll(OBJECT_MAPPER.readValue(Files.readString(p), type).values());
+//        }
+//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amsmath_env.json"), type).values());
+//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amsmath_cmd.json"), type).values());
+//        cmds.addAll(OBJECT_MAPPER.readValue(Util.readAll("latex/package/amssymb_cmd.json"), type).values());
 
         for (Command c : cmds) {
             Tex tex = texes.get(c.command);
@@ -119,6 +130,9 @@ public class LatexTemplateGenerator {
         for (String l : lines) {
             if (StringUtils.isEmpty(l))
                 continue;
+            if (skipCommands.contains(l))
+                continue;
+
             envs.add(new Environment(l, String.format("\\begin{%s}&#10;  $EXPR$&#10;\\end{%s}&#10;&#10;$SELECTION$&#10;", l, l)));
         }
         return envs;
@@ -143,6 +157,8 @@ public class LatexTemplateGenerator {
     }
 
     public static void main(String[] args) throws Exception {
+        resourceDir = Objects.requireNonNull(args[0]);
+
         Configuration configuration = Util.freeMarkerConfiguration();
         Template template = configuration.getTemplate("live-template.xml.ftl");
 

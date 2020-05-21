@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class PopupAction extends AnAction {
@@ -122,6 +123,7 @@ public class PopupAction extends AnAction {
     }
 
     private static class MathTableKeyListener extends KeyAdapter {
+        private static final int NO_CODEPOINT = -1;
         private final JBTable jbTable;
         private final JBPopup popup;
         private String text = "";
@@ -137,7 +139,7 @@ public class PopupAction extends AnAction {
         private void refresh() {
             popup.setAdText(text.trim(), SwingConstants.LEFT);
 
-            if (StringUtils.isEmpty(text) ||(text.length() == 1 && (text.charAt(0) == '/' || text.charAt(0) == '\\' || text.charAt(0) == '!'))) {
+            if (StringUtils.isEmpty(text) ||(text.length() == 1 && (text.charAt(0) == '/'))) {
                 if (jbTable.getModel() == wholeTableModel)
                     return;
 
@@ -147,22 +149,20 @@ public class PopupAction extends AnAction {
                 return;
             }
 
-            final boolean latexSearch = text.startsWith("\\");
             final boolean seqPrefixSearch = text.startsWith("/");
-            final boolean exactMatch = text.startsWith("!");
-            List<String> searchWords = Arrays.asList(StringUtils.split(text, " /\\!"));
+            AtomicInteger codePoint = new AtomicInteger(NO_CODEPOINT);
 
-            String keywords = (seqPrefixSearch || exactMatch) ? text.substring(1) : text;
+            if (text.startsWith("U+")) {
+                try {
+                    codePoint.set(Integer.parseInt(text.substring(2), 16));
+                } catch (Exception ignored) {
+                    return;
+                }
+            }
+
+            List<String> searchWords = Arrays.asList(StringUtils.split(seqPrefixSearch ? text.substring(1) : text, " "));
 
             List<UniCode> filteredSymbols = allUniCodes.stream().filter(symbol -> {
-                if (latexSearch) {
-                    return StringUtils.startsWith(symbol.latex(), keywords) || StringUtils.startsWith(symbol.ulatex(), keywords);
-                }
-
-                if (exactMatch) {
-                    return StringUtils.equals(symbol.latex(), keywords) || StringUtils.equals(symbol.ulatex(), keywords) || StringUtils.equals(symbol.desc(), keywords);
-                }
-
                 if (seqPrefixSearch) {
                     if (searchWords.size() > symbol.tokenized().length)
                         return false;
@@ -180,6 +180,10 @@ public class PopupAction extends AnAction {
                             return false;
                     }
                     return true;
+                }
+
+                if (codePoint.get() != NO_CODEPOINT) {
+                    return symbol.codePoint() == codePoint.get();
                 }
 
                 return searchWords.stream().allMatch(k -> Arrays.stream(symbol.tokenized()).anyMatch(t -> t.contains(k)));
@@ -328,7 +332,9 @@ public class PopupAction extends AnAction {
     }
 
     private static String toolTipText(UniCode uniCode) {
-        return uniCode.ulatex() == null ? uniCode.desc() : uniCode.desc() + " [" + uniCode.ulatex() + "]";
+        return uniCode.ulatex() == null ?
+            uniCode.desc() + " (" + uniCode.codeStr() +")" :
+            uniCode.desc() + " [" + uniCode.ulatex() + "]" + " (" + uniCode.codeStr() +")";
     }
 
 }

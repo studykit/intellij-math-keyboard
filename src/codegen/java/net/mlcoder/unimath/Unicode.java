@@ -66,8 +66,8 @@ public class Unicode {
         );
     }
 
-    private static final Pattern superscript = Pattern.compile("\\bsuperscript\\b");
-    private static final Pattern subscript = Pattern.compile("\\bsubscript\\b");
+    private static final Pattern superscript = Pattern.compile("^\\s*superscript\\s+(\\w|\\(|\\)|=|-|\\+)\\s*$");
+    private static final Pattern subscript = Pattern.compile("^\\s*subscript\\s+(\\w|\\(|\\)|=|-|\\+)\\s*$");
     private static final Pattern capital = Pattern.compile("(?:letter|small)?+\\s*\\bcapital\\b\\s+(?:letter)?(.+)", Pattern.CASE_INSENSITIVE);
     private static final String[] numbers = {
         "\\bzero$",
@@ -88,17 +88,10 @@ public class Unicode {
         t = RegExUtils.removePattern(t, "\\bletter\\b");
         t = RegExUtils.removePattern(t,"\\bgreek\\b");
         t = RegExUtils.removePattern(t, "\\bsymbol\\b");
+        t = RegExUtils.removePattern(t, "\\blatin\\b");
         t = RegExUtils.replacePattern(t, "\\bsmall(?: letter\\b)??\\s+([a-z])\\b", "$1");
         t = RegExUtils.replacePattern(t, "\\bdigit\\s+(\\w+)\\b", "$1");
 
-
-        if (superscript.asPredicate().test(t)) {
-            t = "^" + RegExUtils.removePattern(t, superscript.pattern()).trim();
-        }
-
-        if (subscript.asPredicate().test(t)) {
-            t = "_" + RegExUtils.removePattern(t, superscript.pattern()).trim();
-        }
 
         Matcher matcher = capital.matcher(t);
         if (matcher.find()) {
@@ -106,11 +99,25 @@ public class Unicode {
         }
 
         t = RegExUtils.replacePattern(t, "\\s+-(\\d+)", "-$1");
-        t = RegExUtils.replacePattern(t, "\\blatin ([a-zA-Z])\\b", "$1");
+//        t = RegExUtils.replacePattern(t, "\\blatin ([a-zA-Z])\\b", "$1");
         if (category == GeneralCategory.NUMBER_DECIMAL || category == GeneralCategory.NUMBER_OTHER) {
             for (int i = 0; i < 10; i++ ) {
                 t = RegExUtils.replaceAll(t, numbers[i], "" + i);
             }
+        }
+
+        t = RegExUtils.replacePattern(t, "\\bplus(?: sign)??$", "+");
+        t = RegExUtils.replacePattern(t, "\\bminus(?: sign)??$", "-");
+        t = RegExUtils.replacePattern(t, "\\bequals(?: sign)??$", "=");
+        t = RegExUtils.replacePattern(t, "\\bleft parenthesis$", "(");
+        t = RegExUtils.replacePattern(t, "\\bright parenthesis$", ")");
+
+        if (superscript.asPredicate().test(t)) {
+            t = "^" + RegExUtils.replacePattern(t, superscript.pattern(), "$1").trim();
+        }
+
+        if (subscript.asPredicate().test(t)) {
+            t = "_" + RegExUtils.replacePattern(t, subscript.pattern(), "$1").trim();
         }
 
         return StringUtils.normalizeSpace(t);

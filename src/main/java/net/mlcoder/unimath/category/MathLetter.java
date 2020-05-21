@@ -1,16 +1,21 @@
 package net.mlcoder.unimath.category;
 
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+@ToString @Getter @Accessors(fluent = true)
 public class MathLetter implements UniCode {
     public static final List<UniCode> symbols = new ArrayList<>();
 
     public final String desc;
     public final int codePoint;
+    public final String codeStr;
     public final String chars;
     public final String generalCategory;
     public final int combiningClass;
@@ -25,51 +30,6 @@ public class MathLetter implements UniCode {
     @Nullable
     public final String mathCategory;
 
-    @Override
-    public String desc() {
-        return desc;
-    }
-
-    @Override
-    public int codePoint() {
-        return codePoint;
-    }
-
-    @Override
-    public String chars() {
-        return chars;
-    }
-
-    @Override
-    public String generalCategory() {
-        return generalCategory;
-    }
-
-    @Override
-    public int combiningClass() {
-        return combiningClass;
-    }
-
-    @Override @Nullable
-    public String latex() {
-        return latex;
-    }
-
-    @Override @Nullable
-    public String ulatex() {
-        return ulatex;
-    }
-
-    @Override @Nullable
-    public String mathCategory() {
-        return mathCategory;
-    }
-
-    @Override @Nullable
-    public String[] tokenized() {
-        return tokenized;
-    }
-
     MathLetter(int codePoint, String desc, String chars, String generalCategory, int combiningClass) {
         this(codePoint, desc, chars, generalCategory, combiningClass, null, null, null);
     }
@@ -77,6 +37,7 @@ public class MathLetter implements UniCode {
     MathLetter(int codePoint, String desc, String chars, String generalCategory, int combiningClass,
                  @Nullable String latex, @Nullable String ulatex, @Nullable String mathCategory) {
         this.codePoint = codePoint;
+        this.codeStr = String.format("U+%04X", codePoint);
         this.desc = desc;
         this.generalCategory = generalCategory;
         this.combiningClass = combiningClass;
@@ -84,21 +45,11 @@ public class MathLetter implements UniCode {
         this.latex = latex;
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
-        this.tokenized = Arrays.stream(desc.split(" "))
-            .filter(s -> s.length() != 0).toArray(String[]::new);
-    }
 
-    @Override
-    public String toString() {
-        return "[(MathLetter)]{" +
-            "codePoint=" + codePoint +
-            ", desc='" + desc + '\'' +
-            ", chars='" + chars + '\'' +
-            ", generalCategory='" + generalCategory + '\'' +
-            ", combiningClass=" + combiningClass +
-            ", latex='" + latex + '\'' +
-            ", ulatex='" + ulatex + '\'' +
-        '}';
+        String _latex = latex != null ? " " + latex : "";
+        String _ulatex = ulatex != null ? " " + ulatex : "";
+        this.tokenized = Arrays.stream((desc + _latex + _ulatex + " " + codeStr).split(" "))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
     static {
@@ -127,30 +78,30 @@ public class MathLetter implements UniCode {
         symbols.add(new MathLetter(0x38E, "Upsilon with tonos", "Ύ", "Lu", 0));
         symbols.add(new MathLetter(0x38F, "Omega with tonos", "Ώ", "Lu", 0));
         symbols.add(new MathLetter(0x390, "small iota with dialytika and tonos", "ΐ", "Ll", 0));
-        symbols.add(new MathLetter(0x391, "Alpha", "Α", "Lu", 0, null, "\\mupAlpha", null));
-        symbols.add(new MathLetter(0x392, "Beta", "Β", "Lu", 0, null, "\\mupBeta", null));
-        symbols.add(new MathLetter(0x393, "Gamma", "Γ", "Lu", 0, "\\Gamma", "\\mupGamma", null));
-        symbols.add(new MathLetter(0x394, "Delta", "Δ", "Lu", 0, "\\Delta", "\\mupDelta", null));
-        symbols.add(new MathLetter(0x395, "Epsilon", "Ε", "Lu", 0, null, "\\mupEpsilon", null));
-        symbols.add(new MathLetter(0x396, "Zeta", "Ζ", "Lu", 0, null, "\\mupZeta", null));
-        symbols.add(new MathLetter(0x397, "Eta", "Η", "Lu", 0, null, "\\mupEta", null));
-        symbols.add(new MathLetter(0x398, "Theta", "Θ", "Lu", 0, "\\Theta", "\\mupTheta", null));
-        symbols.add(new MathLetter(0x399, "Iota", "Ι", "Lu", 0, null, "\\mupIota", null));
-        symbols.add(new MathLetter(0x39A, "Kappa", "Κ", "Lu", 0, null, "\\mupKappa", null));
-        symbols.add(new MathLetter(0x39B, "Lamda", "Λ", "Lu", 0, "\\Lambda", "\\mupLambda", null));
-        symbols.add(new MathLetter(0x39C, "Mu", "Μ", "Lu", 0, null, "\\mupMu", null));
-        symbols.add(new MathLetter(0x39D, "Nu", "Ν", "Lu", 0, null, "\\mupNu", null));
-        symbols.add(new MathLetter(0x39E, "Xi", "Ξ", "Lu", 0, "\\Xi", "\\mupXi", null));
-        symbols.add(new MathLetter(0x39F, "Omicron", "Ο", "Lu", 0, null, "\\mupOmicron", null));
-        symbols.add(new MathLetter(0x3A0, "Pi", "Π", "Lu", 0, "\\Pi", "\\mupPi", null));
-        symbols.add(new MathLetter(0x3A1, "Rho", "Ρ", "Lu", 0, null, "\\mupRho", null));
-        symbols.add(new MathLetter(0x3A3, "Sigma", "Σ", "Lu", 0, "\\Sigma", "\\mupSigma", null));
-        symbols.add(new MathLetter(0x3A4, "Tau", "Τ", "Lu", 0, null, "\\mupTau", null));
-        symbols.add(new MathLetter(0x3A5, "Upsilon", "Υ", "Lu", 0, "\\Upsilon", "\\mupUpsilon", null));
-        symbols.add(new MathLetter(0x3A6, "Phi", "Φ", "Lu", 0, "\\Phi", "\\mupPhi", null));
-        symbols.add(new MathLetter(0x3A7, "Chi", "Χ", "Lu", 0, null, "\\mupChi", null));
-        symbols.add(new MathLetter(0x3A8, "Psi", "Ψ", "Lu", 0, "\\Psi", "\\mupPsi", null));
-        symbols.add(new MathLetter(0x3A9, "Omega", "Ω", "Lu", 0, "\\Omega", "\\mupOmega", null));
+        symbols.add(new MathLetter(0x391, "Alpha", "Α", "Lu", 0, null, "\\mupAlpha", "alphabetical"));
+        symbols.add(new MathLetter(0x392, "Beta", "Β", "Lu", 0, null, "\\mupBeta", "alphabetical"));
+        symbols.add(new MathLetter(0x393, "Gamma", "Γ", "Lu", 0, "\\Gamma", "\\mupGamma", "alphabetical"));
+        symbols.add(new MathLetter(0x394, "Delta", "Δ", "Lu", 0, "\\Delta", "\\mupDelta", "alphabetical"));
+        symbols.add(new MathLetter(0x395, "Epsilon", "Ε", "Lu", 0, null, "\\mupEpsilon", "alphabetical"));
+        symbols.add(new MathLetter(0x396, "Zeta", "Ζ", "Lu", 0, null, "\\mupZeta", "alphabetical"));
+        symbols.add(new MathLetter(0x397, "Eta", "Η", "Lu", 0, null, "\\mupEta", "alphabetical"));
+        symbols.add(new MathLetter(0x398, "Theta", "Θ", "Lu", 0, "\\Theta", "\\mupTheta", "alphabetical"));
+        symbols.add(new MathLetter(0x399, "Iota", "Ι", "Lu", 0, null, "\\mupIota", "alphabetical"));
+        symbols.add(new MathLetter(0x39A, "Kappa", "Κ", "Lu", 0, null, "\\mupKappa", "alphabetical"));
+        symbols.add(new MathLetter(0x39B, "Lamda", "Λ", "Lu", 0, "\\Lambda", "\\mupLambda", "alphabetical"));
+        symbols.add(new MathLetter(0x39C, "Mu", "Μ", "Lu", 0, null, "\\mupMu", "alphabetical"));
+        symbols.add(new MathLetter(0x39D, "Nu", "Ν", "Lu", 0, null, "\\mupNu", "alphabetical"));
+        symbols.add(new MathLetter(0x39E, "Xi", "Ξ", "Lu", 0, "\\Xi", "\\mupXi", "alphabetical"));
+        symbols.add(new MathLetter(0x39F, "Omicron", "Ο", "Lu", 0, null, "\\mupOmicron", "alphabetical"));
+        symbols.add(new MathLetter(0x3A0, "Pi", "Π", "Lu", 0, "\\Pi", "\\mupPi", "alphabetical"));
+        symbols.add(new MathLetter(0x3A1, "Rho", "Ρ", "Lu", 0, null, "\\mupRho", "alphabetical"));
+        symbols.add(new MathLetter(0x3A3, "Sigma", "Σ", "Lu", 0, "\\Sigma", "\\mupSigma", "alphabetical"));
+        symbols.add(new MathLetter(0x3A4, "Tau", "Τ", "Lu", 0, null, "\\mupTau", "alphabetical"));
+        symbols.add(new MathLetter(0x3A5, "Upsilon", "Υ", "Lu", 0, "\\Upsilon", "\\mupUpsilon", "alphabetical"));
+        symbols.add(new MathLetter(0x3A6, "Phi", "Φ", "Lu", 0, "\\Phi", "\\mupPhi", "alphabetical"));
+        symbols.add(new MathLetter(0x3A7, "Chi", "Χ", "Lu", 0, null, "\\mupChi", "alphabetical"));
+        symbols.add(new MathLetter(0x3A8, "Psi", "Ψ", "Lu", 0, "\\Psi", "\\mupPsi", "alphabetical"));
+        symbols.add(new MathLetter(0x3A9, "Omega", "Ω", "Lu", 0, "\\Omega", "\\mupOmega", "alphabetical"));
         symbols.add(new MathLetter(0x3AA, "Iota with dialytika", "Ϊ", "Lu", 0));
         symbols.add(new MathLetter(0x3AB, "Upsilon with dialytika", "Ϋ", "Lu", 0));
         symbols.add(new MathLetter(0x3AC, "small alpha with tonos", "ά", "Ll", 0));
@@ -158,55 +109,55 @@ public class MathLetter implements UniCode {
         symbols.add(new MathLetter(0x3AE, "small eta with tonos", "ή", "Ll", 0));
         symbols.add(new MathLetter(0x3AF, "small iota with tonos", "ί", "Ll", 0));
         symbols.add(new MathLetter(0x3B0, "small upsilon with dialytika and tonos", "ΰ", "Ll", 0));
-        symbols.add(new MathLetter(0x3B1, "small alpha", "α", "Ll", 0, "\\alpha", "\\mupalpha", null));
-        symbols.add(new MathLetter(0x3B2, "small beta", "β", "Ll", 0, "\\beta", "\\mupbeta", null));
-        symbols.add(new MathLetter(0x3B3, "small gamma", "γ", "Ll", 0, "\\gamma", "\\mupgamma", null));
-        symbols.add(new MathLetter(0x3B4, "small delta", "δ", "Ll", 0, "\\delta", "\\mupdelta", null));
-        symbols.add(new MathLetter(0x3B5, "small epsilon", "ε", "Ll", 0, "\\varepsilon", "\\mupvarepsilon", null));
-        symbols.add(new MathLetter(0x3B6, "small zeta", "ζ", "Ll", 0, "\\zeta", "\\mupzeta", null));
-        symbols.add(new MathLetter(0x3B7, "small eta", "η", "Ll", 0, "\\eta", "\\mupeta", null));
-        symbols.add(new MathLetter(0x3B8, "small theta", "θ", "Ll", 0, "\\theta", "\\muptheta", null));
-        symbols.add(new MathLetter(0x3B9, "small iota", "ι", "Ll", 0, "\\iota", "\\mupiota", null));
-        symbols.add(new MathLetter(0x3BA, "small kappa", "κ", "Ll", 0, "\\kappa", "\\mupkappa", null));
-        symbols.add(new MathLetter(0x3BB, "small lamda", "λ", "Ll", 0, "\\lambda", "\\muplambda", null));
-        symbols.add(new MathLetter(0x3BC, "small mu", "μ", "Ll", 0, "\\mu", "\\mupmu", null));
-        symbols.add(new MathLetter(0x3BD, "small nu", "ν", "Ll", 0, "\\nu", "\\mupnu", null));
-        symbols.add(new MathLetter(0x3BE, "small xi", "ξ", "Ll", 0, "\\xi", "\\mupxi", null));
-        symbols.add(new MathLetter(0x3BF, "small omicron", "ο", "Ll", 0, null, "\\mupomicron", null));
-        symbols.add(new MathLetter(0x3C0, "small pi", "π", "Ll", 0, "\\pi", "\\muppi", null));
-        symbols.add(new MathLetter(0x3C1, "small rho", "ρ", "Ll", 0, "\\rho", "\\muprho", null));
-        symbols.add(new MathLetter(0x3C2, "small final sigma", "ς", "Ll", 0, "\\varsigma", "\\mupvarsigma", null));
-        symbols.add(new MathLetter(0x3C3, "small sigma", "σ", "Ll", 0, "\\sigma", "\\mupsigma", null));
-        symbols.add(new MathLetter(0x3C4, "small tau", "τ", "Ll", 0, "\\tau", "\\muptau", null));
-        symbols.add(new MathLetter(0x3C5, "small upsilon", "υ", "Ll", 0, "\\upsilon", "\\mupupsilon", null));
-        symbols.add(new MathLetter(0x3C6, "small phi", "φ", "Ll", 0, "\\varphi", "\\mupvarphi", null));
-        symbols.add(new MathLetter(0x3C7, "small chi", "χ", "Ll", 0, "\\chi", "\\mupchi", null));
-        symbols.add(new MathLetter(0x3C8, "small psi", "ψ", "Ll", 0, "\\psi", "\\muppsi", null));
-        symbols.add(new MathLetter(0x3C9, "small omega", "ω", "Ll", 0, "\\omega", "\\mupomega", null));
+        symbols.add(new MathLetter(0x3B1, "small alpha", "α", "Ll", 0, "\\alpha", "\\mupalpha", "alphabetical"));
+        symbols.add(new MathLetter(0x3B2, "small beta", "β", "Ll", 0, "\\beta", "\\mupbeta", "alphabetical"));
+        symbols.add(new MathLetter(0x3B3, "small gamma", "γ", "Ll", 0, "\\gamma", "\\mupgamma", "alphabetical"));
+        symbols.add(new MathLetter(0x3B4, "small delta", "δ", "Ll", 0, "\\delta", "\\mupdelta", "alphabetical"));
+        symbols.add(new MathLetter(0x3B5, "small epsilon", "ε", "Ll", 0, "\\varepsilon", "\\mupvarepsilon", "alphabetical"));
+        symbols.add(new MathLetter(0x3B6, "small zeta", "ζ", "Ll", 0, "\\zeta", "\\mupzeta", "alphabetical"));
+        symbols.add(new MathLetter(0x3B7, "small eta", "η", "Ll", 0, "\\eta", "\\mupeta", "alphabetical"));
+        symbols.add(new MathLetter(0x3B8, "small theta", "θ", "Ll", 0, "\\theta", "\\muptheta", "alphabetical"));
+        symbols.add(new MathLetter(0x3B9, "small iota", "ι", "Ll", 0, "\\iota", "\\mupiota", "alphabetical"));
+        symbols.add(new MathLetter(0x3BA, "small kappa", "κ", "Ll", 0, "\\kappa", "\\mupkappa", "alphabetical"));
+        symbols.add(new MathLetter(0x3BB, "small lamda", "λ", "Ll", 0, "\\lambda", "\\muplambda", "alphabetical"));
+        symbols.add(new MathLetter(0x3BC, "small mu", "μ", "Ll", 0, "\\mu", "\\mupmu", "alphabetical"));
+        symbols.add(new MathLetter(0x3BD, "small nu", "ν", "Ll", 0, "\\nu", "\\mupnu", "alphabetical"));
+        symbols.add(new MathLetter(0x3BE, "small xi", "ξ", "Ll", 0, "\\xi", "\\mupxi", "alphabetical"));
+        symbols.add(new MathLetter(0x3BF, "small omicron", "ο", "Ll", 0, null, "\\mupomicron", "alphabetical"));
+        symbols.add(new MathLetter(0x3C0, "small pi", "π", "Ll", 0, "\\pi", "\\muppi", "alphabetical"));
+        symbols.add(new MathLetter(0x3C1, "small rho", "ρ", "Ll", 0, "\\rho", "\\muprho", "alphabetical"));
+        symbols.add(new MathLetter(0x3C2, "small final sigma", "ς", "Ll", 0, "\\varsigma", "\\mupvarsigma", "alphabetical"));
+        symbols.add(new MathLetter(0x3C3, "small sigma", "σ", "Ll", 0, "\\sigma", "\\mupsigma", "alphabetical"));
+        symbols.add(new MathLetter(0x3C4, "small tau", "τ", "Ll", 0, "\\tau", "\\muptau", "alphabetical"));
+        symbols.add(new MathLetter(0x3C5, "small upsilon", "υ", "Ll", 0, "\\upsilon", "\\mupupsilon", "alphabetical"));
+        symbols.add(new MathLetter(0x3C6, "small phi", "φ", "Ll", 0, "\\varphi", "\\mupvarphi", "alphabetical"));
+        symbols.add(new MathLetter(0x3C7, "small chi", "χ", "Ll", 0, "\\chi", "\\mupchi", "alphabetical"));
+        symbols.add(new MathLetter(0x3C8, "small psi", "ψ", "Ll", 0, "\\psi", "\\muppsi", "alphabetical"));
+        symbols.add(new MathLetter(0x3C9, "small omega", "ω", "Ll", 0, "\\omega", "\\mupomega", "alphabetical"));
         symbols.add(new MathLetter(0x3CA, "small iota with dialytika", "ϊ", "Ll", 0));
         symbols.add(new MathLetter(0x3CB, "small upsilon with dialytika", "ϋ", "Ll", 0));
         symbols.add(new MathLetter(0x3CC, "small omicron with tonos", "ό", "Ll", 0));
         symbols.add(new MathLetter(0x3CD, "small upsilon with tonos", "ύ", "Ll", 0));
         symbols.add(new MathLetter(0x3CE, "small omega with tonos", "ώ", "Ll", 0));
         symbols.add(new MathLetter(0x3CF, "Kai", "Ϗ", "Lu", 0));
-        symbols.add(new MathLetter(0x3D0, "beta", "ϐ", "Ll", 0, "\\varbeta", "\\upvarbeta", null));
-        symbols.add(new MathLetter(0x3D1, "theta", "ϑ", "Ll", 0, "\\vartheta", "\\mupvartheta", null));
-        symbols.add(new MathLetter(0x3D2, "upsilon with hook", "ϒ", "Lu", 0, null, "\\upUpsilon", null));
+        symbols.add(new MathLetter(0x3D0, "beta", "ϐ", "Ll", 0, "\\varbeta", "\\upvarbeta", "alphabetical"));
+        symbols.add(new MathLetter(0x3D1, "theta", "ϑ", "Ll", 0, "\\vartheta", "\\mupvartheta", "alphabetical"));
+        symbols.add(new MathLetter(0x3D2, "upsilon with hook", "ϒ", "Lu", 0, null, "\\upUpsilon", "alphabetical"));
         symbols.add(new MathLetter(0x3D3, "upsilon with acute and hook", "ϓ", "Lu", 0));
         symbols.add(new MathLetter(0x3D4, "upsilon with diaeresis and hook", "ϔ", "Lu", 0));
-        symbols.add(new MathLetter(0x3D5, "phi", "ϕ", "Ll", 0, "\\phi", "\\mupphi", null));
-        symbols.add(new MathLetter(0x3D6, "pi", "ϖ", "Ll", 0, "\\varpi", "\\mupvarpi", null));
+        symbols.add(new MathLetter(0x3D5, "phi", "ϕ", "Ll", 0, "\\phi", "\\mupphi", "alphabetical"));
+        symbols.add(new MathLetter(0x3D6, "pi", "ϖ", "Ll", 0, "\\varpi", "\\mupvarpi", "alphabetical"));
         symbols.add(new MathLetter(0x3D7, "kai", "ϗ", "Ll", 0));
-        symbols.add(new MathLetter(0x3D8, "archaic koppa", "Ϙ", "Lu", 0, "\\Qoppa", "\\upoldKoppa", null));
-        symbols.add(new MathLetter(0x3D9, "small archaic koppa", "ϙ", "Ll", 0, "\\qoppa", "\\upoldkoppa", null));
-        symbols.add(new MathLetter(0x3DA, "stigma", "Ϛ", "Lu", 0, "\\Stigma", "\\upStigma", null));
-        symbols.add(new MathLetter(0x3DB, "small stigma", "ϛ", "Ll", 0, "\\stigma", "\\upstigma", null));
-        symbols.add(new MathLetter(0x3DC, "digamma", "Ϝ", "Lu", 0, "\\Digamma", "\\upDigamma", null));
-        symbols.add(new MathLetter(0x3DD, "small digamma", "ϝ", "Ll", 0, "\\digamma", "\\updigamma", null));
-        symbols.add(new MathLetter(0x3DE, "koppa", "Ϟ", "Lu", 0, "\\Koppa", "\\upKoppa", null));
-        symbols.add(new MathLetter(0x3DF, "small koppa", "ϟ", "Ll", 0, "\\koppa", "\\upkoppa", null));
-        symbols.add(new MathLetter(0x3E0, "sampi", "Ϡ", "Lu", 0, "\\Sampi", "\\upSampi", null));
-        symbols.add(new MathLetter(0x3E1, "small sampi", "ϡ", "Ll", 0, "\\sampi", "\\upsampi", null));
+        symbols.add(new MathLetter(0x3D8, "archaic koppa", "Ϙ", "Lu", 0, "\\Qoppa", "\\upoldKoppa", "ordinary"));
+        symbols.add(new MathLetter(0x3D9, "small archaic koppa", "ϙ", "Ll", 0, "\\qoppa", "\\upoldkoppa", "ordinary"));
+        symbols.add(new MathLetter(0x3DA, "stigma", "Ϛ", "Lu", 0, "\\Stigma", "\\upStigma", "alphabetical"));
+        symbols.add(new MathLetter(0x3DB, "small stigma", "ϛ", "Ll", 0, "\\stigma", "\\upstigma", "alphabetical"));
+        symbols.add(new MathLetter(0x3DC, "digamma", "Ϝ", "Lu", 0, "\\Digamma", "\\upDigamma", "alphabetical"));
+        symbols.add(new MathLetter(0x3DD, "small digamma", "ϝ", "Ll", 0, "\\digamma", "\\updigamma", "alphabetical"));
+        symbols.add(new MathLetter(0x3DE, "koppa", "Ϟ", "Lu", 0, "\\Koppa", "\\upKoppa", "alphabetical"));
+        symbols.add(new MathLetter(0x3DF, "small koppa", "ϟ", "Ll", 0, "\\koppa", "\\upkoppa", "alphabetical"));
+        symbols.add(new MathLetter(0x3E0, "sampi", "Ϡ", "Lu", 0, "\\Sampi", "\\upSampi", "alphabetical"));
+        symbols.add(new MathLetter(0x3E1, "small sampi", "ϡ", "Ll", 0, "\\sampi", "\\upsampi", "alphabetical"));
         symbols.add(new MathLetter(0x3E2, "coptic Shei", "Ϣ", "Lu", 0));
         symbols.add(new MathLetter(0x3E3, "coptic small shei", "ϣ", "Ll", 0));
         symbols.add(new MathLetter(0x3E4, "coptic Fei", "Ϥ", "Lu", 0));
@@ -221,13 +172,13 @@ public class MathLetter implements UniCode {
         symbols.add(new MathLetter(0x3ED, "coptic small shima", "ϭ", "Ll", 0));
         symbols.add(new MathLetter(0x3EE, "coptic Dei", "Ϯ", "Lu", 0));
         symbols.add(new MathLetter(0x3EF, "coptic small dei", "ϯ", "Ll", 0));
-        symbols.add(new MathLetter(0x3F0, "kappa", "ϰ", "Ll", 0, "\\varkappa", "\\mupvarkappa", null));
-        symbols.add(new MathLetter(0x3F1, "rho", "ϱ", "Ll", 0, "\\varrho", "\\mupvarrho", null));
+        symbols.add(new MathLetter(0x3F0, "kappa", "ϰ", "Ll", 0, "\\varkappa", "\\mupvarkappa", "alphabetical"));
+        symbols.add(new MathLetter(0x3F1, "rho", "ϱ", "Ll", 0, "\\varrho", "\\mupvarrho", "alphabetical"));
         symbols.add(new MathLetter(0x3F2, "lunate sigma", "ϲ", "Ll", 0));
         symbols.add(new MathLetter(0x3F3, "yot", "ϳ", "Ll", 0));
-        symbols.add(new MathLetter(0x3F4, "Theta", "ϴ", "Lu", 0, null, "\\mupvarTheta", null));
-        symbols.add(new MathLetter(0x3F5, "lunate epsilon", "ϵ", "Ll", 0, "\\epsilon", "\\mupepsilon", null));
-        symbols.add(new MathLetter(0x3F6, "reversed lunate epsilon", "϶", "Sm", 0, "\\backepsilon", "\\upbackepsilon", null));
+        symbols.add(new MathLetter(0x3F4, "Theta", "ϴ", "Lu", 0, null, "\\mupvarTheta", "alphabetical"));
+        symbols.add(new MathLetter(0x3F5, "lunate epsilon", "ϵ", "Ll", 0, "\\epsilon", "\\mupepsilon", "alphabetical"));
+        symbols.add(new MathLetter(0x3F6, "reversed lunate epsilon", "϶", "Sm", 0, "\\backepsilon", "\\upbackepsilon", "ordinary"));
         symbols.add(new MathLetter(0x3F7, "Sho", "Ϸ", "Lu", 0));
         symbols.add(new MathLetter(0x3F8, "small sho", "ϸ", "Ll", 0));
         symbols.add(new MathLetter(0x3F9, "Lunate sigma", "Ϲ", "Lu", 0));
@@ -478,40 +429,40 @@ public class MathLetter implements UniCode {
         symbols.add(new MathLetter(0x2077, "^7", "⁷", "No", 0));
         symbols.add(new MathLetter(0x2078, "^8", "⁸", "No", 0));
         symbols.add(new MathLetter(0x2079, "^9", "⁹", "No", 0));
-        symbols.add(new MathLetter(0x207A, "^plus sign", "⁺", "Sm", 0));
-        symbols.add(new MathLetter(0x207B, "^minus", "⁻", "Sm", 0));
-        symbols.add(new MathLetter(0x207C, "^equals sign", "⁼", "Sm", 0));
-        symbols.add(new MathLetter(0x207D, "^left parenthesis", "⁽", "Ps", 0));
-        symbols.add(new MathLetter(0x207E, "^right parenthesis", "⁾", "Pe", 0));
+        symbols.add(new MathLetter(0x207A, "^+", "⁺", "Sm", 0));
+        symbols.add(new MathLetter(0x207B, "^-", "⁻", "Sm", 0));
+        symbols.add(new MathLetter(0x207C, "^=", "⁼", "Sm", 0));
+        symbols.add(new MathLetter(0x207D, "^(", "⁽", "Ps", 0));
+        symbols.add(new MathLetter(0x207E, "^)", "⁾", "Pe", 0));
         symbols.add(new MathLetter(0x207F, "^n", "ⁿ", "Lm", 0));
-        symbols.add(new MathLetter(0x2080, "_subscript 0", "₀", "No", 0));
-        symbols.add(new MathLetter(0x2081, "_subscript 1", "₁", "No", 0));
-        symbols.add(new MathLetter(0x2082, "_subscript 2", "₂", "No", 0));
-        symbols.add(new MathLetter(0x2083, "_subscript 3", "₃", "No", 0));
-        symbols.add(new MathLetter(0x2084, "_subscript 4", "₄", "No", 0));
-        symbols.add(new MathLetter(0x2085, "_subscript 5", "₅", "No", 0));
-        symbols.add(new MathLetter(0x2086, "_subscript 6", "₆", "No", 0));
-        symbols.add(new MathLetter(0x2087, "_subscript 7", "₇", "No", 0));
-        symbols.add(new MathLetter(0x2088, "_subscript 8", "₈", "No", 0));
-        symbols.add(new MathLetter(0x2089, "_subscript 9", "₉", "No", 0));
-        symbols.add(new MathLetter(0x208A, "_subscript plus sign", "₊", "Sm", 0));
-        symbols.add(new MathLetter(0x208B, "_subscript minus", "₋", "Sm", 0));
-        symbols.add(new MathLetter(0x208C, "_subscript equals sign", "₌", "Sm", 0));
-        symbols.add(new MathLetter(0x208D, "_subscript left parenthesis", "₍", "Ps", 0));
-        symbols.add(new MathLetter(0x208E, "_subscript right parenthesis", "₎", "Pe", 0));
-        symbols.add(new MathLetter(0x2090, "_latin subscript a", "ₐ", "Lm", 0));
-        symbols.add(new MathLetter(0x2091, "_latin subscript e", "ₑ", "Lm", 0));
-        symbols.add(new MathLetter(0x2092, "_latin subscript o", "ₒ", "Lm", 0));
-        symbols.add(new MathLetter(0x2093, "_latin subscript x", "ₓ", "Lm", 0));
-        symbols.add(new MathLetter(0x2094, "_latin subscript small schwa", "ₔ", "Lm", 0));
-        symbols.add(new MathLetter(0x2095, "_latin subscript h", "ₕ", "Lm", 0));
-        symbols.add(new MathLetter(0x2096, "_latin subscript k", "ₖ", "Lm", 0));
-        symbols.add(new MathLetter(0x2097, "_latin subscript l", "ₗ", "Lm", 0));
-        symbols.add(new MathLetter(0x2098, "_latin subscript m", "ₘ", "Lm", 0));
-        symbols.add(new MathLetter(0x2099, "_latin subscript n", "ₙ", "Lm", 0));
-        symbols.add(new MathLetter(0x209A, "_latin subscript p", "ₚ", "Lm", 0));
-        symbols.add(new MathLetter(0x209B, "_latin subscript s", "ₛ", "Lm", 0));
-        symbols.add(new MathLetter(0x209C, "_latin subscript t", "ₜ", "Lm", 0));
+        symbols.add(new MathLetter(0x2080, "_0", "₀", "No", 0));
+        symbols.add(new MathLetter(0x2081, "_1", "₁", "No", 0));
+        symbols.add(new MathLetter(0x2082, "_2", "₂", "No", 0));
+        symbols.add(new MathLetter(0x2083, "_3", "₃", "No", 0));
+        symbols.add(new MathLetter(0x2084, "_4", "₄", "No", 0));
+        symbols.add(new MathLetter(0x2085, "_5", "₅", "No", 0));
+        symbols.add(new MathLetter(0x2086, "_6", "₆", "No", 0));
+        symbols.add(new MathLetter(0x2087, "_7", "₇", "No", 0));
+        symbols.add(new MathLetter(0x2088, "_8", "₈", "No", 0));
+        symbols.add(new MathLetter(0x2089, "_9", "₉", "No", 0));
+        symbols.add(new MathLetter(0x208A, "_+", "₊", "Sm", 0));
+        symbols.add(new MathLetter(0x208B, "_-", "₋", "Sm", 0));
+        symbols.add(new MathLetter(0x208C, "_=", "₌", "Sm", 0));
+        symbols.add(new MathLetter(0x208D, "_(", "₍", "Ps", 0));
+        symbols.add(new MathLetter(0x208E, "_)", "₎", "Pe", 0));
+        symbols.add(new MathLetter(0x2090, "_a", "ₐ", "Lm", 0));
+        symbols.add(new MathLetter(0x2091, "_e", "ₑ", "Lm", 0));
+        symbols.add(new MathLetter(0x2092, "_o", "ₒ", "Lm", 0));
+        symbols.add(new MathLetter(0x2093, "_x", "ₓ", "Lm", 0));
+        symbols.add(new MathLetter(0x2094, "subscript small schwa", "ₔ", "Lm", 0));
+        symbols.add(new MathLetter(0x2095, "_h", "ₕ", "Lm", 0));
+        symbols.add(new MathLetter(0x2096, "_k", "ₖ", "Lm", 0));
+        symbols.add(new MathLetter(0x2097, "_l", "ₗ", "Lm", 0));
+        symbols.add(new MathLetter(0x2098, "_m", "ₘ", "Lm", 0));
+        symbols.add(new MathLetter(0x2099, "_n", "ₙ", "Lm", 0));
+        symbols.add(new MathLetter(0x209A, "_p", "ₚ", "Lm", 0));
+        symbols.add(new MathLetter(0x209B, "_s", "ₛ", "Lm", 0));
+        symbols.add(new MathLetter(0x209C, "_t", "ₜ", "Lm", 0));
         symbols.add(new MathLetter(0x1D400, "mathematical bold A", "𝐀", "Lu", 0));
         symbols.add(new MathLetter(0x1D401, "mathematical bold B", "𝐁", "Lu", 0));
         symbols.add(new MathLetter(0x1D402, "mathematical bold C", "𝐂", "Lu", 0));
@@ -1164,8 +1115,8 @@ public class MathLetter implements UniCode {
         symbols.add(new MathLetter(0x1D6A1, "mathematical monospace x", "𝚡", "Ll", 0));
         symbols.add(new MathLetter(0x1D6A2, "mathematical monospace y", "𝚢", "Ll", 0));
         symbols.add(new MathLetter(0x1D6A3, "mathematical monospace z", "𝚣", "Ll", 0));
-        symbols.add(new MathLetter(0x1D6A4, "mathematical italic small dotless i", "𝚤", "Ll", 0, "\\imath", null, null));
-        symbols.add(new MathLetter(0x1D6A5, "mathematical italic small dotless j", "𝚥", "Ll", 0, "\\jmath", null, null));
+        symbols.add(new MathLetter(0x1D6A4, "mathematical italic small dotless i", "𝚤", "Ll", 0, "\\imath", null, "alphabetical"));
+        symbols.add(new MathLetter(0x1D6A5, "mathematical italic small dotless j", "𝚥", "Ll", 0, "\\jmath", null, "alphabetical"));
         symbols.add(new MathLetter(0x1D6A8, "mathematical bold Alpha", "𝚨", "Lu", 0));
         symbols.add(new MathLetter(0x1D6A9, "mathematical bold Beta", "𝚩", "Lu", 0));
         symbols.add(new MathLetter(0x1D6AA, "mathematical bold Gamma", "𝚪", "Lu", 0));

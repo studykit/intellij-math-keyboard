@@ -1,16 +1,21 @@
 package net.mlcoder.unimath.category;
 
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+@ToString @Getter @Accessors(fluent = true)
 public class Pictographs implements UniCode {
     public static final List<UniCode> symbols = new ArrayList<>();
 
     public final String desc;
     public final int codePoint;
+    public final String codeStr;
     public final String chars;
     public final String generalCategory;
     public final int combiningClass;
@@ -25,51 +30,6 @@ public class Pictographs implements UniCode {
     @Nullable
     public final String mathCategory;
 
-    @Override
-    public String desc() {
-        return desc;
-    }
-
-    @Override
-    public int codePoint() {
-        return codePoint;
-    }
-
-    @Override
-    public String chars() {
-        return chars;
-    }
-
-    @Override
-    public String generalCategory() {
-        return generalCategory;
-    }
-
-    @Override
-    public int combiningClass() {
-        return combiningClass;
-    }
-
-    @Override @Nullable
-    public String latex() {
-        return latex;
-    }
-
-    @Override @Nullable
-    public String ulatex() {
-        return ulatex;
-    }
-
-    @Override @Nullable
-    public String mathCategory() {
-        return mathCategory;
-    }
-
-    @Override @Nullable
-    public String[] tokenized() {
-        return tokenized;
-    }
-
     Pictographs(int codePoint, String desc, String chars, String generalCategory, int combiningClass) {
         this(codePoint, desc, chars, generalCategory, combiningClass, null, null, null);
     }
@@ -77,6 +37,7 @@ public class Pictographs implements UniCode {
     Pictographs(int codePoint, String desc, String chars, String generalCategory, int combiningClass,
                  @Nullable String latex, @Nullable String ulatex, @Nullable String mathCategory) {
         this.codePoint = codePoint;
+        this.codeStr = String.format("U+%04X", codePoint);
         this.desc = desc;
         this.generalCategory = generalCategory;
         this.combiningClass = combiningClass;
@@ -84,21 +45,11 @@ public class Pictographs implements UniCode {
         this.latex = latex;
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
-        this.tokenized = Arrays.stream(desc.split(" "))
-            .filter(s -> s.length() != 0).toArray(String[]::new);
-    }
 
-    @Override
-    public String toString() {
-        return "[(Pictographs)]{" +
-            "codePoint=" + codePoint +
-            ", desc='" + desc + '\'' +
-            ", chars='" + chars + '\'' +
-            ", generalCategory='" + generalCategory + '\'' +
-            ", combiningClass=" + combiningClass +
-            ", latex='" + latex + '\'' +
-            ", ulatex='" + ulatex + '\'' +
-        '}';
+        String _latex = latex != null ? " " + latex : "";
+        String _ulatex = ulatex != null ? " " + ulatex : "";
+        this.tokenized = Arrays.stream((desc + _latex + _ulatex + " " + codeStr).split(" "))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
     static {
@@ -114,7 +65,7 @@ public class Pictographs implements UniCode {
         symbols.add(new Pictographs(0x20A9, "won sign", "₩", "Sc", 0));
         symbols.add(new Pictographs(0x20AA, "new sheqel sign", "₪", "Sc", 0));
         symbols.add(new Pictographs(0x20AB, "dong sign", "₫", "Sc", 0));
-        symbols.add(new Pictographs(0x20AC, "euro sign", "€", "Sc", 0, null, "\\euro", null));
+        symbols.add(new Pictographs(0x20AC, "euro sign", "€", "Sc", 0, null, "\\euro", "ordinary"));
         symbols.add(new Pictographs(0x20AD, "kip sign", "₭", "Sc", 0));
         symbols.add(new Pictographs(0x20AE, "tugrik sign", "₮", "Sc", 0));
         symbols.add(new Pictographs(0x20AF, "drachma sign", "₯", "Sc", 0));
@@ -679,10 +630,10 @@ public class Pictographs implements UniCode {
         symbols.add(new Pictographs(0x1F51E, "no one under eighteen", "🔞", "So", 0));
         symbols.add(new Pictographs(0x1F51F, "keycap ten", "🔟", "So", 0));
         symbols.add(new Pictographs(0x1F520, "input for S", "🔠", "So", 0));
-        symbols.add(new Pictographs(0x1F521, "input for latin small letters", "🔡", "So", 0));
+        symbols.add(new Pictographs(0x1F521, "input for small letters", "🔡", "So", 0));
         symbols.add(new Pictographs(0x1F522, "input for numbers", "🔢", "So", 0));
         symbols.add(new Pictographs(0x1F523, "input for symbols", "🔣", "So", 0));
-        symbols.add(new Pictographs(0x1F524, "input for latin letters", "🔤", "So", 0));
+        symbols.add(new Pictographs(0x1F524, "input for letters", "🔤", "So", 0));
         symbols.add(new Pictographs(0x1F525, "fire", "🔥", "So", 0));
         symbols.add(new Pictographs(0x1F526, "electric torch", "🔦", "So", 0));
         symbols.add(new Pictographs(0x1F527, "wrench", "🔧", "So", 0));
@@ -716,8 +667,8 @@ public class Pictographs implements UniCode {
         symbols.add(new Pictographs(0x1F543, "notched left semicircle with three dots", "🕃", "So", 0));
         symbols.add(new Pictographs(0x1F544, "notched right semicircle with three dots", "🕄", "So", 0));
         symbols.add(new Pictographs(0x1F545, "for marks chapter", "🕅", "So", 0));
-        symbols.add(new Pictographs(0x1F546, "white latin cross", "🕆", "So", 0));
-        symbols.add(new Pictographs(0x1F547, "heavy latin cross", "🕇", "So", 0));
+        symbols.add(new Pictographs(0x1F546, "white cross", "🕆", "So", 0));
+        symbols.add(new Pictographs(0x1F547, "heavy cross", "🕇", "So", 0));
         symbols.add(new Pictographs(0x1F548, "celtic cross", "🕈", "So", 0));
         symbols.add(new Pictographs(0x1F549, "om", "🕉", "So", 0));
         symbols.add(new Pictographs(0x1F54A, "dove of peace", "🕊", "So", 0));

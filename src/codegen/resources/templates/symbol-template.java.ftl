@@ -1,16 +1,20 @@
 package net.mlcoder.unimath.category;
 
+import lombok.*;
+import lombok.experimental.Accessors;
+
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+@ToString @Getter @Accessors(fluent = true)
 public class ${className} implements UniCode {
     public static final List<UniCode> symbols = new ArrayList<>();
 
     public final String desc;
     public final int codePoint;
+    public final String codeStr;
     public final String chars;
     public final String generalCategory;
     public final int combiningClass;
@@ -25,51 +29,6 @@ public class ${className} implements UniCode {
     @Nullable
     public final String mathCategory;
 
-    @Override
-    public String desc() {
-        return desc;
-    }
-
-    @Override
-    public int codePoint() {
-        return codePoint;
-    }
-
-    @Override
-    public String chars() {
-        return chars;
-    }
-
-    @Override
-    public String generalCategory() {
-        return generalCategory;
-    }
-
-    @Override
-    public int combiningClass() {
-        return combiningClass;
-    }
-
-    @Override @Nullable
-    public String latex() {
-        return latex;
-    }
-
-    @Override @Nullable
-    public String ulatex() {
-        return ulatex;
-    }
-
-    @Override @Nullable
-    public String mathCategory() {
-        return mathCategory;
-    }
-
-    @Override @Nullable
-    public String[] tokenized() {
-        return tokenized;
-    }
-
     ${className}(int codePoint, String desc, String chars, String generalCategory, int combiningClass) {
         this(codePoint, desc, chars, generalCategory, combiningClass, null, null, null);
     }
@@ -77,6 +36,7 @@ public class ${className} implements UniCode {
     ${className}(int codePoint, String desc, String chars, String generalCategory, int combiningClass,
                  @Nullable String latex, @Nullable String ulatex, @Nullable String mathCategory) {
         this.codePoint = codePoint;
+        this.codeStr = String.format("U+%04X", codePoint);
         this.desc = desc;
         this.generalCategory = generalCategory;
         this.combiningClass = combiningClass;
@@ -84,21 +44,11 @@ public class ${className} implements UniCode {
         this.latex = latex;
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
-        this.tokenized = Arrays.stream(desc.split(" "))
-            .filter(s -> s.length() != 0).toArray(String[]::new);
-    }
 
-    @Override
-    public String toString() {
-        return "[(${className})]{" +
-            "codePoint=" + codePoint +
-            ", desc='" + desc + '\'' +
-            ", chars='" + chars + '\'' +
-            ", generalCategory='" + generalCategory + '\'' +
-            ", combiningClass=" + combiningClass +
-            ", latex='" + latex + '\'' +
-            ", ulatex='" + ulatex + '\'' +
-        '}';
+        String _latex = latex != null ? " " + latex : "";
+        String _ulatex = ulatex != null ? " " + ulatex : "";
+        this.tokenized = Arrays.stream((desc + _latex + _ulatex + " " + codeStr).split(" "))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
     static {

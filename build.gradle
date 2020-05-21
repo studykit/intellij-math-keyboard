@@ -26,6 +26,8 @@ sourceSets {
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
     codegenCompileOnly 'org.projectlombok:lombok:1.18.12'
     codegenAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
@@ -51,7 +53,9 @@ patchPluginXml {
 task generateLatexTemplate(type: JavaExec) {
     group = "script"
     classpath = sourceSets.codegen.runtimeClasspath
+
     workingDir("${project.rootDir}/src/main/resources/templates/latex")
+    args sourceSets.codegen.resources.srcDirs.first().path
 
     main = "net.mlcoder.codegen.LatexTemplateGenerator"
 }

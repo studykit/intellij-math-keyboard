@@ -1,16 +1,21 @@
 package net.mlcoder.unimath.category;
 
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
+@ToString @Getter @Accessors(fluent = true)
 public class Shapes implements UniCode {
     public static final List<UniCode> symbols = new ArrayList<>();
 
     public final String desc;
     public final int codePoint;
+    public final String codeStr;
     public final String chars;
     public final String generalCategory;
     public final int combiningClass;
@@ -25,51 +30,6 @@ public class Shapes implements UniCode {
     @Nullable
     public final String mathCategory;
 
-    @Override
-    public String desc() {
-        return desc;
-    }
-
-    @Override
-    public int codePoint() {
-        return codePoint;
-    }
-
-    @Override
-    public String chars() {
-        return chars;
-    }
-
-    @Override
-    public String generalCategory() {
-        return generalCategory;
-    }
-
-    @Override
-    public int combiningClass() {
-        return combiningClass;
-    }
-
-    @Override @Nullable
-    public String latex() {
-        return latex;
-    }
-
-    @Override @Nullable
-    public String ulatex() {
-        return ulatex;
-    }
-
-    @Override @Nullable
-    public String mathCategory() {
-        return mathCategory;
-    }
-
-    @Override @Nullable
-    public String[] tokenized() {
-        return tokenized;
-    }
-
     Shapes(int codePoint, String desc, String chars, String generalCategory, int combiningClass) {
         this(codePoint, desc, chars, generalCategory, combiningClass, null, null, null);
     }
@@ -77,6 +37,7 @@ public class Shapes implements UniCode {
     Shapes(int codePoint, String desc, String chars, String generalCategory, int combiningClass,
                  @Nullable String latex, @Nullable String ulatex, @Nullable String mathCategory) {
         this.codePoint = codePoint;
+        this.codeStr = String.format("U+%04X", codePoint);
         this.desc = desc;
         this.generalCategory = generalCategory;
         this.combiningClass = combiningClass;
@@ -84,21 +45,11 @@ public class Shapes implements UniCode {
         this.latex = latex;
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
-        this.tokenized = Arrays.stream(desc.split(" "))
-            .filter(s -> s.length() != 0).toArray(String[]::new);
-    }
 
-    @Override
-    public String toString() {
-        return "[(Shapes)]{" +
-            "codePoint=" + codePoint +
-            ", desc='" + desc + '\'' +
-            ", chars='" + chars + '\'' +
-            ", generalCategory='" + generalCategory + '\'' +
-            ", combiningClass=" + combiningClass +
-            ", latex='" + latex + '\'' +
-            ", ulatex='" + ulatex + '\'' +
-        '}';
+        String _latex = latex != null ? " " + latex : "";
+        String _ulatex = ulatex != null ? " " + ulatex : "";
+        this.tokenized = Arrays.stream((desc + _latex + _ulatex + " " + codeStr).split(" "))
+            .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
     static {
@@ -108,7 +59,7 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x2503, "box drawings heavy vertical", "┃", "So", 0));
         symbols.add(new Shapes(0x2504, "box drawings light triple dash horizontal", "┄", "So", 0));
         symbols.add(new Shapes(0x2505, "box drawings heavy triple dash horizontal", "┅", "So", 0));
-        symbols.add(new Shapes(0x2506, "box drawings light triple dash vertical", "┆", "So", 0, null, "\\bdtriplevdash", null));
+        symbols.add(new Shapes(0x2506, "box drawings light triple dash vertical", "┆", "So", 0, null, "\\bdtriplevdash", "ordinary"));
         symbols.add(new Shapes(0x2507, "box drawings heavy triple dash vertical", "┇", "So", 0));
         symbols.add(new Shapes(0x2508, "box drawings light quadruple dash horizontal", "┈", "So", 0));
         symbols.add(new Shapes(0x2509, "box drawings heavy quadruple dash horizontal", "┉", "So", 0));
@@ -230,26 +181,26 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x257D, "box drawings light up and heavy down", "╽", "So", 0));
         symbols.add(new Shapes(0x257E, "box drawings heavy left and light right", "╾", "So", 0));
         symbols.add(new Shapes(0x257F, "box drawings heavy up and light down", "╿", "So", 0));
-        symbols.add(new Shapes(0x2580, "upper half block", "▀", "So", 0, null, "\\blockuphalf", null));
+        symbols.add(new Shapes(0x2580, "upper half block", "▀", "So", 0, null, "\\blockuphalf", "ordinary"));
         symbols.add(new Shapes(0x2581, "lower one eighth block", "▁", "So", 0));
         symbols.add(new Shapes(0x2582, "lower one quarter block", "▂", "So", 0));
         symbols.add(new Shapes(0x2583, "lower three eighths block", "▃", "So", 0));
-        symbols.add(new Shapes(0x2584, "lower half block", "▄", "So", 0, null, "\\blocklowhalf", null));
+        symbols.add(new Shapes(0x2584, "lower half block", "▄", "So", 0, null, "\\blocklowhalf", "ordinary"));
         symbols.add(new Shapes(0x2585, "lower five eighths block", "▅", "So", 0));
         symbols.add(new Shapes(0x2586, "lower three quarters block", "▆", "So", 0));
         symbols.add(new Shapes(0x2587, "lower seven eighths block", "▇", "So", 0));
-        symbols.add(new Shapes(0x2588, "full block", "█", "So", 0, null, "\\blockfull", null));
+        symbols.add(new Shapes(0x2588, "full block", "█", "So", 0, null, "\\blockfull", "ordinary"));
         symbols.add(new Shapes(0x2589, "left seven eighths block", "▉", "So", 0));
         symbols.add(new Shapes(0x258A, "left three quarters block", "▊", "So", 0));
         symbols.add(new Shapes(0x258B, "left five eighths block", "▋", "So", 0));
-        symbols.add(new Shapes(0x258C, "left half block", "▌", "So", 0, null, "\\blocklefthalf", null));
+        symbols.add(new Shapes(0x258C, "left half block", "▌", "So", 0, null, "\\blocklefthalf", "ordinary"));
         symbols.add(new Shapes(0x258D, "left three eighths block", "▍", "So", 0));
         symbols.add(new Shapes(0x258E, "left one quarter block", "▎", "So", 0));
         symbols.add(new Shapes(0x258F, "left one eighth block", "▏", "So", 0));
-        symbols.add(new Shapes(0x2590, "right half block", "▐", "So", 0, null, "\\blockrighthalf", null));
-        symbols.add(new Shapes(0x2591, "light shade", "░", "So", 0, null, "\\blockqtrshaded", null));
-        symbols.add(new Shapes(0x2592, "medium shade", "▒", "So", 0, null, "\\blockhalfshaded", null));
-        symbols.add(new Shapes(0x2593, "dark shade", "▓", "So", 0, null, "\\blockthreeqtrshaded", null));
+        symbols.add(new Shapes(0x2590, "right half block", "▐", "So", 0, null, "\\blockrighthalf", "ordinary"));
+        symbols.add(new Shapes(0x2591, "light shade", "░", "So", 0, null, "\\blockqtrshaded", "ordinary"));
+        symbols.add(new Shapes(0x2592, "medium shade", "▒", "So", 0, null, "\\blockhalfshaded", "ordinary"));
+        symbols.add(new Shapes(0x2593, "dark shade", "▓", "So", 0, null, "\\blockthreeqtrshaded", "ordinary"));
         symbols.add(new Shapes(0x2594, "upper one eighth block", "▔", "So", 0));
         symbols.add(new Shapes(0x2595, "right one eighth block", "▕", "So", 0));
         symbols.add(new Shapes(0x2596, "quadrant lower left", "▖", "So", 0));
@@ -262,102 +213,102 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x259D, "quadrant upper right", "▝", "So", 0));
         symbols.add(new Shapes(0x259E, "quadrant upper right and lower left", "▞", "So", 0));
         symbols.add(new Shapes(0x259F, "quadrant upper right and lower left and lower right", "▟", "So", 0));
-        symbols.add(new Shapes(0x25A0, "black square", "■", "So", 0, null, "\\mdlgblksquare", null));
-        symbols.add(new Shapes(0x25A1, "white square", "□", "So", 0, null, "\\mdlgwhtsquare", null));
-        symbols.add(new Shapes(0x25A2, "white square with rounded corners", "▢", "So", 0, null, "\\squoval", null));
-        symbols.add(new Shapes(0x25A3, "white square containing black small square", "▣", "So", 0, null, "\\blackinwhitesquare", null));
-        symbols.add(new Shapes(0x25A4, "square with horizontal fill", "▤", "So", 0, null, "\\squarehfill", null));
-        symbols.add(new Shapes(0x25A5, "square with vertical fill", "▥", "So", 0, null, "\\squarevfill", null));
-        symbols.add(new Shapes(0x25A6, "square with orthogonal crosshatch fill", "▦", "So", 0, null, "\\squarehvfill", null));
-        symbols.add(new Shapes(0x25A7, "square with upper left to lower right fill", "▧", "So", 0, null, "\\squarenwsefill", null));
-        symbols.add(new Shapes(0x25A8, "square with upper right to lower left fill", "▨", "So", 0, null, "\\squareneswfill", null));
-        symbols.add(new Shapes(0x25A9, "square with diagonal crosshatch fill", "▩", "So", 0, null, "\\squarecrossfill", null));
-        symbols.add(new Shapes(0x25AA, "black small square", "▪", "So", 0, null, "\\smblksquare", null));
-        symbols.add(new Shapes(0x25AB, "white small square", "▫", "So", 0, null, "\\smwhtsquare", null));
-        symbols.add(new Shapes(0x25AC, "black rectangle", "▬", "So", 0, null, "\\hrectangleblack", null));
-        symbols.add(new Shapes(0x25AD, "white rectangle", "▭", "So", 0, null, "\\hrectangle", null));
-        symbols.add(new Shapes(0x25AE, "black vertical rectangle", "▮", "So", 0, null, "\\vrectangleblack", null));
-        symbols.add(new Shapes(0x25AF, "white vertical rectangle", "▯", "So", 0, null, "\\vrectangle", null));
-        symbols.add(new Shapes(0x25B0, "black parallelogram", "▰", "So", 0, null, "\\parallelogramblack", null));
-        symbols.add(new Shapes(0x25B1, "white parallelogram", "▱", "So", 0, null, "\\parallelogram", null));
-        symbols.add(new Shapes(0x25B2, "black up-pointing triangle", "▲", "So", 0, null, "\\bigblacktriangleup", null));
-        symbols.add(new Shapes(0x25B3, "white up-pointing triangle", "△", "So", 0, "\\bigtriangleup", null, null));
-        symbols.add(new Shapes(0x25B4, "black up-pointing small triangle", "▴", "So", 0, "\\blacktriangleup", "\\blacktriangle", null));
-        symbols.add(new Shapes(0x25B5, "white up-pointing small triangle", "▵", "So", 0, "\\smalltriangleup", "\\vartriangle", null));
-        symbols.add(new Shapes(0x25B6, "black right-pointing triangle", "▶", "So", 0, "\\RHD", "\\blacktriangleright", null));
-        symbols.add(new Shapes(0x25B7, "white right-pointing triangle", "▷", "Sm", 0, "\\rhd", "\\triangleright", null));
-        symbols.add(new Shapes(0x25B8, "black right-pointing small triangle", "▸", "So", 0, "\\blacktriangleright", "\\smallblacktriangleright", null));
-        symbols.add(new Shapes(0x25B9, "white right-pointing small triangle", "▹", "So", 0, "\\smalltriangleright", null, null));
-        symbols.add(new Shapes(0x25BA, "black right-pointing pointer", "►", "So", 0, null, "\\blackpointerright", null));
-        symbols.add(new Shapes(0x25BB, "white right-pointing pointer", "▻", "So", 0, null, "\\whitepointerright", null));
-        symbols.add(new Shapes(0x25BC, "black down-pointing triangle", "▼", "So", 0, null, "\\bigblacktriangledown", null));
-        symbols.add(new Shapes(0x25BD, "white down-pointing triangle", "▽", "So", 0, "\\bigtriangledown", null, null));
-        symbols.add(new Shapes(0x25BE, "black down-pointing small triangle", "▾", "So", 0, "\\blacktriangledown", null, null));
-        symbols.add(new Shapes(0x25BF, "white down-pointing small triangle", "▿", "So", 0, "\\smalltriangledown", "\\triangledown", null));
-        symbols.add(new Shapes(0x25C0, "black left-pointing triangle", "◀", "So", 0, "\\LHD", "\\blacktriangleleft", null));
-        symbols.add(new Shapes(0x25C1, "white left-pointing triangle", "◁", "Sm", 0, "\\lhd", "\\triangleleft", null));
-        symbols.add(new Shapes(0x25C2, "black left-pointing small triangle", "◂", "So", 0, "\\blacktriangleleft", "\\smallblacktriangleleft", null));
-        symbols.add(new Shapes(0x25C3, "white left-pointing small triangle", "◃", "So", 0, "\\smalltriangleleft", null, null));
-        symbols.add(new Shapes(0x25C4, "black left-pointing pointer", "◄", "So", 0, null, "\\blackpointerleft", null));
-        symbols.add(new Shapes(0x25C5, "white left-pointing pointer", "◅", "So", 0, null, "\\whitepointerleft", null));
-        symbols.add(new Shapes(0x25C6, "black diamond", "◆", "So", 0, "\\Diamondblack", "\\mdlgblkdiamond", null));
-        symbols.add(new Shapes(0x25C7, "white diamond", "◇", "So", 0, "\\Diamond", "\\mdlgwhtdiamond", null));
-        symbols.add(new Shapes(0x25C8, "white diamond containing black small diamond", "◈", "So", 0, null, "\\blackinwhitediamond", null));
-        symbols.add(new Shapes(0x25C9, "fisheye", "◉", "So", 0, null, "\\fisheye", null));
-        symbols.add(new Shapes(0x25CA, "lozenge", "◊", "So", 0, "\\lozenge", "\\mdlgwhtlozenge", null));
-        symbols.add(new Shapes(0x25CB, "white circle", "○", "So", 0, "\\Circle", "\\mdlgwhtcircle", null));
-        symbols.add(new Shapes(0x25CC, "dotted circle", "◌", "So", 0, null, "\\dottedcircle", null));
-        symbols.add(new Shapes(0x25CD, "circle with vertical fill", "◍", "So", 0, null, "\\circlevertfill", null));
-        symbols.add(new Shapes(0x25CE, "bullseye", "◎", "So", 0, null, "\\bullseye", null));
-        symbols.add(new Shapes(0x25CF, "black circle", "●", "So", 0, "\\CIRCLE", "\\mdlgblkcircle", null));
-        symbols.add(new Shapes(0x25D0, "circle with left half black", "◐", "So", 0, "\\LEFTcircle", "\\circlelefthalfblack", null));
-        symbols.add(new Shapes(0x25D1, "circle with right half black", "◑", "So", 0, "\\RIGHTcircle", "\\circlerighthalfblack", null));
-        symbols.add(new Shapes(0x25D2, "circle with lower half black", "◒", "So", 0, null, "\\circlebottomhalfblack", null));
-        symbols.add(new Shapes(0x25D3, "circle with upper half black", "◓", "So", 0, null, "\\circletophalfblack", null));
-        symbols.add(new Shapes(0x25D4, "circle with upper right quadrant black", "◔", "So", 0, null, "\\circleurquadblack", null));
-        symbols.add(new Shapes(0x25D5, "circle with all but upper left quadrant black", "◕", "So", 0, null, "\\blackcircleulquadwhite", null));
-        symbols.add(new Shapes(0x25D6, "left half black circle", "◖", "So", 0, "\\LEFTCIRCLE", "\\blacklefthalfcircle", null));
-        symbols.add(new Shapes(0x25D7, "right half black circle", "◗", "So", 0, "\\RIGHTCIRCLE", "\\blackrighthalfcircle", null));
-        symbols.add(new Shapes(0x25D8, "inverse bullet", "◘", "So", 0, null, "\\inversebullet", null));
-        symbols.add(new Shapes(0x25D9, "inverse white circle", "◙", "So", 0, null, "\\inversewhitecircle", null));
-        symbols.add(new Shapes(0x25DA, "upper half inverse white circle", "◚", "So", 0, null, "\\invwhiteupperhalfcircle", null));
-        symbols.add(new Shapes(0x25DB, "lower half inverse white circle", "◛", "So", 0, null, "\\invwhitelowerhalfcircle", null));
-        symbols.add(new Shapes(0x25DC, "upper left quadrant circular arc", "◜", "So", 0, null, "\\ularc", null));
-        symbols.add(new Shapes(0x25DD, "upper right quadrant circular arc", "◝", "So", 0, null, "\\urarc", null));
-        symbols.add(new Shapes(0x25DE, "lower right quadrant circular arc", "◞", "So", 0, null, "\\lrarc", null));
-        symbols.add(new Shapes(0x25DF, "lower left quadrant circular arc", "◟", "So", 0, null, "\\llarc", null));
-        symbols.add(new Shapes(0x25E0, "upper half circle", "◠", "So", 0, null, "\\topsemicircle", null));
-        symbols.add(new Shapes(0x25E1, "lower half circle", "◡", "So", 0, null, "\\botsemicircle", null));
-        symbols.add(new Shapes(0x25E2, "black lower right triangle", "◢", "So", 0, null, "\\lrblacktriangle", null));
-        symbols.add(new Shapes(0x25E3, "black lower left triangle", "◣", "So", 0, null, "\\llblacktriangle", null));
-        symbols.add(new Shapes(0x25E4, "black upper left triangle", "◤", "So", 0, null, "\\ulblacktriangle", null));
-        symbols.add(new Shapes(0x25E5, "black upper right triangle", "◥", "So", 0, null, "\\urblacktriangle", null));
-        symbols.add(new Shapes(0x25E6, "white bullet", "◦", "So", 0, null, "\\smwhtcircle", null));
-        symbols.add(new Shapes(0x25E7, "square with left half black", "◧", "So", 0, null, "\\squareleftblack", null));
-        symbols.add(new Shapes(0x25E8, "square with right half black", "◨", "So", 0, null, "\\squarerightblack", null));
-        symbols.add(new Shapes(0x25E9, "square with upper left diagonal half black", "◩", "So", 0, null, "\\squareulblack", null));
-        symbols.add(new Shapes(0x25EA, "square with lower right diagonal half black", "◪", "So", 0, null, "\\squarelrblack", null));
-        symbols.add(new Shapes(0x25EB, "white square with vertical bisecting line", "◫", "So", 0, "\\boxbar", null, null));
-        symbols.add(new Shapes(0x25EC, "white up-pointing triangle with dot", "◬", "So", 0, null, "\\trianglecdot", null));
-        symbols.add(new Shapes(0x25ED, "up-pointing triangle with left half black", "◭", "So", 0, null, "\\triangleleftblack", null));
-        symbols.add(new Shapes(0x25EE, "up-pointing triangle with right half black", "◮", "So", 0, null, "\\trianglerightblack", null));
-        symbols.add(new Shapes(0x25EF, "large circle", "◯", "So", 0, null, "\\lgwhtcircle", null));
-        symbols.add(new Shapes(0x25F0, "white square with upper left quadrant", "◰", "So", 0, null, "\\squareulquad", null));
-        symbols.add(new Shapes(0x25F1, "white square with lower left quadrant", "◱", "So", 0, null, "\\squarellquad", null));
-        symbols.add(new Shapes(0x25F2, "white square with lower right quadrant", "◲", "So", 0, null, "\\squarelrquad", null));
-        symbols.add(new Shapes(0x25F3, "white square with upper right quadrant", "◳", "So", 0, null, "\\squareurquad", null));
-        symbols.add(new Shapes(0x25F4, "white circle with upper left quadrant", "◴", "So", 0, null, "\\circleulquad", null));
-        symbols.add(new Shapes(0x25F5, "white circle with lower left quadrant", "◵", "So", 0, null, "\\circlellquad", null));
-        symbols.add(new Shapes(0x25F6, "white circle with lower right quadrant", "◶", "So", 0, null, "\\circlelrquad", null));
-        symbols.add(new Shapes(0x25F7, "white circle with upper right quadrant", "◷", "So", 0, null, "\\circleurquad", null));
-        symbols.add(new Shapes(0x25F8, "upper left triangle", "◸", "Sm", 0, null, "\\ultriangle", null));
-        symbols.add(new Shapes(0x25F9, "upper right triangle", "◹", "Sm", 0, null, "\\urtriangle", null));
-        symbols.add(new Shapes(0x25FA, "lower left triangle", "◺", "Sm", 0, null, "\\lltriangle", null));
-        symbols.add(new Shapes(0x25FB, "white medium square", "◻", "Sm", 0, "\\square", "\\mdwhtsquare", null));
-        symbols.add(new Shapes(0x25FC, "black medium square", "◼", "Sm", 0, "\\blacksquare", "\\mdblksquare", null));
-        symbols.add(new Shapes(0x25FD, "white medium small square", "◽", "Sm", 0, null, "\\mdsmwhtsquare", null));
-        symbols.add(new Shapes(0x25FE, "black medium small square", "◾", "Sm", 0, null, "\\mdsmblksquare", null));
-        symbols.add(new Shapes(0x25FF, "lower right triangle", "◿", "Sm", 0, null, "\\lrtriangle", null));
+        symbols.add(new Shapes(0x25A0, "black square", "■", "So", 0, null, "\\mdlgblksquare", "ordinary"));
+        symbols.add(new Shapes(0x25A1, "white square", "□", "So", 0, null, "\\mdlgwhtsquare", "ordinary"));
+        symbols.add(new Shapes(0x25A2, "white square with rounded corners", "▢", "So", 0, null, "\\squoval", "ordinary"));
+        symbols.add(new Shapes(0x25A3, "white square containing black small square", "▣", "So", 0, null, "\\blackinwhitesquare", "ordinary"));
+        symbols.add(new Shapes(0x25A4, "square with horizontal fill", "▤", "So", 0, null, "\\squarehfill", "ordinary"));
+        symbols.add(new Shapes(0x25A5, "square with vertical fill", "▥", "So", 0, null, "\\squarevfill", "ordinary"));
+        symbols.add(new Shapes(0x25A6, "square with orthogonal crosshatch fill", "▦", "So", 0, null, "\\squarehvfill", "ordinary"));
+        symbols.add(new Shapes(0x25A7, "square with upper left to lower right fill", "▧", "So", 0, null, "\\squarenwsefill", "ordinary"));
+        symbols.add(new Shapes(0x25A8, "square with upper right to lower left fill", "▨", "So", 0, null, "\\squareneswfill", "ordinary"));
+        symbols.add(new Shapes(0x25A9, "square with diagonal crosshatch fill", "▩", "So", 0, null, "\\squarecrossfill", "ordinary"));
+        symbols.add(new Shapes(0x25AA, "black small square", "▪", "So", 0, null, "\\smblksquare", "ordinary"));
+        symbols.add(new Shapes(0x25AB, "white small square", "▫", "So", 0, null, "\\smwhtsquare", "ordinary"));
+        symbols.add(new Shapes(0x25AC, "black rectangle", "▬", "So", 0, null, "\\hrectangleblack", "ordinary"));
+        symbols.add(new Shapes(0x25AD, "white rectangle", "▭", "So", 0, null, "\\hrectangle", "ordinary"));
+        symbols.add(new Shapes(0x25AE, "black vertical rectangle", "▮", "So", 0, null, "\\vrectangleblack", "ordinary"));
+        symbols.add(new Shapes(0x25AF, "white vertical rectangle", "▯", "So", 0, null, "\\vrectangle", "ordinary"));
+        symbols.add(new Shapes(0x25B0, "black parallelogram", "▰", "So", 0, null, "\\parallelogramblack", "ordinary"));
+        symbols.add(new Shapes(0x25B1, "white parallelogram", "▱", "So", 0, null, "\\parallelogram", "ordinary"));
+        symbols.add(new Shapes(0x25B2, "black up-pointing triangle", "▲", "So", 0, null, "\\bigblacktriangleup", "ordinary"));
+        symbols.add(new Shapes(0x25B3, "white up-pointing triangle", "△", "So", 0, "\\bigtriangleup", null, "binary relation"));
+        symbols.add(new Shapes(0x25B4, "black up-pointing small triangle", "▴", "So", 0, "\\blacktriangleup", "\\blacktriangle", "ordinary"));
+        symbols.add(new Shapes(0x25B5, "white up-pointing small triangle", "▵", "So", 0, "\\smalltriangleup", "\\vartriangle", "relation"));
+        symbols.add(new Shapes(0x25B6, "black right-pointing triangle", "▶", "So", 0, "\\RHD", "\\blacktriangleright", "ordinary"));
+        symbols.add(new Shapes(0x25B7, "white right-pointing triangle", "▷", "Sm", 0, "\\rhd", "\\triangleright", "binary relation"));
+        symbols.add(new Shapes(0x25B8, "black right-pointing small triangle", "▸", "So", 0, "\\blacktriangleright", "\\smallblacktriangleright", "ordinary"));
+        symbols.add(new Shapes(0x25B9, "white right-pointing small triangle", "▹", "So", 0, "\\smalltriangleright", null, "ordinary"));
+        symbols.add(new Shapes(0x25BA, "black right-pointing pointer", "►", "So", 0, null, "\\blackpointerright", "ordinary"));
+        symbols.add(new Shapes(0x25BB, "white right-pointing pointer", "▻", "So", 0, null, "\\whitepointerright", "ordinary"));
+        symbols.add(new Shapes(0x25BC, "black down-pointing triangle", "▼", "So", 0, null, "\\bigblacktriangledown", "ordinary"));
+        symbols.add(new Shapes(0x25BD, "white down-pointing triangle", "▽", "So", 0, "\\bigtriangledown", null, "ordinary"));
+        symbols.add(new Shapes(0x25BE, "black down-pointing small triangle", "▾", "So", 0, "\\blacktriangledown", null, "ordinary"));
+        symbols.add(new Shapes(0x25BF, "white down-pointing small triangle", "▿", "So", 0, "\\smalltriangledown", "\\triangledown", "ordinary"));
+        symbols.add(new Shapes(0x25C0, "black left-pointing triangle", "◀", "So", 0, "\\LHD", "\\blacktriangleleft", "ordinary"));
+        symbols.add(new Shapes(0x25C1, "white left-pointing triangle", "◁", "Sm", 0, "\\lhd", "\\triangleleft", "binary relation"));
+        symbols.add(new Shapes(0x25C2, "black left-pointing small triangle", "◂", "So", 0, "\\blacktriangleleft", "\\smallblacktriangleleft", "ordinary"));
+        symbols.add(new Shapes(0x25C3, "white left-pointing small triangle", "◃", "So", 0, "\\smalltriangleleft", null, "ordinary"));
+        symbols.add(new Shapes(0x25C4, "black left-pointing pointer", "◄", "So", 0, null, "\\blackpointerleft", "ordinary"));
+        symbols.add(new Shapes(0x25C5, "white left-pointing pointer", "◅", "So", 0, null, "\\whitepointerleft", "ordinary"));
+        symbols.add(new Shapes(0x25C6, "black diamond", "◆", "So", 0, "\\Diamondblack", "\\mdlgblkdiamond", "ordinary"));
+        symbols.add(new Shapes(0x25C7, "white diamond", "◇", "So", 0, "\\Diamond", "\\mdlgwhtdiamond", "ordinary"));
+        symbols.add(new Shapes(0x25C8, "white diamond containing black small diamond", "◈", "So", 0, null, "\\blackinwhitediamond", "ordinary"));
+        symbols.add(new Shapes(0x25C9, "fisheye", "◉", "So", 0, null, "\\fisheye", "ordinary"));
+        symbols.add(new Shapes(0x25CA, "lozenge", "◊", "So", 0, "\\lozenge", "\\mdlgwhtlozenge", "ordinary"));
+        symbols.add(new Shapes(0x25CB, "white circle", "○", "So", 0, "\\Circle", "\\mdlgwhtcircle", "binary relation"));
+        symbols.add(new Shapes(0x25CC, "dotted circle", "◌", "So", 0, null, "\\dottedcircle", "ordinary"));
+        symbols.add(new Shapes(0x25CD, "circle with vertical fill", "◍", "So", 0, null, "\\circlevertfill", "ordinary"));
+        symbols.add(new Shapes(0x25CE, "bullseye", "◎", "So", 0, null, "\\bullseye", "ordinary"));
+        symbols.add(new Shapes(0x25CF, "black circle", "●", "So", 0, "\\CIRCLE", "\\mdlgblkcircle", "ordinary"));
+        symbols.add(new Shapes(0x25D0, "circle with left half black", "◐", "So", 0, "\\LEFTcircle", "\\circlelefthalfblack", "ordinary"));
+        symbols.add(new Shapes(0x25D1, "circle with right half black", "◑", "So", 0, "\\RIGHTcircle", "\\circlerighthalfblack", "ordinary"));
+        symbols.add(new Shapes(0x25D2, "circle with lower half black", "◒", "So", 0, null, "\\circlebottomhalfblack", "ordinary"));
+        symbols.add(new Shapes(0x25D3, "circle with upper half black", "◓", "So", 0, null, "\\circletophalfblack", "ordinary"));
+        symbols.add(new Shapes(0x25D4, "circle with upper right quadrant black", "◔", "So", 0, null, "\\circleurquadblack", "ordinary"));
+        symbols.add(new Shapes(0x25D5, "circle with all but upper left quadrant black", "◕", "So", 0, null, "\\blackcircleulquadwhite", "ordinary"));
+        symbols.add(new Shapes(0x25D6, "left half black circle", "◖", "So", 0, "\\LEFTCIRCLE", "\\blacklefthalfcircle", "ordinary"));
+        symbols.add(new Shapes(0x25D7, "right half black circle", "◗", "So", 0, "\\RIGHTCIRCLE", "\\blackrighthalfcircle", "ordinary"));
+        symbols.add(new Shapes(0x25D8, "inverse bullet", "◘", "So", 0, null, "\\inversebullet", "ordinary"));
+        symbols.add(new Shapes(0x25D9, "inverse white circle", "◙", "So", 0, null, "\\inversewhitecircle", "ordinary"));
+        symbols.add(new Shapes(0x25DA, "upper half inverse white circle", "◚", "So", 0, null, "\\invwhiteupperhalfcircle", "ordinary"));
+        symbols.add(new Shapes(0x25DB, "lower half inverse white circle", "◛", "So", 0, null, "\\invwhitelowerhalfcircle", "ordinary"));
+        symbols.add(new Shapes(0x25DC, "upper left quadrant circular arc", "◜", "So", 0, null, "\\ularc", "ordinary"));
+        symbols.add(new Shapes(0x25DD, "upper right quadrant circular arc", "◝", "So", 0, null, "\\urarc", "ordinary"));
+        symbols.add(new Shapes(0x25DE, "lower right quadrant circular arc", "◞", "So", 0, null, "\\lrarc", "ordinary"));
+        symbols.add(new Shapes(0x25DF, "lower left quadrant circular arc", "◟", "So", 0, null, "\\llarc", "ordinary"));
+        symbols.add(new Shapes(0x25E0, "upper half circle", "◠", "So", 0, null, "\\topsemicircle", "ordinary"));
+        symbols.add(new Shapes(0x25E1, "lower half circle", "◡", "So", 0, null, "\\botsemicircle", "ordinary"));
+        symbols.add(new Shapes(0x25E2, "black lower right triangle", "◢", "So", 0, null, "\\lrblacktriangle", "ordinary"));
+        symbols.add(new Shapes(0x25E3, "black lower left triangle", "◣", "So", 0, null, "\\llblacktriangle", "ordinary"));
+        symbols.add(new Shapes(0x25E4, "black upper left triangle", "◤", "So", 0, null, "\\ulblacktriangle", "ordinary"));
+        symbols.add(new Shapes(0x25E5, "black upper right triangle", "◥", "So", 0, null, "\\urblacktriangle", "ordinary"));
+        symbols.add(new Shapes(0x25E6, "white bullet", "◦", "So", 0, null, "\\smwhtcircle", "ordinary"));
+        symbols.add(new Shapes(0x25E7, "square with left half black", "◧", "So", 0, null, "\\squareleftblack", "ordinary"));
+        symbols.add(new Shapes(0x25E8, "square with right half black", "◨", "So", 0, null, "\\squarerightblack", "ordinary"));
+        symbols.add(new Shapes(0x25E9, "square with upper left diagonal half black", "◩", "So", 0, null, "\\squareulblack", "ordinary"));
+        symbols.add(new Shapes(0x25EA, "square with lower right diagonal half black", "◪", "So", 0, null, "\\squarelrblack", "ordinary"));
+        symbols.add(new Shapes(0x25EB, "white square with vertical bisecting line", "◫", "So", 0, "\\boxbar", null, "binary relation"));
+        symbols.add(new Shapes(0x25EC, "white up-pointing triangle with dot", "◬", "So", 0, null, "\\trianglecdot", "ordinary"));
+        symbols.add(new Shapes(0x25ED, "up-pointing triangle with left half black", "◭", "So", 0, null, "\\triangleleftblack", "ordinary"));
+        symbols.add(new Shapes(0x25EE, "up-pointing triangle with right half black", "◮", "So", 0, null, "\\trianglerightblack", "ordinary"));
+        symbols.add(new Shapes(0x25EF, "large circle", "◯", "So", 0, null, "\\lgwhtcircle", "ordinary"));
+        symbols.add(new Shapes(0x25F0, "white square with upper left quadrant", "◰", "So", 0, null, "\\squareulquad", "ordinary"));
+        symbols.add(new Shapes(0x25F1, "white square with lower left quadrant", "◱", "So", 0, null, "\\squarellquad", "ordinary"));
+        symbols.add(new Shapes(0x25F2, "white square with lower right quadrant", "◲", "So", 0, null, "\\squarelrquad", "ordinary"));
+        symbols.add(new Shapes(0x25F3, "white square with upper right quadrant", "◳", "So", 0, null, "\\squareurquad", "ordinary"));
+        symbols.add(new Shapes(0x25F4, "white circle with upper left quadrant", "◴", "So", 0, null, "\\circleulquad", "ordinary"));
+        symbols.add(new Shapes(0x25F5, "white circle with lower left quadrant", "◵", "So", 0, null, "\\circlellquad", "ordinary"));
+        symbols.add(new Shapes(0x25F6, "white circle with lower right quadrant", "◶", "So", 0, null, "\\circlelrquad", "ordinary"));
+        symbols.add(new Shapes(0x25F7, "white circle with upper right quadrant", "◷", "So", 0, null, "\\circleurquad", "ordinary"));
+        symbols.add(new Shapes(0x25F8, "upper left triangle", "◸", "Sm", 0, null, "\\ultriangle", "ordinary"));
+        symbols.add(new Shapes(0x25F9, "upper right triangle", "◹", "Sm", 0, null, "\\urtriangle", "ordinary"));
+        symbols.add(new Shapes(0x25FA, "lower left triangle", "◺", "Sm", 0, null, "\\lltriangle", "ordinary"));
+        symbols.add(new Shapes(0x25FB, "white medium square", "◻", "Sm", 0, "\\square", "\\mdwhtsquare", "ordinary"));
+        symbols.add(new Shapes(0x25FC, "black medium square", "◼", "Sm", 0, "\\blacksquare", "\\mdblksquare", "ordinary"));
+        symbols.add(new Shapes(0x25FD, "white medium small square", "◽", "Sm", 0, null, "\\mdsmwhtsquare", "ordinary"));
+        symbols.add(new Shapes(0x25FE, "black medium small square", "◾", "Sm", 0, null, "\\mdsmblksquare", "ordinary"));
+        symbols.add(new Shapes(0x25FF, "lower right triangle", "◿", "Sm", 0, null, "\\lrtriangle", "ordinary"));
         symbols.add(new Shapes(0x2700, "black safety scissors", "✀", "So", 0));
         symbols.add(new Shapes(0x2701, "upper blade scissors", "✁", "So", 0));
         symbols.add(new Shapes(0x2702, "black scissors", "✂", "So", 0));
@@ -372,25 +323,25 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x270B, "raised hand", "✋", "So", 0));
         symbols.add(new Shapes(0x270C, "victory hand", "✌", "So", 0));
         symbols.add(new Shapes(0x270D, "writing hand", "✍", "So", 0));
-        symbols.add(new Shapes(0x270E, "lower right pencil", "✎", "So", 0, "\\pencil", null, null));
+        symbols.add(new Shapes(0x270E, "lower right pencil", "✎", "So", 0, "\\pencil", null, "ordinary"));
         symbols.add(new Shapes(0x270F, "pencil", "✏", "So", 0));
         symbols.add(new Shapes(0x2710, "upper right pencil", "✐", "So", 0));
         symbols.add(new Shapes(0x2711, "white nib", "✑", "So", 0));
         symbols.add(new Shapes(0x2712, "black nib", "✒", "So", 0));
-        symbols.add(new Shapes(0x2713, "check mark", "✓", "So", 0, "\\checkmark", null, null));
+        symbols.add(new Shapes(0x2713, "check mark", "✓", "So", 0, "\\checkmark", null, "ordinary"));
         symbols.add(new Shapes(0x2714, "heavy check mark", "✔", "So", 0));
         symbols.add(new Shapes(0x2715, "multiplication x", "✕", "So", 0));
         symbols.add(new Shapes(0x2716, "heavy multiplication x", "✖", "So", 0));
-        symbols.add(new Shapes(0x2717, "ballot x", "✗", "So", 0, "\\ballotx", null, null));
+        symbols.add(new Shapes(0x2717, "ballot x", "✗", "So", 0, "\\ballotx", null, "ordinary"));
         symbols.add(new Shapes(0x2718, "heavy ballot x", "✘", "So", 0));
         symbols.add(new Shapes(0x2719, "outlined cross", "✙", "So", 0));
         symbols.add(new Shapes(0x271A, "heavy cross", "✚", "So", 0));
         symbols.add(new Shapes(0x271B, "open centre cross", "✛", "So", 0));
         symbols.add(new Shapes(0x271C, "heavy open centre cross", "✜", "So", 0));
-        symbols.add(new Shapes(0x271D, "latin cross", "✝", "So", 0));
-        symbols.add(new Shapes(0x271E, "shadowed white latin cross", "✞", "So", 0));
-        symbols.add(new Shapes(0x271F, "outlined latin cross", "✟", "So", 0));
-        symbols.add(new Shapes(0x2720, "maltese cross", "✠", "So", 0, "\\maltese", null, null));
+        symbols.add(new Shapes(0x271D, "cross", "✝", "So", 0));
+        symbols.add(new Shapes(0x271E, "shadowed white cross", "✞", "So", 0));
+        symbols.add(new Shapes(0x271F, "outlined cross", "✟", "So", 0));
+        symbols.add(new Shapes(0x2720, "maltese cross", "✠", "So", 0, "\\maltese", null, "ordinary"));
         symbols.add(new Shapes(0x2721, "star of david", "✡", "So", 0));
         symbols.add(new Shapes(0x2722, "four teardrop-spoked asterisk", "✢", "So", 0));
         symbols.add(new Shapes(0x2723, "four balloon-spoked asterisk", "✣", "So", 0));
@@ -400,7 +351,7 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x2727, "white four pointed star", "✧", "So", 0));
         symbols.add(new Shapes(0x2728, "sparkles", "✨", "So", 0));
         symbols.add(new Shapes(0x2729, "stress outlined white star", "✩", "So", 0));
-        symbols.add(new Shapes(0x272A, "circled white star", "✪", "So", 0, null, "\\circledstar", null));
+        symbols.add(new Shapes(0x272A, "circled white star", "✪", "So", 0, null, "\\circledstar", "ordinary"));
         symbols.add(new Shapes(0x272B, "open centre black star", "✫", "So", 0));
         symbols.add(new Shapes(0x272C, "black centre white star", "✬", "So", 0));
         symbols.add(new Shapes(0x272D, "outlined black star", "✭", "So", 0));
@@ -412,14 +363,14 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x2733, "eight spoked asterisk", "✳", "So", 0));
         symbols.add(new Shapes(0x2734, "eight pointed black star", "✴", "So", 0));
         symbols.add(new Shapes(0x2735, "eight pointed pinwheel star", "✵", "So", 0));
-        symbols.add(new Shapes(0x2736, "six pointed black star", "✶", "So", 0, null, "\\varstar", null));
+        symbols.add(new Shapes(0x2736, "six pointed black star", "✶", "So", 0, null, "\\varstar", "ordinary"));
         symbols.add(new Shapes(0x2737, "eight pointed rectilinear black star", "✷", "So", 0));
         symbols.add(new Shapes(0x2738, "heavy eight pointed rectilinear black star", "✸", "So", 0));
         symbols.add(new Shapes(0x2739, "twelve pointed black star", "✹", "So", 0));
         symbols.add(new Shapes(0x273A, "sixteen pointed asterisk", "✺", "So", 0));
         symbols.add(new Shapes(0x273B, "teardrop-spoked asterisk", "✻", "So", 0));
         symbols.add(new Shapes(0x273C, "open centre teardrop-spoked asterisk", "✼", "So", 0));
-        symbols.add(new Shapes(0x273D, "heavy teardrop-spoked asterisk", "✽", "So", 0, null, "\\dingasterisk", null));
+        symbols.add(new Shapes(0x273D, "heavy teardrop-spoked asterisk", "✽", "So", 0, null, "\\dingasterisk", "ordinary"));
         symbols.add(new Shapes(0x273E, "six petalled black and white florette", "✾", "So", 0));
         symbols.add(new Shapes(0x273F, "black florette", "✿", "So", 0));
         symbols.add(new Shapes(0x2740, "white florette", "❀", "So", 0));
@@ -472,8 +423,8 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x276F, "heavy right-pointing angle quotation mark ornament", "❯", "Pe", 0));
         symbols.add(new Shapes(0x2770, "heavy left-pointing angle bracket ornament", "❰", "Ps", 0));
         symbols.add(new Shapes(0x2771, "heavy right-pointing angle bracket ornament", "❱", "Pe", 0));
-        symbols.add(new Shapes(0x2772, "light left tortoise shell bracket ornament", "❲", "Ps", 0, null, "\\lbrbrak", null));
-        symbols.add(new Shapes(0x2773, "light right tortoise shell bracket ornament", "❳", "Pe", 0, null, "\\rbrbrak", null));
+        symbols.add(new Shapes(0x2772, "light left tortoise shell bracket ornament", "❲", "Ps", 0, null, "\\lbrbrak", "opening"));
+        symbols.add(new Shapes(0x2773, "light right tortoise shell bracket ornament", "❳", "Pe", 0, null, "\\rbrbrak", "closing"));
         symbols.add(new Shapes(0x2774, "medium left curly bracket ornament", "❴", "Ps", 0));
         symbols.add(new Shapes(0x2775, "medium right curly bracket ornament", "❵", "Pe", 0));
         symbols.add(new Shapes(0x2776, "dingbat negative circled 1", "❶", "No", 0));
@@ -507,20 +458,20 @@ public class Shapes implements UniCode {
         symbols.add(new Shapes(0x2792, "dingbat negative circled sans-serif 9", "➒", "No", 0));
         symbols.add(new Shapes(0x2793, "dingbat negative circled sans-serif number ten", "➓", "No", 0));
         symbols.add(new Shapes(0x2794, "heavy wide-headed rightwards arrow", "➔", "So", 0));
-        symbols.add(new Shapes(0x2795, "heavy plus sign", "➕", "So", 0));
-        symbols.add(new Shapes(0x2796, "heavy minus sign", "➖", "So", 0));
+        symbols.add(new Shapes(0x2795, "heavy +", "➕", "So", 0));
+        symbols.add(new Shapes(0x2796, "heavy -", "➖", "So", 0));
         symbols.add(new Shapes(0x2797, "heavy division sign", "➗", "So", 0));
         symbols.add(new Shapes(0x2798, "heavy south east arrow", "➘", "So", 0));
         symbols.add(new Shapes(0x2799, "heavy rightwards arrow", "➙", "So", 0));
         symbols.add(new Shapes(0x279A, "heavy north east arrow", "➚", "So", 0));
-        symbols.add(new Shapes(0x279B, "drafting point rightwards arrow", "➛", "So", 0, null, "\\draftingarrow", null));
+        symbols.add(new Shapes(0x279B, "drafting point rightwards arrow", "➛", "So", 0, null, "\\draftingarrow", "ordinary"));
         symbols.add(new Shapes(0x279C, "heavy round-tipped rightwards arrow", "➜", "So", 0));
         symbols.add(new Shapes(0x279D, "triangle-headed rightwards arrow", "➝", "So", 0));
         symbols.add(new Shapes(0x279E, "heavy triangle-headed rightwards arrow", "➞", "So", 0));
         symbols.add(new Shapes(0x279F, "dashed triangle-headed rightwards arrow", "➟", "So", 0));
         symbols.add(new Shapes(0x27A0, "heavy dashed triangle-headed rightwards arrow", "➠", "So", 0));
         symbols.add(new Shapes(0x27A1, "black rightwards arrow", "➡", "So", 0));
-        symbols.add(new Shapes(0x27A2, "three-d top-lighted rightwards arrowhead", "➢", "So", 0, "\\arrowbullet", null, null));
+        symbols.add(new Shapes(0x27A2, "three-d top-lighted rightwards arrowhead", "➢", "So", 0, "\\arrowbullet", null, "ordinary"));
         symbols.add(new Shapes(0x27A3, "three-d bottom-lighted rightwards arrowhead", "➣", "So", 0));
         symbols.add(new Shapes(0x27A4, "black rightwards arrowhead", "➤", "So", 0));
         symbols.add(new Shapes(0x27A5, "heavy black curved downwards and rightwards arrow", "➥", "So", 0));

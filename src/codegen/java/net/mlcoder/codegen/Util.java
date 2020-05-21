@@ -3,10 +3,12 @@ package net.mlcoder.codegen;
 import com.google.common.io.Resources;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateExceptionHandler;
+import lombok.experimental.Accessors;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+@Accessors(fluent = true)
 public class Util {
     public static Configuration freeMarkerConfiguration() {
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_20);
@@ -24,5 +26,9 @@ public class Util {
 
     public static List<String> readlLines(String file) throws Exception {
         return Resources.readLines(Resources.getResource(file), StandardCharsets.UTF_8);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(String.format("%s", null));
     }
 }

@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.mlcoder'
-version '0.0.3'
+version '0.0.4'
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
@@ -68,3 +68,7 @@ task generateSymbols(type: JavaExec) {
 
     main = "net.mlcoder.codegen.JavaSymbolFileGenerator"
 }
+
+tasks.compileJava.dependsOn generateLatexTemplate
+tasks.compileJava.dependsOn generateSymbols
+

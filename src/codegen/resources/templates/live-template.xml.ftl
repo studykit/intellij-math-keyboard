@@ -1,7 +1,7 @@
 <#--noinspection ALL-->
 <templateSet group="${name}">
   <#list envs as e>
-  <template name="\${e.abbr}" value="${e.snippet}" description="${e.name} environment" toReformat="false" toShortenFQNames="true">
+  <template name="\${e.abbreation}" value="${e.snippet}" description="${e.name} environment" toReformat="false" toShortenFQNames="true">
     <variable name="EXPR" expression="" defaultValue="" alwaysStopAt="true"/>
     <context>
       <option name="UNIMATH" value="true"/>
@@ -9,7 +9,7 @@
   </template>
   </#list>
   <#list cmds as c>
-  <template name="\${c.abbr}" value="${c.snippet}" description="${c.label}" toReformat="false" toShortenFQNames="true">
+  <template name="\${c.abbreation}" value="${c.snippet}" description="${c.label}" toReformat="false" toShortenFQNames="true">
     <#list c.vars as var>
     <variable name="${var}" expression="" defaultValue="" alwaysStopAt="true"/>
     </#list>

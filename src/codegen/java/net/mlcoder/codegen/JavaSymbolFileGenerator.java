@@ -44,10 +44,13 @@ public class JavaSymbolFileGenerator {
         JavaSymbolFileGenerator javaSymbolFileGenerator = new JavaSymbolFileGenerator();
 
         javaSymbolFileGenerator.createUnicodeSymbolJavaFile("MathLetter"
+            , Block.of("0080..00FF; Latin-1 Supplement")
             , Block.of("0370..03FF; Greek and Coptic")
             , Block.of("1F00..1FFF; Greek Extended")
             , Block.of("2070..209F; Superscripts and Subscripts")
+            , Block.of("2100..214F; Letterlike Symbols")
             , Block.of("1D400..1D7FF; Mathematical Alphanumeric Symbols")
+            , Block.of("1F100..1F1FF; Enclosed Alphanumeric Supplement")
         );
 
 

@@ -8,8 +8,10 @@ import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,6 +22,9 @@ public class Unicode {
     public static int DESC = 1;
     public static int GENERAL_CATEGORY = 2;
     public static int CANONICAL_COMBINING_CLASS = 3;
+    private static final List<Predicate<Unicode>> SKIP_PREDICATE = Arrays.asList(
+        (Unicode uc) -> uc.generalCategory == GeneralCategory.OTHER_CONTROL
+    );
 
     public final int codePoint;
     public final String desc;
@@ -46,6 +51,9 @@ public class Unicode {
 
         for (String line : lines) {
             Unicode data = from(line);
+            if (SKIP_PREDICATE.stream().anyMatch(p -> p.test(data)))
+                continue;
+
             result.put(data.codePoint, data);
         }
 

@@ -91,7 +91,7 @@ public class LatexTemplateGenerator {
 //        CUSTOM_TEMPLATE.put("mbfscr{}", "\\mbfscr{$SELECTION$} $END$");
 //        CUSTOM_TEMPLATE.put("mfrak{}", "\\mfrak{$SELECTION$} $END$");
 //        CUSTOM_TEMPLATE.put("mtt{}", "\\mtt{$SELECTION$} $END$");
-        CUSTOM_TEMPLATE.put("text", "\\text{$SELECTION$} $END$");
+        CUSTOM_TEMPLATE.put("text", "\\text{$SELECTION$}$END$");
 //        CUSTOM_TEMPLATE.put("textara{}", "\\textara{$SELECTION$} $END$");
 //        CUSTOM_TEMPLATE.put("textarc{}", "\\textarc{$SELECTION$} $END$");
 //        CUSTOM_TEMPLATE.put("textarl{}", "\\textarl{$SELECTION$} $END$");
@@ -160,8 +160,6 @@ public class LatexTemplateGenerator {
             return "\\$" + sanitized + "\\$";
         });
 
-        result = StringUtils.replace(result, "\\n", "&#10;");
-        result = StringUtils.replace(result, "\\t", "  ");
         result = StringEscapeUtils.escapeXml11(result);
 
         vars.sort(String::compareTo);
@@ -260,7 +258,7 @@ public class LatexTemplateGenerator {
                 this.vars = templ.getRight();
                 if (tex != null && vars.size() == 0) {
                     label = tex.chars;
-                    snippet = "\\" + command +" $END$";
+                    snippet = "\\" + command +"$END$";
                     return;
                 }
 
@@ -270,7 +268,7 @@ public class LatexTemplateGenerator {
                 if (StringUtils.isEmpty(templ.getLeft()) || vars.size() == 0) {
                     snippet = "\\" + command + " $END$";
                 } else {
-                    snippet = "\\" + result + (StringUtils.contains(snippet, "\\end") ? NEWLINE + "$END$" : " $END$");
+                    snippet = "\\" + result + (StringUtils.contains(snippet, "\\end") ? NEWLINE + "$END$" : "$END$");
                 }
 
             } finally {

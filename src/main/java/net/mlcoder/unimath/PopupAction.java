@@ -20,6 +20,7 @@ import com.intellij.util.ui.JBFont;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import net.mlcoder.unimath.category.*;
+import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,17 +30,18 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class PopupAction extends AnAction {
     private static final Logger logger = Logger.getInstance(PopupAction.class);
     private static final List<UniCode> allUniCodes;
     private static final FixedColumnsModel wholeTableModel;
+    private static final FixedColumnsModel emptyTableModel;
+    private static final Comparator<UniCode> latexComparator = (o1, o2) -> StringUtils.compareIgnoreCase(o1.latex(), o2.latex());
+    private static final Comparator<UniCode> ulatexComparator = (o1, o2) -> StringUtils.compareIgnoreCase(o1.ulatex(), o2.ulatex());
+
+
 
     static {
         allUniCodes = new ArrayList<>();
@@ -51,6 +53,8 @@ public class PopupAction extends AnAction {
         allUniCodes.addAll(CombininingMark.symbols);
         wholeTableModel =
             new FixedColumnsModel(new CollectionListModel<>(allUniCodes, true), 5);
+        emptyTableModel =
+            new FixedColumnsModel(new CollectionListModel<>(new CollectionListModel<>(Collections.emptyList(), true)), 1);
     }
 
     private static JBTable createMathTable() {
@@ -123,7 +127,6 @@ public class PopupAction extends AnAction {
     }
 
     private static class MathTableKeyListener extends KeyAdapter {
-        private static final int NO_CODEPOINT = -1;
         private final JBTable jbTable;
         private final JBPopup popup;
         private String text = "";
@@ -139,7 +142,7 @@ public class PopupAction extends AnAction {
         private void refresh() {
             popup.setAdText(text.trim(), SwingConstants.LEFT);
 
-            if (StringUtils.isEmpty(text) ||(text.length() == 1 && (text.charAt(0) == '/'))) {
+            if (StringUtils.isEmpty(text)) {
                 if (jbTable.getModel() == wholeTableModel)
                     return;
 
@@ -149,48 +152,114 @@ public class PopupAction extends AnAction {
                 return;
             }
 
-            final boolean seqPrefixSearch = text.startsWith("/");
-            AtomicInteger codePoint = new AtomicInteger(NO_CODEPOINT);
-
             if (text.startsWith("U+")) {
+                Optional<UniCode> any = Optional.empty();
                 try {
-                    codePoint.set(Integer.parseInt(text.substring(2), 16));
+                    int codePoint = Integer.parseInt(text.substring(2), 16);
+                    any = allUniCodes.stream().filter(uniCode -> uniCode.codePoint() == codePoint).findAny();
                 } catch (Exception ignored) {
+                }
+
+                if (any.isEmpty()) {
+                    if (jbTable.getModel() != emptyTableModel)
+                        jbTable.setModel(emptyTableModel);
                     return;
                 }
+
+                FixedColumnsModel model = new FixedColumnsModel(new CollectionListModel<>(Collections.singletonList(any.get())), 1);
+                jbTable.setModel(model);
+                jbTable.setRowSelectionInterval(0, 0);
+                jbTable.setColumnSelectionInterval(0, 0);
+                return;
             }
 
-            List<String> searchWords = Arrays.asList(StringUtils.split(seqPrefixSearch ? text.substring(1) : text, " "));
-
-            List<UniCode> filteredSymbols = allUniCodes.stream().filter(symbol -> {
-                if (seqPrefixSearch) {
-                    if (searchWords.size() > symbol.tokenized().length)
-                        return false;
-
-                    String[] tokenized = symbol.tokenized();
-
-                    int j = 0;
-                    for (String keyword : searchWords) {
-                        for  (;j < tokenized.length; j++) {
-                            if (StringUtils.startsWith(tokenized[j], keyword))
-                                break;
-                        }
-
-                        if (j >= tokenized.length)
-                            return false;
+            if (StringUtils.startsWith(text, "\\")) {
+                TreeSet<UniCode> latexes = new TreeSet<>(latexComparator);
+                TreeSet<UniCode> ulatexes = new TreeSet<>(ulatexComparator);
+                allUniCodes.forEach(ud -> {
+                    if (StringUtils.startsWith(ud.latex(), text)) {
+                        latexes.add(ud);
+                        return;
                     }
-                    return true;
+                    if (StringUtils.startsWith(ud.ulatex(), text)) {
+                        ulatexes.add(ud);
+                    }
+                });
+
+                List<UniCode> sorted = new ArrayList<>(latexes.size() + ulatexes.size());
+                sorted.addAll(latexes);
+                sorted.addAll(ulatexes);
+
+                jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(sorted, true), Math.min(latexes.size(), 5)));
+                if (latexes.size() > 0) {
+                    jbTable.setRowSelectionInterval(0, 0);
+                    jbTable.setColumnSelectionInterval(0, 0);
+                }
+                return;
+            }
+
+            List<String> searchWords = Arrays.asList(StringUtils.split(text, " "));
+            String tex = searchWords.size() == 1 ? "\\" + searchWords.get(0) : null;
+
+            TreeSet<UniCode> latexes = new TreeSet<>(latexComparator);
+            TreeSet<UniCode> ulatexes = new TreeSet<>(ulatexComparator);
+
+            List<UniCode> prefixMatch = Lists.newArrayList();
+            List<UniCode> containMatchSymbols = Lists.newArrayList();
+
+            allUniCodes.forEach(symbol -> {
+                if (searchWords.size() >  symbol.tokenized().length)
+                    return;
+
+                if (tex != null && symbol.hasTex()) {
+                    if (StringUtils.startsWith(symbol.latex(), tex)) {
+                        latexes.add(symbol);
+                    }
+
+                    if (StringUtils.startsWith(symbol.ulatex(), tex)) {
+                        ulatexes.add(symbol);
+                    }
+
+                    return;
                 }
 
-                if (codePoint.get() != NO_CODEPOINT) {
-                    return symbol.codePoint() == codePoint.get();
+                // seq seqrch
+                String[] tokenized = symbol.tokenized();
+                boolean found = true;
+                int j = 0;
+                for (String keyword : searchWords) {
+                    for (; j < tokenized.length; j++) {
+                        if (StringUtils.startsWith(tokenized[j], keyword))
+                            break;
+                    }
+
+                    if (j >= tokenized.length) {
+                        found = false;
+                    }
                 }
 
-                return searchWords.stream().allMatch(k -> Arrays.stream(symbol.tokenized()).anyMatch(t -> t.contains(k)));
-            }).collect(Collectors.toList());
+                if (found) {
+                    prefixMatch.add(symbol);
+                    return;
+                }
 
-            jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(filteredSymbols, true), Math.min(filteredSymbols.size(), 5)));
-            if (filteredSymbols.size() > 0) {
+                if (searchWords.stream().allMatch(k -> Arrays.stream(symbol.tokenized()).anyMatch(t -> t.contains(k)))) {
+                    containMatchSymbols.add(symbol);
+                }
+            });
+
+            List<UniCode> sorted = new ArrayList<>(latexes.size() +
+                + ulatexes.size()
+                + prefixMatch.size()
+                + containMatchSymbols.size()
+            );
+            sorted.addAll(latexes);
+            sorted.addAll(ulatexes);
+            sorted.addAll(prefixMatch);
+            sorted.addAll(containMatchSymbols);
+
+            jbTable.setModel(new FixedColumnsModel(new CollectionListModel<>(sorted, true), Math.min(sorted.size(), 5)));
+            if (sorted.size() > 0) {
                 jbTable.setRowSelectionInterval(0, 0);
                 jbTable.setColumnSelectionInterval(0, 0);
             }
@@ -251,9 +320,14 @@ public class PopupAction extends AnAction {
 
                 int column;
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_A: column = 0; break;
-                    case KeyEvent.VK_E: column = jbTable.getColumnCount() - 1; break;
-                    default: return;
+                    case KeyEvent.VK_A:
+                        column = 0;
+                        break;
+                    case KeyEvent.VK_E:
+                        column = jbTable.getColumnCount() - 1;
+                        break;
+                    default:
+                        return;
                 }
 
                 int row = jbTable.getSelectedRow();
@@ -333,8 +407,8 @@ public class PopupAction extends AnAction {
 
     private static String toolTipText(UniCode uniCode) {
         return uniCode.ulatex() == null ?
-            uniCode.desc() + " (" + uniCode.codeStr() +")" :
-            uniCode.desc() + " [" + uniCode.ulatex() + "]" + " (" + uniCode.codeStr() +")";
+            uniCode.desc() + " (" + uniCode.codeStr() + ")" :
+            uniCode.desc() + " [" + uniCode.ulatex() + "]" + " (" + uniCode.codeStr() + ")";
     }
 
 }

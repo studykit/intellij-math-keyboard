@@ -46,9 +46,10 @@ public class MathOperator implements UniCode {
         this.ulatex = ulatex;
         this.mathCategory = mathCategory;
 
-        String _latex = latex != null ? " " + latex : "";
-        String _ulatex = ulatex != null ? " " + ulatex : "";
-        this.tokenized = Arrays.stream((desc + _latex + _ulatex + " " + codeStr).split(" "))
+        String _latex = latex != null ? " " + latex.substring(1) : "";
+        String _ulatex = ulatex != null ? " " + ulatex.substring(1) : "";
+        String concanated = (_latex + _ulatex + " " + desc).trim();
+        this.tokenized = Arrays.stream(concanated.split(" "))
             .filter(s -> s.length() != 0).toArray(String[]::new);
     }
 
